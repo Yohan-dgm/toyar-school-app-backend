@@ -3,6 +3,6 @@
 # allow files in root dir
 !/.gitignore
 # allow directories in root dir
-!/Modules
+!/modules
 # allow decendants in each allowed directories mentioned above
-!/Modules/*
+!/modules/*
