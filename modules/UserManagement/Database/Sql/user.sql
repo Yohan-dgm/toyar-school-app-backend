@@ -30,7 +30,6 @@ CREATE TABLE "public"."user" (
   "remember_token" varchar(100) COLLATE "pg_catalog"."default",
   "created_at" timestamp(0),
   "updated_at" timestamp(0),
-  "user_type_id" int4,
   "created_by" int8,
   "update_by" int8
 )
