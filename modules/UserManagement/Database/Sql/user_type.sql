@@ -15,6 +15,17 @@
  Date: 06/12/2024 14:05:17
 */
 
+-- ----------------------------
+-- Sequence structure for user_type_id_seq
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "public"."user_type_id_seq";
+CREATE SEQUENCE "public"."user_type_id_seq" 
+INCREMENT 1
+MINVALUE  1
+MAXVALUE 9223372036854775807
+START 1
+CACHE 1;
+
 
 -- ----------------------------
 -- Table structure for user_type
@@ -38,3 +49,15 @@ INSERT INTO "public"."user_type" VALUES (4, 'Parent', NULL, NULL);
 INSERT INTO "public"."user_type" VALUES (5, 'intern', NULL, NULL);
 INSERT INTO "public"."user_type" VALUES (6, 'Coach', NULL, NULL);
 INSERT INTO "public"."user_type" VALUES (7, 'genaral', NULL, NULL);
+
+-- ----------------------------
+-- Primary Key structure for table user_type
+-- ----------------------------
+ALTER TABLE "public"."user_type" ADD CONSTRAINT "user_type_pkey" PRIMARY KEY ("id");
+
+-- ----------------------------
+-- Alter sequences owned by
+-- ----------------------------
+ALTER SEQUENCE "public"."user_type_id_seq"
+OWNED BY "public"."user_type"."id";
+SELECT setval('"public"."user_type_id_seq"', 10, true);
