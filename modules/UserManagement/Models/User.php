@@ -21,6 +21,8 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
+        'created_by',
+        'updated_by',
     ];
 
     /**
@@ -48,6 +50,6 @@ class User extends Authenticatable
 
     public function user_type_list(): BelongsToMany
     {
-        return $this->belongsToMany(User_type::class, 'user_user_type_pivot', 'user_id', 'user_type_id');
+        return $this->belongsToMany(UserType::class, 'user_user_type_pivot', 'user_id', 'user_type_id');
     }
 }

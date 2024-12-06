@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class User_type extends Model
+class UserType extends Model
 {
     use HasFactory;
 
@@ -14,6 +14,8 @@ class User_type extends Model
 
     protected $fillable = [
         'name',
+        'created_by',
+        'updated_by',
     ];
 
     public $timestamps = true;
