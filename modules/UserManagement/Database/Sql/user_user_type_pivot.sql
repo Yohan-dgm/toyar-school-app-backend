@@ -50,4 +50,4 @@ ALTER TABLE "public"."user_user_type_pivot" ADD CONSTRAINT "user_user_type_pivot
 -- ----------------------------
 ALTER SEQUENCE "public"."user_user_type_pivot_id_seq"
 OWNED BY "public"."user_user_type_pivot"."id";
-SELECT setval('"public"."user_user_type_pivot_id_seq"', 1, true);
+SELECT setval('"public"."user_user_type_pivot_id_seq"', 1, false);
