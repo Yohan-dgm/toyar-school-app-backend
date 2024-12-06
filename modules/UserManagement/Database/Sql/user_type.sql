@@ -12,7 +12,7 @@
  Target Server Version : 160000 (160000)
  File Encoding         : 65001
 
- Date: 06/12/2024 12:53:24
+ Date: 06/12/2024 14:05:17
 */
 
 
@@ -22,17 +22,19 @@
 DROP TABLE IF EXISTS "public"."user_type";
 CREATE TABLE "public"."user_type" (
   "id" int8 NOT NULL DEFAULT nextval('user_type_seqs'::regclass),
-  "name" varchar(255) COLLATE "pg_catalog"."default" NOT NULL
+  "name" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
+  "created_by" int8,
+  "updated_by" timestamp(0)
 )
 ;
 
 -- ----------------------------
 -- Records of user_type
 -- ----------------------------
-INSERT INTO "public"."user_type" VALUES (1, 'Administrator');
-INSERT INTO "public"."user_type" VALUES (2, 'Student');
-INSERT INTO "public"."user_type" VALUES (3, 'Educator');
-INSERT INTO "public"."user_type" VALUES (4, 'Parent');
-INSERT INTO "public"."user_type" VALUES (5, 'intern');
-INSERT INTO "public"."user_type" VALUES (6, 'Coach');
-INSERT INTO "public"."user_type" VALUES (7, 'genaral');
+INSERT INTO "public"."user_type" VALUES (1, 'Administrator', NULL, NULL);
+INSERT INTO "public"."user_type" VALUES (2, 'Student', NULL, NULL);
+INSERT INTO "public"."user_type" VALUES (3, 'Educator', NULL, NULL);
+INSERT INTO "public"."user_type" VALUES (4, 'Parent', NULL, NULL);
+INSERT INTO "public"."user_type" VALUES (5, 'intern', NULL, NULL);
+INSERT INTO "public"."user_type" VALUES (6, 'Coach', NULL, NULL);
+INSERT INTO "public"."user_type" VALUES (7, 'genaral', NULL, NULL);
