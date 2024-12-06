@@ -55,4 +55,4 @@ ALTER TABLE "public"."user_type" ADD CONSTRAINT "user_type_pkey" PRIMARY KEY ("i
 -- ----------------------------
 ALTER SEQUENCE "public"."user_type_id_seq"
 OWNED BY "public"."user_type"."id";
-SELECT setval('"public"."user_type_id_seq"', 10, true);
+SELECT setval('"public"."user_type_id_seq"', 5, true);
