@@ -35,6 +35,7 @@ class SignInIntent
                 $data['full_name'] = $user->full_name;
                 $data['username'] = $user->username;
                 $data['email'] = $user->email;
+                $data['user_type_list'] = $user->user_type_list->select('name', 'pivot');
                 return $data;
             } else {
                 return null;
