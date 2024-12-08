@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\UserManagement\Intents\User\SignInUser;
+namespace Modules\UserManagement\Intents\User\SignIn;
 
 use Illuminate\Http\Request;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\Support\Validation\ValidationContext;
 
-class SignInUserDTO extends Data
+class SignInDTO extends Data
 {
     public function __construct(
         // user
