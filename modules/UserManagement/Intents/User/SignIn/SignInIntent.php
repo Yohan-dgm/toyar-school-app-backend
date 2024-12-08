@@ -24,21 +24,21 @@ class SignInIntent
 
             // Action 1
             $actionData = [];
-            $signInResult = SignInAction::run($signInUserDTO, $actionData);
+            $signInResult = SignInAction::run($signInUserDTO, $actionData, $request);
 
             // After Intent
 
             // Return Response
-            if($signInResult){
+            if ($signInResult) {
                 $user = $signInResult;
                 $data['id'] = $user->id;
                 $data['full_name'] = $user->full_name;
                 $data['username'] = $user->username;
                 $data['email'] = $user->email;
                 return $data;
-            }else{
+            } else {
                 return null;
-            }            
+            }
         } catch (\Throwable $th) {
             throw $th;
         }
