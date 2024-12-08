@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\UserManagement\Intents\User\SignOutUser;
+namespace Modules\UserManagement\Intents\User\SignOut;
 
 use Illuminate\Support\Facades\Auth;
 use Lorisleiva\Actions\Concerns\AsAction;
 use Modules\UserManagement\Models\User;
 
-class SignOutUserAction
+class SignOutAction
 {
     use AsAction;
 
