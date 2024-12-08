@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\UserManagement\Intents\User\SignOutUser;
+namespace Modules\UserManagement\Intents\User\SignIn;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class SignOutUserIntent
+class SignInIntent
 {
     use AsAction;
 
@@ -16,6 +16,7 @@ class SignOutUserIntent
             // 1. Authorization
 
             // 2. User Data Validation
+            $signInUserDTO = SignInUserDTO::validate($request->all());
 
             // 3. Before Intent
 
@@ -23,12 +24,21 @@ class SignOutUserIntent
 
             // Action 1
             $actionData = [];
-            $signOutResult = SignOutUserAction::run([], $actionData);
+            $signInResult = SignInAction::run($signInUserDTO, $actionData);
 
             // After Intent
 
             // Return Response
-            return $signOutResult;
+            if($signInResult){
+                $user = $signInResult;
+                $data['id'] = $user->id;
+                $data['full_name'] = $user->full_name;
+                $data['username'] = $user->username;
+                $data['email'] = $user->email;
+                return $data;
+            }else{
+                return null;
+            }            
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -43,11 +53,18 @@ class SignOutUserIntent
                     [
                         "status" => "successful",
                         "message" => "",
-                        "data" => null,
+                        "data" => $result,
                         "metadata" => null,
                     ],
                     200
                 );
+            } else {
+                return response()->json([
+                    "status" => "invalid-credentials",
+                    "message" => "",
+                    "data" => null,
+                    "metadata" => null,
+                ], 401);
             }
         } catch (\Throwable $th) {
             throw $th;
