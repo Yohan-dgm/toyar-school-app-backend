@@ -1,15 +1,12 @@
 <?php
 
-namespace Modules\UserManagement\Intents\User\SignInUser;
+namespace Modules\UserManagement\Intents\User\SignIn;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 use Lorisleiva\Actions\Concerns\AsAction;
-use Modules\UserManagement\Models\User;
 
-class SignInUserIntent
+class SignInIntent
 {
     use AsAction;
 
@@ -19,7 +16,7 @@ class SignInUserIntent
             // 1. Authorization
 
             // 2. User Data Validation
-            $signInUserUserDTO = SignInUserUserDTO::validate($request->all());
+            $signInUserDTO = SignInUserDTO::validate($request->all());
 
             // 3. Before Intent
 
@@ -27,7 +24,7 @@ class SignInUserIntent
 
             // Action 1
             $actionData = [];
-            $signInResult = SignInUserAction::run($signInUserUserDTO, $actionData);
+            $signInResult = SignInAction::run($signInUserDTO, $actionData);
 
             // After Intent
 
