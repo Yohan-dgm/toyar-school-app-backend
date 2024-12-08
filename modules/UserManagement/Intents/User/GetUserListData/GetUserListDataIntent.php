@@ -24,13 +24,14 @@ class GetUserListDataIntent
             // Business Rules Validation
 
             // Action 1
-            $userListData = GetUserListDataAction::run($getUserListDataUserDTO);
+            $actionData = [];
+            $actionData['user_id'] = $request->user()->id;
+            $userListData = GetUserListDataAction::run($getUserListDataUserDTO, $actionData);
             $data["user_count"] = DB::table("user")->count();
             // After Intent
 
             // Return Response
             return array_merge($userListData->toArray(), $data);
-            return $userListData;
         } catch (\Throwable $th) {
             throw $th;
         }
