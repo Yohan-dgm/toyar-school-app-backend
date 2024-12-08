@@ -1,6 +1,7 @@
 <?php
 
 namespace Modules\UserManagement\Intents\User\SignIn;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -11,17 +12,17 @@ class SignInAction
 {
     use AsAction;
 
-    public function handle($payloadArray, $actionData)
+    public function handle($payloadArray, $actionData, Request $request)
     {
         // User Data Validation
         $signInUserDTO = SignInUserDTO::validate($payloadArray);
 
         // Data Prep
-        
+
         // System Data Prep
-        
+
         // Final Data Validation
-        
+
         // // Sign In User (Token Based Authentication)
         // $user = User::where("username", $signInUserDTO["username_or_email"])->first();
         // if ($user) {
@@ -58,7 +59,7 @@ class SignInAction
         } else if (Auth::attempt($credentials_with_email)) {
             $request->session()->regenerate();
             return $request->user();
-        }else{
+        } else {
             return false;
         }
     }
