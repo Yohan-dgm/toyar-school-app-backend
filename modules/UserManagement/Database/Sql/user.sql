@@ -48,39 +48,39 @@ CREATE TABLE "public"."user" (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO "public"."user" VALUES (9, 'M R H Maheshi Meegalla', 'maheshi', 'maheshi@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (10, 'Dissanayake Mudiyanselage Upeksha Chethana Dissanayake', 'chethana', 'chethana@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (12, 'M D Piyumika S Weerasinghe', 'piyumika', 'piyumika@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (2, 'Wasala Tanthrige Noyeli Hansika Perera', 'noyeli', 'noyeli@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (3, 'Sirinayake Gunawardhanalage Niranja Hemali Gunawardhana', 'niranja', 'niranja@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (4, 'Kachchakaduge Nilanka Sajeewani Peiris', 'nilanka', 'nilanka@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (5, 'K K Tilki Subhashini De Alwis', 'tilki', 'tilki@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (17, 'Niyagama Pathiranage Okitma Sandanaki', 'okithma', 'okithma@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (1, 'Sevwandi Lanka Kankanamge', 'sevwandi', 'sevwandi@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (6, 'C M R Tharuka Sathsarani', 'tharuka', 'tharuka@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (7, 'K M Nirosha Madushika Karunarathne', 'nirosha', 'nirosha@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (8, 'Nethmi Shehani Kasthuriarachchi', 'nethmi', 'nethmi@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (16, 'Bodiyabaduge Roshenka Madhushani Fernando', 'roshenka', 'roshenka@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (15, 'Shakila Anushki Wanigasinghe', 'shakila', 'shakila@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (14, 'Assarapullige Roshel Anjala De Silva', 'roshel', 'roshel@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (13, 'Shavinke Nimesh Nicol Trimanne', 'shavinke', 'shavinke@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (18, 'W A Wathsala Madhubhasini ', 'wathsala', 'wathsala@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (19, 'R A Nethmi Nayanathara', 'nayanathara', 'nayanathara@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (20, 'Wanni Arachchige Saranga Iresh Fonseka ', 'saranga', 'saranga@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (21, 'Athauda Arachchilage Chaminda Sisira Kumara Athauda Arachchi', 'chamin', 'chamin@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (22, 'V A Sameera Chathuranga', 'sameera', 'sameera@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (23, 'M A S Anuththara', 'shenali', 'shenali@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (24, 'Disavi Tharuni Harangala', 'disavi', 'disavi@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (25, 'W S W Weerasooriya', 'warshana', 'warshana@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (26, 'G R Welgama', 'geesha', 'geesha@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (27, 'L M S Perera', 'eshmi', 'eshmi@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (28, 'J I D Gunasekara', 'isara', 'isara@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (29, 'Fritz Roy Royen', 'roy', 'roy@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (30, 'B Proyadarshana Lal', 'priyadarshana', 'priyadarshana@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (31, 'W A Lalith Senani Bandula Jayakody', 'jayakody', 'jayakody@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (32, 'B L Ranidu Chamara', 'chamara', 'chamara@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (33, 'K J R Perera', 'janith', 'janith@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."user" VALUES (11, 'R Sithumi Bhagya Senevirathne', 'sithumi', 'sithumi@nexiscollege.lk', NULL, ' $2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (9, 'M R H Maheshi Meegalla', 'maheshi', 'maheshi@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (10, 'Dissanayake Mudiyanselage Upeksha Chethana Dissanayake', 'chethana', 'chethana@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (12, 'M D Piyumika S Weerasinghe', 'piyumika', 'piyumika@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (2, 'Wasala Tanthrige Noyeli Hansika Perera', 'noyeli', 'noyeli@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (3, 'Sirinayake Gunawardhanalage Niranja Hemali Gunawardhana', 'niranja', 'niranja@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (4, 'Kachchakaduge Nilanka Sajeewani Peiris', 'nilanka', 'nilanka@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (5, 'K K Tilki Subhashini De Alwis', 'tilki', 'tilki@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (17, 'Niyagama Pathiranage Okitma Sandanaki', 'okithma', 'okithma@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (1, 'Sevwandi Lanka Kankanamge', 'sevwandi', 'sevwandi@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (6, 'C M R Tharuka Sathsarani', 'tharuka', 'tharuka@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (7, 'K M Nirosha Madushika Karunarathne', 'nirosha', 'nirosha@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (8, 'Nethmi Shehani Kasthuriarachchi', 'nethmi', 'nethmi@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (16, 'Bodiyabaduge Roshenka Madhushani Fernando', 'roshenka', 'roshenka@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (15, 'Shakila Anushki Wanigasinghe', 'shakila', 'shakila@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (14, 'Assarapullige Roshel Anjala De Silva', 'roshel', 'roshel@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (13, 'Shavinke Nimesh Nicol Trimanne', 'shavinke', 'shavinke@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (18, 'W A Wathsala Madhubhasini ', 'wathsala', 'wathsala@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (19, 'R A Nethmi Nayanathara', 'nayanathara', 'nayanathara@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (20, 'Wanni Arachchige Saranga Iresh Fonseka ', 'saranga', 'saranga@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (21, 'Athauda Arachchilage Chaminda Sisira Kumara Athauda Arachchi', 'chamin', 'chamin@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (22, 'V A Sameera Chathuranga', 'sameera', 'sameera@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (23, 'M A S Anuththara', 'shenali', 'shenali@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (24, 'Disavi Tharuni Harangala', 'disavi', 'disavi@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (25, 'W S W Weerasooriya', 'warshana', 'warshana@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (26, 'G R Welgama', 'geesha', 'geesha@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (27, 'L M S Perera', 'eshmi', 'eshmi@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (28, 'J I D Gunasekara', 'isara', 'isara@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (29, 'Fritz Roy Royen', 'roy', 'roy@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (30, 'B Proyadarshana Lal', 'priyadarshana', 'priyadarshana@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (31, 'W A Lalith Senani Bandula Jayakody', 'jayakody', 'jayakody@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (32, 'B L Ranidu Chamara', 'chamara', 'chamara@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (33, 'K J R Perera', 'janith', 'janith@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."user" VALUES (11, 'R Sithumi Bhagya Senevirathne', 'sithumi', 'sithumi@nexiscollege.lk', NULL, '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G', NULL, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Primary Key structure for table user
