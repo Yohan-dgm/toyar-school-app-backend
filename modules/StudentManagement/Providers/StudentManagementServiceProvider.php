@@ -21,6 +21,6 @@ class StudentManagementServiceProvider extends ServiceProvider
     {
         //
         $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
-        $this->mergeConfigFrom(__DIR__ . '/../config.php', 'user-management');
+        $this->mergeConfigFrom(__DIR__ . '/../config.php', 'student-management');
     }
 }
