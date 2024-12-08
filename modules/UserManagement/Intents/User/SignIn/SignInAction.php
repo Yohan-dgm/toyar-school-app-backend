@@ -1,22 +1,20 @@
 <?php
 
-namespace Modules\UserManagement\Intents\User\SignInUser;
-
+namespace Modules\UserManagement\Intents\User\SignIn;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Lorisleiva\Actions\Concerns\AsAction;
 use Modules\UserManagement\Models\User;
 
-class SignInUserAction
+class SignInAction
 {
     use AsAction;
 
     public function handle($payloadArray, $actionData)
     {
         // User Data Validation
-        $signInUserUserDTO = SignInUserUserDTO::validate($payloadArray);
+        $signInUserDTO = SignInUserDTO::validate($payloadArray);
 
         // Data Prep
         
@@ -25,17 +23,17 @@ class SignInUserAction
         // Final Data Validation
         
         // // Sign In User (Token Based Authentication)
-        // $user = User::where("username", $signInUserUserDTO["username_or_email"])->first();
+        // $user = User::where("username", $signInUserDTO["username_or_email"])->first();
         // if ($user) {
-        //     if (!Hash::check($signInUserUserDTO["password"], $user->password)) {
+        //     if (!Hash::check($signInUserDTO["password"], $user->password)) {
         //         return false;
         //     }
         //     $token = $user->createToken("my-auth-token")->plainTextToken;
         //     return $token;
         // }else{
-        //     $user = User::where("email", $signInUserUserDTO["username_or_email"])->first();
+        //     $user = User::where("email", $signInUserDTO["username_or_email"])->first();
         //     if($user){
-        //         if (!Hash::check($signInUserUserDTO["password"], $user->password)) {
+        //         if (!Hash::check($signInUserDTO["password"], $user->password)) {
         //             return false;
         //         }
         //         $token = $user->createToken("my-auth-token")->plainTextToken;
@@ -47,12 +45,12 @@ class SignInUserAction
 
         // Sign In User (Session Based Authentication)
         $credentials_with_username = [
-            'username' => $signInUserUserDTO['username_or_email'],
-            'password' => $signInUserUserDTO['password'],
+            'username' => $signInUserDTO['username_or_email'],
+            'password' => $signInUserDTO['password'],
         ];
         $credentials_with_email = [
-            'email' => $signInUserUserDTO['username_or_email'],
-            'password' => $signInUserUserDTO['password'],
+            'email' => $signInUserDTO['username_or_email'],
+            'password' => $signInUserDTO['password'],
         ];
         if (Auth::attempt($credentials_with_username)) {
             $request->session()->regenerate();
