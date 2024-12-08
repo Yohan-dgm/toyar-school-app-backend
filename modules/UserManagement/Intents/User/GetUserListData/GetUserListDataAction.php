@@ -37,7 +37,12 @@ class GetUserListDataAction
                 $user_query_group3->orWhere("email", "ILIKE", "%" . $getUserListDataUserDTO['search_phrase'] . "%");
             }
         })
+            ->with(['user_type_list' => function (Builder $user_type_list_query) {
+                //
+                $user_type_list_query->select("name");
+            }])
             ->select(
+                "id",
                 "full_name",
                 "username",
                 "email",
