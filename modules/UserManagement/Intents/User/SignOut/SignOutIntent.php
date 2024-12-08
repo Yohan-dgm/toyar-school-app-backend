@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\UserManagement\Intents\User\SignOutUser;
+namespace Modules\UserManagement\Intents\User\SignOut;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class SignOutUserIntent
+class SignOutIntent
 {
     use AsAction;
 
@@ -23,7 +23,7 @@ class SignOutUserIntent
 
             // Action 1
             $actionData = [];
-            $signOutResult = SignOutUserAction::run([], $actionData);
+            $signOutResult = SignOutAction::run([], $actionData);
 
             // After Intent
 
