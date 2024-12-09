@@ -1,17 +1,19 @@
 <?php
 
-namespace Modules\EmployeeManagement\Models;
+namespace Modules\GeneralEntityManagement\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Modules\EmployeeManagement\Models\Employee;
+use Modules\GeneralEntityManagement\Models\Employee;
 
-class EmployeeType extends Model
+class Country extends Model
 {
     use HasFactory;
 
-    protected $table = 'employee_type';
+    protected $table = 'country';
 
     protected $fillable = [
         'name',
@@ -21,9 +23,6 @@ class EmployeeType extends Model
 
     public $timestamps = true;
  
-    public function employee_list() : HasMany
-    {
-        return $this->hasMany(Employee::class, 'employee_type_id', 'id'); 
+ 
 
-    }
 }
