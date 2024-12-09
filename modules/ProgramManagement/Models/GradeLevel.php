@@ -20,13 +20,13 @@ class GradeLevel extends Model
 
     public $timestamps = true;
 
-    public function student_list(): HasMany
+    public function program_list(): HasMany
     {
         return $this->hasMany(Program::class, 'grade_level_id', 'id');
     }
 
-    // protected static function newFactory(): CurriculumTypeFactory
+    // protected static function newFactory(): GradeLevelFactory
     // {
-    //     return new CurriculumTypeFactory();
+    //     return new GradeLevelFactory();
     // }
 }
