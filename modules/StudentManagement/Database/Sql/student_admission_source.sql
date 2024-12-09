@@ -16,10 +16,10 @@
 */
 
 -- ----------------------------
--- Sequence structure for student_id_seq
+-- Sequence structure for student_admission_source_id_seq
 -- ----------------------------
-DROP SEQUENCE IF EXISTS "public"."student_id_seq";
-CREATE SEQUENCE "public"."student_id_seq" 
+DROP SEQUENCE IF EXISTS "public"."student_admission_source_id_seq";
+CREATE SEQUENCE "public"."student_admission_source_id_seq" 
 INCREMENT 1
 MINVALUE  1
 MAXVALUE 9223372036854775807
@@ -35,8 +35,10 @@ DROP TABLE IF EXISTS "public"."student_admission_source";
 CREATE TABLE "public"."student_admission_source" (
   "id" int8 NOT NULL DEFAULT nextval('student_admission_source_id_seq'::regclass),
   "name" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
-  "created_by" int8,
-  "updated_by" timestamp(0)
+  "created_by" int8 NOT NULL,
+  "updated_by" int8 NOT NULL,
+  "created_at" timestamp(0) NOT NULL,
+  "updated_at" timestamp(0) NOT NULL
 )
 ;
 
@@ -64,7 +66,7 @@ ALTER TABLE "public"."student_admission_source" ADD CONSTRAINT "student_admissio
 -- ----------------------------
 -- Alter sequences owned by
 -- ----------------------------
-ALTER SEQUENCE "public"."student_id_seq"
-OWNED BY "public"."student"."id";
-SELECT setval('"public"."student_id_seq"', 33, true);
+ALTER SEQUENCE "public"."student_admission_source_id_seq"
+OWNED BY "public"."student_admission_source"."id";
+SELECT setval('"public"."student_admission_source_id_seq"', 12, true);
 

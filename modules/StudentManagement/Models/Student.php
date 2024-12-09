@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\EmployeeManagement\Models;
+namespace Modules\StudentManagement\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Student extends Model
 {
-    protected $table = 'employee';
+    protected $table = 'student';
 
     protected $fillable = [
      
@@ -19,16 +19,16 @@ class Student extends Model
         'student_admission_source_id',
         'joined_date',
         'full_name',
-        'gender
-        full_name_with_title',
+        'gender',
+        'full_name_with_title',
         'date_of_birth',
         'nationality_id',
         'religion_id',
         'grade_level_id',
         'full_address',
-        'phone
-        email
-        school_studied_before',
+        'phone',
+        'email',
+        'school_studied_before',
         'special_conditions',
         'admission_fee_discount_percentage',
         'approved_admission_fee',

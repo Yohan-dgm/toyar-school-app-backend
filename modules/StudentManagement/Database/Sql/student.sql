@@ -55,7 +55,9 @@ CREATE TABLE "public"."student" (
   "applicable_term_payment" numeric(10,1) NOT NULL,
   "applicable_year_payment" numeric(10,1) NOT NULL,
   "created_by" int8 NOT NULL,
-  "updated_by" timestamp(0) NOT NULL
+  "updated_by" int8 NOT NULL,
+  "created_at" timestamp(0) NOT NULL,
+  "updated_at" timestamp(0) NOT NULL
 )
 ;
 
@@ -347,5 +349,5 @@ ALTER TABLE "public"."student" ADD CONSTRAINT "student_pkey" PRIMARY KEY ("id");
 -- ----------------------------
 ALTER SEQUENCE "public"."student_id_seq"
 OWNED BY "public"."student"."id";
-SELECT setval('"public"."student_id_seq"', 196, true);
+SELECT setval('"public"."student_id_seq"', 274, true);
 
