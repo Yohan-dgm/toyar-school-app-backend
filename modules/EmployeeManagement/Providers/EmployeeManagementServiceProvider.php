@@ -1,10 +1,10 @@
 <?php
 
-namespace Modules\StudentManagement\Providers;
+namespace Modules\EmployeeManagement\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class StudentManagementServiceProvider extends ServiceProvider
+class EmployeeManagementServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -21,6 +21,6 @@ class StudentManagementServiceProvider extends ServiceProvider
     {
         //
         $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
-        $this->mergeConfigFrom(__DIR__ . '/../config.php', 'student-management');
+        $this->mergeConfigFrom(__DIR__ . '/../config.php', 'employee-management');
     }
 }
