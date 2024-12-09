@@ -21,8 +21,8 @@ class Role extends Model
     public $timestamps = true;
 
     // Optional: Define relationships
-    public function roleGroup()
+    public function role_group()
     {
-        return $this->belongsTo(RoleGroup::class);
+        return $this->belongsTo(RoleGroup::class , 'role_group_id');
     }
 }

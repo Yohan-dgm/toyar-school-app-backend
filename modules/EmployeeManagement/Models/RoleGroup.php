@@ -20,8 +20,8 @@ class RoleGroup extends Model
     public $timestamps = true;
 
     // Optional: Define relationships
-    public function roles()
+    public function role_list()
     {
-        return $this->hasMany(Role::class);
+        return $this->hasMany(Role::class, 'role_group_id');
     }
 }

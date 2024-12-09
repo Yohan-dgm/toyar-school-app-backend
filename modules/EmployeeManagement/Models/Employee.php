@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\UserManagement\Models;
+namespace Modules\EmployeeManagement\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Modules\EmployeeManagement\Models\EmployeeType;
@@ -14,9 +14,9 @@ class Employee extends Model
         'employee_type_id',
         'nic_number',
         'epf_number',
-        'remaining_annual_leave',
-        'remaining_medical_leave',
-        'remaining_maternity_leave',
+        'remaining_annual_leaves',
+        'remaining_medical_leaves',
+        'remaining_maternity_leaves',
         'created_by',
         'updated_by',
     ];
@@ -25,7 +25,7 @@ class Employee extends Model
     /**
      * Relationship with Employee Type
      */
-    public function employeeType()
+    public function employee_list()
     {
         return $this->belongsTo(EmployeeType::class, 'employee_type_id');
     }

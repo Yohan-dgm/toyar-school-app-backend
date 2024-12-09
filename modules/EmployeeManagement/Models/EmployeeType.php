@@ -4,7 +4,7 @@ namespace Modules\EmployeeManagement\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Modules\UserManagement\Models\Employee;
+use Modules\EmployeeManagement\Models\Employee;
 
 class EmployeeType extends Model
 {
@@ -23,6 +23,6 @@ class EmployeeType extends Model
     // Optional: Define relationships
     public function employees()
     {
-        return $this->hasMany(Employee::class);
+        return $this->hasMany(Employee::class, 'employee_type_id');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\UserManagement\Models;
+namespace Modules\EmployeeManagement\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -18,7 +18,7 @@ class LeaveType extends Model
 
      
     // Relationship with Employee Leaves
-    public function employeeLeaves(): HasMany
+    public function employee_leave_list(): HasMany
     {
         return $this->hasMany(EmployeeLeave::class, 'leave_type_id');
     }

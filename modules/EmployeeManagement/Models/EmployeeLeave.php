@@ -4,7 +4,7 @@ namespace Modules\EmployeeManagement\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Modules\UserManagement\Models\Employee;
+use Modules\EmployeeManagement\Models\Employee;
 
 class EmployeeLeave extends Model
 {
@@ -28,6 +28,6 @@ class EmployeeLeave extends Model
     // Optional: Define relationships
     public function employee()
     {
-        return $this->belongsTo(Employee::class);
+        return $this->belongsTo(Employee::class, 'employee_id');
     }
 }

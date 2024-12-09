@@ -34,9 +34,9 @@ CREATE TABLE "public"."employee" (
   "employee_type_id" int8 NOT NULL,
   "nic_number" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
   "epf_number" int8 NOT NULL,
-  "remaining_annual_leave" int8 NOT NULL,
-  "remaining_medical_leave" int8 NOT NULL,
-  "remaining_maternity_leave" int8 NOT NULL,
+  "remaining_annual_leaves" int8 NOT NULL,
+  "remaining_medical_leaves" int8 NOT NULL,
+  "remaining_maternity_leaves" int8 NOT NULL,
   "created_by" int8 NOT NULL,
   "updated_by" timestamp(0) NOT NULL
 )
