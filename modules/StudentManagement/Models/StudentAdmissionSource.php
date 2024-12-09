@@ -18,11 +18,7 @@ class StudentAdmissionSource extends Model
         'updated_by', 
     ];
 
-  
-    /**
-     * Relationship with Employee Type
-     */
-    
+   
    
     public function student_list() :HasMany
     {
