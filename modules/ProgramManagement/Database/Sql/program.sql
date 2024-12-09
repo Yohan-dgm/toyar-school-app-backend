@@ -36,7 +36,7 @@ CREATE TABLE "public"."program" (
   "program_type_id" int8,
   "curriculum_type_id" int8,
   "grade_level_id" int8,
-  "duration_type_id" int8,
+  "program_duration_type_id" int8,
   "program_status_id" int8,
   "created_by" int8,
   "updated_by" int8,

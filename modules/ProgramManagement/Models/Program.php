@@ -19,7 +19,7 @@ class Program extends Model
         'program_type_id',
         'curriculum_type_id',
         'grade_level_id',
-        'duration_type_id',
+        'program_duration_type_id',
         'program_status_id',
         'created_by',
         'updated_by',
@@ -31,9 +31,17 @@ class Program extends Model
     {
         return $this->belongsTo(GradeLevel::class, 'grade_level_id', 'id');
     }
+    public function curriculum_type(): BelongsTo
+    {
+        return $this->belongsTo(CurriculumType::class, 'curriculum_type_id', 'id');
+    }
+    public function program_duration_type(): BelongsTo
+    {
+        return $this->belongsTo(ProgramDurationType::class, 'program_duration_type_id', 'id');
+    }
 
-    // protected static function newFactory(): CurriculumTypeFactory
+    // protected static function newFactory(): ProgramTypeFactory
     // {
-    //     return new CurriculumTypeFactory();
+    //     return new ProgramTypeFactory();
     // }
 }
