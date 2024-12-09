@@ -13,9 +13,7 @@ class StudentAdmissionSource extends Model
 
     protected $fillable = [
       
-        'name',
-        'created_at',
-        'updated_at',
+        'name', 
         'created_by',
         'updated_by', 
     ];
