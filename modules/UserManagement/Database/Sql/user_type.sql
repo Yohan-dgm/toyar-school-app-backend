@@ -44,6 +44,8 @@ INSERT INTO "public"."user_type" VALUES (1, 'Administrator', NULL, NULL);
 INSERT INTO "public"."user_type" VALUES (2, 'Student', NULL, NULL);
 INSERT INTO "public"."user_type" VALUES (3, 'Educator', NULL, NULL);
 INSERT INTO "public"."user_type" VALUES (4, 'Parent', NULL, NULL);
+INSERT INTO "public"."user_type" VALUES (5, 'Functional Staff', NULL, NULL);
+INSERT INTO "public"."user_type" VALUES (6, 'Admin Staff', NULL, NULL);
 
 -- ----------------------------
 -- Primary Key structure for table user_type
@@ -55,4 +57,4 @@ ALTER TABLE "public"."user_type" ADD CONSTRAINT "user_type_pkey" PRIMARY KEY ("i
 -- ----------------------------
 ALTER SEQUENCE "public"."user_type_id_seq"
 OWNED BY "public"."user_type"."id";
-SELECT setval('"public"."user_type_id_seq"', 4, true);
+SELECT setval('"public"."user_type_id_seq"', 6, true);
