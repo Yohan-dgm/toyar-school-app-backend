@@ -4,7 +4,7 @@ namespace Modules\EmployeeManagement\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Modules\UserManagement\Models\Employee;
+use Modules\EmployeeManagement\Models\Employee;
 
 class Designation extends Model
 {
@@ -21,8 +21,8 @@ class Designation extends Model
     public $timestamps = true;
 
     // Optional: Define relationships
-    public function employees()
+    public function employee_list()
     {
-        return $this->hasMany(Employee::class);
+        return $this->hasMany(Employee::class, 'designation_id');
     }
 }

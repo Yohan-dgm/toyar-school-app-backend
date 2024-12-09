@@ -1,14 +1,14 @@
 <?php
 
-namespace Modules\UserManagement\Models;
+namespace Modules\EmployeeManagement\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\EmployeeManagement\Models\EmployeeLeave;
 
-class EmployeeLeaveStatus extends Model
+class EmployeeLeaveStatusType extends Model
 {
-    protected $table = 'employee_leave_status';
+    protected $table = 'employee_leave_status_type';
 
     protected $fillable = [
         'name',
@@ -22,7 +22,7 @@ class EmployeeLeaveStatus extends Model
      * 
      * Note: This assumes an EmployeeLeave model exists
      */
-    public function employeeLeaves(): HasMany
+    public function employee_leave_list(): HasMany
     {
         return $this->hasMany(EmployeeLeave::class, 'leave_status_id');
     }
