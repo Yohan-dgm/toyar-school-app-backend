@@ -16,14 +16,11 @@ class EmployeeLeaveStatusType extends Model
         'updated_by',
     ];
 
- 
-    /**
-     * Relationship with Employee Leaves
-     * 
-     * Note: This assumes an EmployeeLeave model exists
-     */
+  
     public function employee_leave_list(): HasMany
     {
-        return $this->hasMany(EmployeeLeave::class, 'leave_status_id');
+        return $this->hasMany(EmployeeLeave::class, 'employee_leave_status_type_id','id');
     }
+
+    
 }

@@ -19,10 +19,10 @@ class EmployeeType extends Model
     ];
 
     public $timestamps = true;
-
-    // Optional: Define relationships
+ 
     public function employees()
     {
-        return $this->hasMany(Employee::class, 'employee_type_id');
+        return $this->hasMany(Employee::class, 'employee_type_id', 'id'); 
+
     }
 }

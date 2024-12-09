@@ -4,6 +4,8 @@ namespace Modules\EmployeeManagement\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class RoleGroup extends Model
 {
@@ -17,11 +19,11 @@ class RoleGroup extends Model
         'updated_by',
     ];
 
-    public $timestamps = true;
-
-    // Optional: Define relationships
-    public function role_list()
+    public $timestamps = true; 
+    
+    public function role_list(): HasMany
     {
-        return $this->hasMany(Role::class, 'role_group_id');
+        return $this->hasMany(Role::class, 'role_group_id', 'id');
     }
+
 }
