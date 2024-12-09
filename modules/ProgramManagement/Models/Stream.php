@@ -22,7 +22,7 @@ class Stream extends Model
 
     public function subject_list(): HasMany
     {
-        return $this->hasMany(Program::class, 'stream_id', 'id');
+        return $this->hasMany(Subject::class, 'stream_id', 'id');
     }
 
     // protected static function newFactory(): StreamFactory
