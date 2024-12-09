@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Modules\UserManagement\Models\Employee;
 
-class EmployeeType extends Model
+class Designation extends Model
 {
     use HasFactory;
 
-    protected $table = 'employee_type';
+    protected $table = 'designation';
 
     protected $fillable = [
         'name',
