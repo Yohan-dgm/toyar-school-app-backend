@@ -13,7 +13,6 @@ class EducatorAttendance extends Model
     protected $table = 'educator_attendance';
 
     protected $fillable = [
-        'name',
         'created_by',
         'updated_by',
         'educator_id',
