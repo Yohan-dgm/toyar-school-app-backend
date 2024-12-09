@@ -42,8 +42,7 @@ CREATE TABLE "public"."employee_type" (
 -- ----------------------------
 INSERT INTO "public"."employee_type" VALUES (1, 'Intern', NULL, NULL);
 INSERT INTO "public"."employee_type" VALUES (2, 'Temporary Employee', NULL, NULL);
-INSERT INTO "public"."employee_type" VALUES (3, 'Part-Time Employee', NULL, NULL);
-INSERT INTO "public"."employee_type" VALUES (4, 'Full-Time Employee', NULL, NULL);
+INSERT INTO "public"."employee_type" VALUES (3, 'Permanent Employee', NULL, NULL);
 
 -- ----------------------------
 -- Primary Key structure for table employee_type
@@ -55,4 +54,4 @@ ALTER TABLE "public"."employee_type" ADD CONSTRAINT "employee_type_pkey" PRIMARY
 -- ----------------------------
 ALTER SEQUENCE "public"."employee_type_id_seq"
 OWNED BY "public"."employee_type"."id";
-SELECT setval('"public"."employee_type_id_seq"', 4, true);
+SELECT setval('"public"."employee_type_id_seq"', 3, true);
