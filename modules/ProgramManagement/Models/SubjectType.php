@@ -22,7 +22,7 @@ class SubjectType extends Model
 
     public function subject_list(): HasMany
     {
-        return $this->hasMany(Program::class, 'subject_type_id', 'id');
+        return $this->hasMany(Subject::class, 'subject_type_id', 'id');
     }
 
     // protected static function newFactory(): SubjectTypeFactory
