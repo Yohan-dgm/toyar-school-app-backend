@@ -42,15 +42,11 @@ class GetProgramListDataAction
                     return $curriculum_type_query->where('name', "ILIKE", "%" . $getProgramListDataUserDTO['search_phrase'] . "%");
                 });
                 $program_query_group3->orWhereHas('subject_list', function (Builder $subject_list_query) use ($getProgramListDataUserDTO) {
-                    $subject_list = $subject_list_query->where('name', "ILIKE", "%" . $getProgramListDataUserDTO['search_phrase'] . "%")
-                        ->orWhere('subject_code', "ILIKE", "%" . $getProgramListDataUserDTO['search_phrase'] . "%");
-
-                    $subject_list_query->orWhereHas('stream', function (Builder $stream_query) use ($getProgramListDataUserDTO) {
-                        $stream = $stream_query->where('name', "ILIKE", "%" . $getProgramListDataUserDTO['search_phrase'] . "%");
-
-                        return $stream;
-                    });
-                    return $subject_list;
+                    return $subject_list_query->where('name', "ILIKE", "%" . $getProgramListDataUserDTO['search_phrase'] . "%")
+                        ->orWhere('subject_code', "ILIKE", "%" . $getProgramListDataUserDTO['search_phrase'] . "%")
+                        ->orWhereHas('stream', function (Builder $stream_query) use ($getProgramListDataUserDTO) {
+                            return $stream_query->where('name', "ILIKE", "%" . $getProgramListDataUserDTO['search_phrase'] . "%");
+                        });
                 });
                 $program_query_group3->orWhereHas('school_location_list', function (Builder $school_location_list_query) use ($getProgramListDataUserDTO) {
                     return $school_location_list_query->where('name', "ILIKE", "%" . $getProgramListDataUserDTO['search_phrase'] . "%");
@@ -65,17 +61,12 @@ class GetProgramListDataAction
                 //
                 $curriculum_type_query->select("id", "name");
             }])
-            // ->with(['subject_list' => function (Builder $subject_list_query) {
-            //     $subject_list_query->select("id", "program_id", "name", "subject_code");
-            // }])
             ->with(['subject_list' => function (Builder $subject_list_query) {
                 //
                 $subject_list_query->with(['stream' => function (Builder $stream_query) {
                     //
                     $stream_query->select("stream.id", "stream.name");
-                }])->select("id", "name");
-
-                $subject_list_query->select("id", "program_id", "stream_id", "name", "subject_code");
+                }])->select("id", "program_id", "stream_id", "name", "subject_code");
             }])
             ->with(['school_location_list' => function (Builder $school_location_list_query) {
                 $school_location_list_query->select("school_location_id", "name");
