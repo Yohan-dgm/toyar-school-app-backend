@@ -55,4 +55,4 @@ ALTER TABLE "public"."program_type" ADD CONSTRAINT "program_type_pkey" PRIMARY K
 -- ----------------------------
 ALTER SEQUENCE "public"."program_type_id_seq"
 OWNED BY "public"."program_type"."id";
-SELECT setval('"public"."program_type_id_seq"', 2, true);
+SELECT setval('"public"."program_type_id_seq"', 1, true);
