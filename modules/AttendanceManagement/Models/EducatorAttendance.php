@@ -5,6 +5,7 @@ namespace Modules\AttendanceManagement\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Modules\EducatorManagement\Models\Educator;
 
 class EducatorAttendance extends Model
 {
@@ -23,10 +24,10 @@ class EducatorAttendance extends Model
 
     public $timestamps = true;
 
-    // public function educator(): BelongsTo
-    // {
-    //     return $this->belongsTo(Educator::class, 'educator_id', 'id');
-    // }
+    public function educator(): BelongsTo
+    {
+        return $this->belongsTo(Educator::class, 'educator_id', 'id');
+    }
 
     public function attendance_type(): BelongsTo
     {
