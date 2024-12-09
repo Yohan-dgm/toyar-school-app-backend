@@ -4,14 +4,16 @@ namespace Modules\EmployeeManagement\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\EmployeeManagement\Models\Employee;
 
-class EmployeeType extends Model
+class Designation extends Model
 {
     use HasFactory;
 
-    protected $table = 'employee_type';
+    protected $table = 'designation';
 
     protected $fillable = [
         'name',
@@ -21,9 +23,10 @@ class EmployeeType extends Model
 
     public $timestamps = true;
  
-    public function employee_list() : HasMany
+    public function employee_list(): HasMany
     {
-        return $this->hasMany(Employee::class, 'employee_type_id', 'id'); 
-
+        return $this->hasMany(Employee::class, 'designation_id', 'id');
     }
+
+
 }
