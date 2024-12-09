@@ -45,6 +45,11 @@ class Employee extends Model
         return $this->hasMany(EmployeeLeave::class, 'employee_id', 'id');
     }
 
+    public function employee_type() :BelongsTo
+    {
+        return $this->belongsTo(EmployeeType::class, 'employee_type_id', 'id'); 
+
+    }
 
 
 }
