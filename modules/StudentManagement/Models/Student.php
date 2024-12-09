@@ -34,7 +34,10 @@ class Student extends Model
         'approved_admission_fee',
         'applicable_refundable_deposit',
         'applicable_term_payment',
-        'applicable_year_payment', 
+        'applicable_year_payment',
+        'created_by',
+        'updated_by', 
+
 
 
  
