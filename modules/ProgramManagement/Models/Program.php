@@ -5,8 +5,6 @@ namespace Modules\ProgramManagement\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Modules\OrganizationManagement\Models\CurriculumType;
-use Modules\OrganizationManagement\Models\ProgramDurationType;
 
 class Program extends Model
 {
