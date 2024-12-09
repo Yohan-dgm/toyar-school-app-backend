@@ -5,6 +5,9 @@ namespace Modules\ProgramManagement\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Modules\OrganizationManagement\Models\SchoolLocation;
 
 class Program extends Model
 {
@@ -38,6 +41,16 @@ class Program extends Model
     public function program_duration_type(): BelongsTo
     {
         return $this->belongsTo(ProgramDurationType::class, 'program_duration_type_id', 'id');
+    }
+
+    public function subject_list(): HasMany
+    {
+        return $this->hasMany(Subject::class, 'program_id', 'id');
+    }
+
+    public function school_location_list(): BelongsToMany
+    {
+        return $this->belongsToMany(SchoolLocation::class, 'program_school_location_pivot', 'program_id', 'school_location_id');
     }
 
     // protected static function newFactory(): ProgramTypeFactory
