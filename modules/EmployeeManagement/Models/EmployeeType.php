@@ -21,7 +21,7 @@ class EmployeeType extends Model
 
     public $timestamps = true;
  
-    public function employees() : HasMany
+    public function employee_list() : HasMany
     {
         return $this->hasMany(Employee::class, 'employee_type_id', 'id'); 
 
