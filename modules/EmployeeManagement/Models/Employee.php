@@ -35,7 +35,7 @@ class Employee extends Model
         
     }
  
-    public function employee_list(): BelongsTo
+    public function designation_list(): BelongsTo
     {
         return $this->belongsTo(Designation::class, 'designation_id', 'id');
     }
