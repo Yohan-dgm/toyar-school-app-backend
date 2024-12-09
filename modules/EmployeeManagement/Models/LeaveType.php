@@ -19,9 +19,9 @@ class LeaveType extends Model
     ];
  
 
-    public function employee_leave(): BelongsTo
+    public function employee_leave_list():  HasMany
     {
-        return $this->belongsTo(EmployeeLeave::class, 'leave_type_id', 'id');
+        return $this->hasMany(EmployeeLeave::class, 'leave_type_id', 'id');
     }
 
 
