@@ -2,7 +2,6 @@
 
 namespace Modules\StudentManagement\Models;
 
-<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -37,20 +36,10 @@ class Student extends Model
         'applicable_term_payment',
         'applicable_year_payment',
         'created_by',
-        'updated_by', 
-
-
-
- 
- 
-
+        'updated_by',  
     ];
 
-  
-    /**
-     * Relationship with Employee Type
-     */
-    
+   
    
     public function student_admission_source() :BelongsTo
     {
@@ -60,34 +49,4 @@ class Student extends Model
 
 
 }
-=======
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Modules\AttendanceManagement\Models\StudentAttendance;
-
-class Student extends Model
-{
-    use HasFactory;
-
-    protected $table = 'student';
-
-    protected $fillable = [
-        'full_name',
-        'created_by',
-        'updated_by',
-    ];
-
-    public $timestamps = true;
-
-    public function student_attendance_list(): HasMany
-    {
-        return $this->hasMany(StudentAttendance::class, 'student_id', 'id');
-    }
-
-    // protected static function newFactory(): StudentFactory
-    // {
-    //     return new StudentFactory();
-    // }
-}
->>>>>>> 0333d13759d7dac8730a4729aa261a528a41a933
+ 
