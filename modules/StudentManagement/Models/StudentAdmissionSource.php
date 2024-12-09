@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\EmployeeManagement\Models;
+namespace Modules\StudentManagement\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -9,15 +9,15 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class StudentAdmissionSource extends Model
 {
-    protected $table = 'employee';
+    protected $table = 'student_admission_source';
 
     protected $fillable = [
-     
-         
+      
         'name',
-         
- 
-
+        'created_at',
+        'updated_at',
+        'created_by',
+        'updated_by', 
     ];
 
   
