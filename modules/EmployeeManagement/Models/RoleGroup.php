@@ -4,13 +4,12 @@ namespace Modules\EmployeeManagement\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Modules\UserManagement\Models\Employee;
 
-class EmployeeType extends Model
+class RoleGroup extends Model
 {
     use HasFactory;
 
-    protected $table = 'employee_type';
+    protected $table = 'role_group';
 
     protected $fillable = [
         'name',
@@ -21,8 +20,8 @@ class EmployeeType extends Model
     public $timestamps = true;
 
     // Optional: Define relationships
-    public function employees()
+    public function roles()
     {
-        return $this->hasMany(Employee::class);
+        return $this->hasMany(Role::class);
     }
 }
