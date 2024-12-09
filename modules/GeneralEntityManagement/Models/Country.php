@@ -2,27 +2,27 @@
 
 namespace Modules\EmployeeManagement\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Modules\EmployeeManagement\Models\EmployeeLeave;
+use Modules\EmployeeManagement\Models\Employee;
 
-class LeaveType extends Model
+class Country extends Model
 {
-    protected $table = 'leave_type';
+    use HasFactory;
+
+    protected $table = 'country';
 
     protected $fillable = [
         'name',
         'created_by',
         'updated_by',
     ];
+
+    public $timestamps = true;
  
-
-    public function employee_leave(): BelongsTo
-    {
-        return $this->belongsTo(EmployeeLeave::class, 'leave_type_id', 'id');
-    }
-
+ 
 
 }

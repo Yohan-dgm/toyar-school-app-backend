@@ -23,9 +23,9 @@ class Role extends Model
     public $timestamps = true;
  
 
-    public function role_group_list(): BelongsToMany
+    public function employee_list(): BelongsToMany
     {
-        return $this->belongsToMany(Employee::class, 'Role_role_group_pivot', 'employee_role_pivot',  'role_id', 'employee_id');
+        return $this->belongsToMany(Employee::class,  'employee_role_pivot',  'role_id', 'employee_id');
         
     }
  
