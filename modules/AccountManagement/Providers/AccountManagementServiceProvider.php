@@ -1,10 +1,10 @@
 <?php
 
-namespace Modules\ReceivableAccountManagement\Providers;
+namespace Modules\AccountManagement\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class ReceivableAccountManagementServiceProvider extends ServiceProvider
+class AccountManagementServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -21,6 +21,6 @@ class ReceivableAccountManagementServiceProvider extends ServiceProvider
     {
         //
         $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
-        $this->mergeConfigFrom(__DIR__ . '/../config.php', 'receivable-account-management');
+        $this->mergeConfigFrom(__DIR__ . '/../config.php', 'account-management');
     }
 }
