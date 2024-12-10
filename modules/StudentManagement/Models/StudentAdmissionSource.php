@@ -2,27 +2,24 @@
 
 namespace Modules\StudentManagement\Models;
 
-use Illuminate\Database\Eloquent\Model; 
-use Illuminate\Database\Eloquent\Relations\HasMany; 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class StudentAdmissionSource extends Model
 {
     protected $table = 'student_admission_source';
 
     protected $fillable = [
-      
-        'name', 
+
+        'name',
         'created_by',
-        'updated_by', 
+        'updated_by',
     ];
 
-   
-   
-    public function student_list() :HasMany
+    public $timestamps = true;
+
+    public function student_list(): HasMany
     {
-        return $this->hasMany(Student::class, 'student_admission_source_id', 'id'); 
-
+        return $this->hasMany(Student::class, 'student_admission_source_id', 'id');
     }
-
-
 }
