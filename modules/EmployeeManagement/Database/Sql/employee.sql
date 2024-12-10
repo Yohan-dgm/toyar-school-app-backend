@@ -71,6 +71,12 @@ INSERT INTO "public"."employee" VALUES (23, 'R A Nethmi Nayanathara', 3, '', 0, 
 INSERT INTO "public"."employee" VALUES (24, 'Wanni Arachchige Saranga Iresh Fonseka', 3, '831471042V', 0, 14, 7, 0, 0, '0001-01-01 00:00:00');
 INSERT INTO "public"."employee" VALUES (25, 'Athauda Arachchilage Chaminda Sisira Kumara Athauda Arachchi', 3, '', 0, 14, 7, 0, 0, '0001-01-01 00:00:00');
 INSERT INTO "public"."employee" VALUES (26, 'V A Sameera Chathuranga', 3, '', 0, 14, 7, 0, 0, '0001-01-01 00:00:00');
+INSERT INTO "public"."employee" VALUES (27, 'M A S Anuththara', 3, '', 0, 14, 7, 0, 0, '0001-01-01 00:00:00');
+INSERT INTO "public"."employee" VALUES (28, 'Disavi Tharuni Harangala', 3, '', 0, 14, 7, 0, 0, '0001-01-01 00:00:00');
+INSERT INTO "public"."employee" VALUES (29, 'W S W Weerasooriya', 3, '', 0, 14, 7, 0, 0, '0001-01-01 00:00:00');
+INSERT INTO "public"."employee" VALUES (30, 'G R Welgama', 3, '', 0, 14, 7, 0, 0, '0001-01-01 00:00:00');
+INSERT INTO "public"."employee" VALUES (31, 'L M S Perera', 3, '', 0, 14, 7, 0, 0, '0001-01-01 00:00:00');
+INSERT INTO "public"."employee" VALUES (32, 'J I D Gunasekara', 3, '', 0, 14, 7, 0, 0, '0001-01-01 00:00:00');
  
 -- ----------------------------
 -- Primary Key structure for table employee
@@ -82,5 +88,5 @@ ALTER TABLE "public"."employee" ADD CONSTRAINT "employee_pkey" PRIMARY KEY ("id"
 -- ----------------------------
 ALTER SEQUENCE "public"."employee_id_seq"
 OWNED BY "public"."employee"."id";
-SELECT setval('"public"."employee_id_seq"', 26, true);
+SELECT setval('"public"."employee_id_seq"', 32, true);
 
