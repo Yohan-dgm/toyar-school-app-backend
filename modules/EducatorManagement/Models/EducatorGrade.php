@@ -4,6 +4,8 @@ namespace Modules\EducatorManagement\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class EducatorGrade extends Model
 {
@@ -18,6 +20,11 @@ class EducatorGrade extends Model
     ];
 
     public $timestamps = true;
+
+    public function educator_list(): HasMany
+    {
+        return $this->hasMany(Educator::class, 'educator_grade_id', 'id');
+    }
 
     // protected static function newFactory(): EducatorGradeFactory
     // {
