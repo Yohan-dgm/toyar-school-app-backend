@@ -38,7 +38,7 @@ CREATE TABLE "public"."student" (
   "full_name" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
   "gender" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
   "full_name_with_title" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
-  "date_of_birth" timestamp(0) NOT NULL,
+  "date_of_birth" date NOT NULL,
   "nationality_id" int8 NOT NULL,
   "religion_id" int8 NOT NULL,
   "grade_level_id" int8 NOT NULL,
@@ -54,8 +54,8 @@ CREATE TABLE "public"."student" (
   "applicable_year_payment" numeric(15,1) NOT NULL,
   "created_by" int8 ,
   "updated_by" int8 ,
-  "created_at" timestamp(6),
-  "updated_at" timestamp(6),
+  "created_at" timestamp(0),
+  "updated_at" timestamp(0),
 );
 
 -- ----------------------------
