@@ -32,7 +32,7 @@ CACHE 1;
 DROP TABLE IF EXISTS "public"."employee_leave";
 CREATE TABLE "public"."employee_leave" (
   "id" int8 NOT NULL DEFAULT nextval('employee_leave_id_seq'::regclass),
-  "name" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
+  "name" varchar(255) COLLATE "pg_catalog"."default" ,
   "employee_id" int8,
   "leave_date" timestamp(0),
   "leave_duration" int8,
