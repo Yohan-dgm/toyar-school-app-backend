@@ -31,8 +31,8 @@ CACHE 1;
 DROP TABLE IF EXISTS "public"."role_role_group_pivot";
 CREATE TABLE "public"."role_role_group_pivot" (
   "id" int8 NOT NULL DEFAULT nextval('role_role_group_pivot_id_seq'::regclass),
-  "role_id" int8 NOT NULL,
-  "role_group_id" int8 NOT NULL,
+  "role_id" int8 ,
+  "role_group_id" int8 ,
   "created_by" int8,
   "updated_by" int8,
   "created_at" timestamp(0),

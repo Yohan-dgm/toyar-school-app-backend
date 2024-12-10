@@ -32,7 +32,7 @@ CACHE 1;
 DROP TABLE IF EXISTS "public"."country";
 CREATE TABLE "public"."country" (
   "id" int8 NOT NULL DEFAULT nextval('country_id_seq'::regclass),
-  "name" varchar(255) COLLATE "pg_catalog"."default" NOT NULL, 
+  "name" varchar(255) COLLATE "pg_catalog"."default" , 
   "created_by" int8,
   "updated_by" int8,
   "created_at" timestamp(0),
