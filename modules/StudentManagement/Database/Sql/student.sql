@@ -14,7 +14,16 @@
 
  Date: 10/12/2024 06:25:44
 */
-
+-- ----------------------------
+-- Sequence structure for student_id_seq
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "public"."student_id_seq";
+CREATE SEQUENCE "public"."student_id_seq" 
+INCREMENT 1
+MINVALUE  1
+MAXVALUE 9223372036854775807
+START 1
+CACHE 1;
 
 -- ----------------------------
 -- Table structure for student
@@ -318,3 +327,10 @@ INSERT INTO "public"."student" VALUES (262, 0, 'NY24/278', 10, '2024-11-26 00:00
 -- Primary Key structure for table student
 -- ----------------------------
 ALTER TABLE "public"."student" ADD CONSTRAINT "student_pkey" PRIMARY KEY ("id");
+
+-- ----------------------------
+-- Alter sequences owned by
+-- ----------------------------
+ALTER SEQUENCE "public"."student_id_seq"
+OWNED BY "public"."student"."id";
+SELECT setval('"public"."student_id_seq"', 262, true);
