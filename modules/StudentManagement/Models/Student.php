@@ -3,17 +3,14 @@
 namespace Modules\StudentManagement\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasMany; 
+use Illuminate\Database\Eloquent\Relations\BelongsTo; 
 
 class Student extends Model
 {
     protected $table = 'student';
 
     protected $fillable = [
-     
-         
+      
         'applicant_id',
         'admission_number',
         'student_admission_source_id',
@@ -39,7 +36,7 @@ class Student extends Model
         'updated_by',  
     ];
 
-   
+    
    
     public function student_admission_source() :BelongsTo
     {
