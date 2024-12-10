@@ -3,14 +3,13 @@
 namespace Modules\StudentManagement\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo; 
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Student extends Model
 {
     protected $table = 'student';
 
     protected $fillable = [
-      
         'applicant_id',
         'admission_number',
         'student_admission_source_id',
@@ -33,17 +32,13 @@ class Student extends Model
         'applicable_term_payment',
         'applicable_year_payment',
         'created_by',
-        'updated_by',  
+        'updated_by',
     ];
 
-    
-   
-    public function student_admission_source() :BelongsTo
+    public $timestamps = true;
+
+    public function student_admission_source(): BelongsTo
     {
-        return $this->belongsTo(StudentAdmissionSource::class, 'student_admission_source_id', 'id'); 
-
+        return $this->belongsTo(StudentAdmissionSource::class, 'student_admission_source_id', 'id');
     }
-
-
 }
- 
