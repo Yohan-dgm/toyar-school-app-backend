@@ -4,6 +4,7 @@ namespace Modules\StudentManagement\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Modules\ProgramManagement\Models\GradeLevel;
 
 class Student extends Model
 {
@@ -40,5 +41,10 @@ class Student extends Model
     public function student_admission_source(): BelongsTo
     {
         return $this->belongsTo(StudentAdmissionSource::class, 'student_admission_source_id', 'id');
+    }
+
+    public function grade_level(): BelongsTo
+    {
+        return $this->belongsTo(GradeLevel::class, 'grade_level_id', 'id');
     }
 }
