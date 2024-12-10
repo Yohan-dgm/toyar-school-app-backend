@@ -33,7 +33,7 @@ CREATE TABLE "public"."student_admission_source" (
   "id" int8 NOT NULL DEFAULT nextval('student_admission_source_id_seq'::regclass),
   "name" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
   "created_by" int8,
-  "updated_by" timestamp(0)
+  "updated_by" int8
 )
 ;
 
