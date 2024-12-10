@@ -48,10 +48,10 @@ CREATE TABLE "public"."student" (
   "school_studied_before" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
   "special_conditions" text COLLATE "pg_catalog"."default" NOT NULL,
   "admission_fee_discount_percentage" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
-  "approved_admission_fee" numeric(10,1) NOT NULL,
-  "applicable_refundable_deposit" numeric(10,1) NOT NULL,
-  "applicable_term_payment" numeric(10,1) NOT NULL,
-  "applicable_year_payment" numeric(10,1) NOT NULL,
+  "approved_admission_fee" numeric(15,1) NOT NULL,
+  "applicable_refundable_deposit" numeric(15,1) NOT NULL,
+  "applicable_term_payment" numeric(15,1) NOT NULL,
+  "applicable_year_payment" numeric(15,1) NOT NULL,
   "created_by" int8 NOT NULL,
   "updated_by" int8 NOT NULL
 );
