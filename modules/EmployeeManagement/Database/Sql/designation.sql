@@ -12,11 +12,10 @@
  Target Server Version : 160000 (160000)
  File Encoding         : 65001
 
- Date: 09/12/2024 11:41:05
+ Date: 10/12/2024 22:11:35
 */
--- ----------------------------
--- Sequence structure for designation_id_seq
--- ----------------------------
+
+
 DROP SEQUENCE IF EXISTS "public"."designation_id_seq";
 CREATE SEQUENCE "public"."designation_id_seq" 
 INCREMENT 1
@@ -38,17 +37,30 @@ CREATE TABLE "public"."designation" (
 )
 ;
 
- 
+-- ----------------------------
+-- Records of designation
+-- ----------------------------
+INSERT INTO "public"."designation" VALUES (1, 'Class Teacher', NULL, NULL);
+INSERT INTO "public"."designation" VALUES (2, 'Subject Teacher', NULL, NULL);
+INSERT INTO "public"."designation" VALUES (5, 'Deputy Chief Operating Officer', NULL, NULL);
+INSERT INTO "public"."designation" VALUES (3, 'Head Teacher', NULL, NULL);
+INSERT INTO "public"."designation" VALUES (6, 'Managing Director', NULL, NULL);
+INSERT INTO "public"."designation" VALUES (4, 'Assistant Teacher', NULL, NULL);
+INSERT INTO "public"."designation" VALUES (7, 'Chief Operating Officer', NULL, NULL);
+INSERT INTO "public"."designation" VALUES (8, 'Deputy Principal', NULL, NULL);
+INSERT INTO "public"."designation" VALUES (9, 'Junior Executive - Administration', NULL, NULL);
+INSERT INTO "public"."designation" VALUES (10, 'Basket Ball Coach', NULL, NULL);
+INSERT INTO "public"."designation" VALUES (11, 'Swimming Coach', NULL, NULL);
+INSERT INTO "public"."designation" VALUES (12, 'Athletic Coach', NULL, NULL);
+INSERT INTO "public"."designation" VALUES (13, 'Cricket Coah', NULL, NULL);
+INSERT INTO "public"."designation" VALUES (14, 'Pickleball Coach', NULL, NULL);
+
 -- ----------------------------
 -- Primary Key structure for table designation
 -- ----------------------------
 ALTER TABLE "public"."designation" ADD CONSTRAINT "designation_pkey" PRIMARY KEY ("id");
 
-
--- ----------------------------
--- Alter sequences owned by
--- ----------------------------
 ALTER SEQUENCE "public"."designation_id_seq"
 OWNED BY "public"."designation"."id";
-SELECT setval('"public"."designation_id_seq"', 1, FALSE);
+SELECT setval('"public"."designation_id_seq"', 14, true);
 
