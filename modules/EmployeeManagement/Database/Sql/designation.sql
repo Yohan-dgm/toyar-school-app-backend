@@ -52,15 +52,15 @@ INSERT INTO "public"."designation" VALUES (9, 'Junior Executive - Administration
 INSERT INTO "public"."designation" VALUES (10, 'Basket Ball Coach', NULL, NULL);
 INSERT INTO "public"."designation" VALUES (11, 'Swimming Coach', NULL, NULL);
 INSERT INTO "public"."designation" VALUES (12, 'Athletic Coach', NULL, NULL);
-INSERT INTO "public"."designation" VALUES (13, 'Cricket Coah', NULL, NULL);
 INSERT INTO "public"."designation" VALUES (14, 'Pickleball Coach', NULL, NULL);
+INSERT INTO "public"."designation" VALUES (13, 'Cricket Coah', NULL, NULL);
 
 -- ----------------------------
 -- Primary Key structure for table designation
 -- ----------------------------
 ALTER TABLE "public"."designation" ADD CONSTRAINT "designation_pkey" PRIMARY KEY ("id");
 
-ALTER SEQUENCE "public"."designation_id_seq"
-OWNED BY "public"."designation"."id";
+ALTER SEQUENCE "public"."designation_id_seq" 
+OWNED BY "public"."designation"."id"; 
 SELECT setval('"public"."designation_id_seq"', 14, true);
 
