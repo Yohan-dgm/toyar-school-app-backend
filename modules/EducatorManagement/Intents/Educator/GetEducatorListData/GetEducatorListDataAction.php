@@ -44,9 +44,9 @@ class GetEducatorListDataAction
                     $employee_type_query->select("employee_type.id", "employee_type.name");
                 }])->select("id", "full_name", "nic_number", "epf_number", "employee_type_id");
             }])
-            ->with(['educator_grade_id' => function (Builder $educator_grade_id_query) {
+            ->with(['educator_grade' => function (Builder $educator_grade_query) {
                 //
-                $educator_grade_id_query->select("id", "name");
+                $educator_grade_query->select("id", "name");
             }])
             ->select(
                 "id",
