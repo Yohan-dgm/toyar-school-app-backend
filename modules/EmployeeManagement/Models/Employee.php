@@ -5,7 +5,9 @@ namespace Modules\EmployeeManagement\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasMany; 
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Modules\EducatorManagement\Models\Educator;
 
 class Employee extends Model
 {
@@ -16,7 +18,7 @@ class Employee extends Model
         'employee_type_id',
         'nic_number',
         'epf_number',
-        'designation_id', 
+        'designation_id',
         'remaining_annual_leaves',
         'remaining_medical_leaves',
         'remaining_maternity_leaves',
@@ -24,17 +26,16 @@ class Employee extends Model
         'updated_by',
     ];
 
-  
+
     /**
      * Relationship with Employee Type
      */
-    
+
     public function role_list(): BelongsToMany
     {
         return $this->belongsToMany(Role::class, 'employee_role_pivot', 'employee_id',  'role_id');
-        
     }
- 
+
     public function designation_list(): BelongsTo
     {
         return $this->belongsTo(Designation::class, 'designation_id', 'id');
@@ -45,11 +46,13 @@ class Employee extends Model
         return $this->hasMany(EmployeeLeave::class, 'employee_id', 'id');
     }
 
-    public function employee_type() :BelongsTo
+    public function employee_type(): BelongsTo
     {
-        return $this->belongsTo(EmployeeType::class, 'employee_type_id', 'id'); 
-
+        return $this->belongsTo(EmployeeType::class, 'employee_type_id', 'id');
     }
 
-
+    public function educator(): HasOne
+    {
+        return $this->hasOne(Educator::class, 'employee_id', 'id');
+    }
 }
