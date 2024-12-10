@@ -40,18 +40,18 @@ CREATE TABLE "public"."student_admission_source" (
 -- ----------------------------
 -- Records of student_admission_source
 -- ----------------------------
-INSERT INTO "public"."student_admission_source" VALUES (1, "Lakshitha sirs contact", NULL, NULL);
-INSERT INTO "public"."student_admission_source" VALUES (2, "NBK student", NULL, NULL);
-INSERT INTO "public"."student_admission_source" VALUES (6, "Ruwan sirs contact", NULL, NULL);
-INSERT INTO "public"."student_admission_source" VALUES (7, "CRM", NULL, NULL);
-INSERT INTO "public"."student_admission_source" VALUES (9, "Neighbourhood", NULL, NULL);
-INSERT INTO "public"."student_admission_source" VALUES (10, "Other", NULL, NULL);
-INSERT INTO "public"."student_admission_source" VALUES (3, "Socail media campaign", NULL, NULL);
-INSERT INTO "public"."student_admission_source" VALUES (4, "Old student of NBK", NULL, NULL);
-INSERT INTO "public"."student_admission_source" VALUES (8, "SUNICO", NULL, NULL);
-INSERT INTO "public"."student_admission_source" VALUES (5, "Word of Mouth", NULL, NULL);
-INSERT INTO "public"."student_admission_source" VALUES (11, "Sibling of NBV Student", NULL, NULL);
-INSERT INTO "public"."student_admission_source" VALUES (12, "Ruwan sirs contact", NULL, NULL);
+INSERT INTO "public"."student_admission_source" VALUES (1, 'Lakshitha sirs contact', NULL, NULL);
+INSERT INTO "public"."student_admission_source" VALUES (2, 'NBK student', NULL, NULL);
+INSERT INTO "public"."student_admission_source" VALUES (3, 'Socail media campaign', NULL, NULL);
+INSERT INTO "public"."student_admission_source" VALUES (4, 'Old student of NBK', NULL, NULL);
+INSERT INTO "public"."student_admission_source" VALUES (5, 'Word of Mouth', NULL, NULL);
+INSERT INTO "public"."student_admission_source" VALUES (6, 'Ruwan sirs contact', NULL, NULL);
+INSERT INTO "public"."student_admission_source" VALUES (7, 'CRM', NULL, NULL);
+INSERT INTO "public"."student_admission_source" VALUES (8, 'SUNICO', NULL, NULL);
+INSERT INTO "public"."student_admission_source" VALUES (9, 'Neighbourhood', NULL, NULL);
+INSERT INTO "public"."student_admission_source" VALUES (10, 'Other', NULL, NULL);
+INSERT INTO "public"."student_admission_source" VALUES (11, 'Sibling of NBV Student', NULL, NULL);
+
 
 -- ----------------------------
 -- Primary Key structure for table student_admission_source
@@ -63,4 +63,4 @@ ALTER TABLE "public"."student_admission_source" ADD CONSTRAINT "student_admissio
 -- ----------------------------
 ALTER SEQUENCE "public"."student_admission_source_id_seq"
 OWNED BY "public"."student_admission_source"."id";
-SELECT setval('"public"."student_admission_source_id_seq"', 12, true);
+SELECT setval('"public"."student_admission_source_id_seq"', 11, true);
