@@ -31,21 +31,21 @@ CACHE 1;
 DROP TABLE IF EXISTS "public"."educator_grade";
 CREATE TABLE "public"."educator_grade" (
   "id" int8 NOT NULL DEFAULT nextval('educator_grade_id_seq'::regclass),
-   "name" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
+  "name" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
   "created_by" int8,
   "updated_by" int8,
   "created_at" timestamp(6),
-  "updated_at" timestamp(6),
+  "updated_at" timestamp(6)
 )
 ;
 
 -- ----------------------------
 -- Records of educator_grade
 -- ----------------------------
-INSERT INTO "public"."educator_grade" VALUES (1, 'Teacher - Grade I', NULL, NULL);
-INSERT INTO "public"."educator_grade" VALUES (2, 'Teacher - Grade II', NULL, NULL);
-INSERT INTO "public"."educator_grade" VALUES (3, 'Teacher - Grade III', NULL, NULL);
-INSERT INTO "public"."educator_grade" VALUES (4, 'Teacher - Grade IV', NULL, NULL);
+INSERT INTO "public"."educator_grade" VALUES (1, 'Teacher - Grade I', NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator_grade" VALUES (2, 'Teacher - Grade II', NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator_grade" VALUES (3, 'Teacher - Grade III', NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator_grade" VALUES (4, 'Teacher - Grade IV', NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Primary Key structure for table educator_grade
