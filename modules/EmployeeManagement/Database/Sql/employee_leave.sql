@@ -34,12 +34,12 @@ CREATE TABLE "public"."employee_leave" (
   "id" int8 NOT NULL DEFAULT nextval('employee_leave_id_seq'::regclass),
   "name" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
   "employee_id" int8,
-  "leave_date" timestamp(6),
+  "leave_date" timestamp(0),
   "leave_duration" int8,
   "created_by" int8,
   "updated_by" int8,
-  "created_at" timestamp(6),
-  "updated_at" timestamp(6)
+  "created_at" timestamp(0),
+  "updated_at" timestamp(0)
 )
 ;
 

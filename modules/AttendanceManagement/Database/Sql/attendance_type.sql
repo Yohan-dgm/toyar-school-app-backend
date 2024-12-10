@@ -32,8 +32,8 @@ DROP TABLE IF EXISTS "public"."attendance_type";
 CREATE TABLE "public"."attendance_type" (
   "created_by" int8,
   "updated_by" int8,
-  "created_at" timestamp(6),
-  "updated_at" timestamp(6),
+  "created_at" timestamp(0),
+  "updated_at" timestamp(0),
   "id" int8 NOT NULL DEFAULT nextval('attendance_type_id_seq'::regclass),
   "name" varchar(255) COLLATE "pg_catalog"."default"
 )

@@ -33,8 +33,8 @@ DROP TABLE IF EXISTS "public"."receipt_voucher";
 CREATE TABLE "public"."receipt_voucher" (
   "created_by" int8,
   "updated_by" int8,
-  "created_at" timestamp(6),
-  "updated_at" timestamp(6),
+  "created_at" timestamp(0),
+  "updated_at" timestamp(0),
   "id" int8 NOT NULL DEFAULT nextval('receipt_voucher_id_seq'::regclass),
   "receipt_party" varchar(255) COLLATE "pg_catalog"."default",
   "student_id" int8,

@@ -33,8 +33,8 @@ CREATE TABLE "public"."stream" (
   "name" varchar(255) COLLATE "pg_catalog"."default",
   "created_by" int8,
   "updated_by" int8,
-  "created_at" timestamp(6),
-  "updated_at" timestamp(6),
+  "created_at" timestamp(0),
+  "updated_at" timestamp(0),
   "id" int8 NOT NULL DEFAULT nextval('stream_id_seq'::regclass)
 )
 ;
