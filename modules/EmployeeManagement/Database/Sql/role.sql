@@ -35,7 +35,9 @@ CREATE TABLE "public"."role" (
   "name" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
   "role_group_id" int8,
   "created_by" int8,
-  "updated_by" timestamp(0)
+  "updated_by" int8,
+  "created_at" timestamp(0),
+  "updated_at" timestamp(0)
 )
 ;
 

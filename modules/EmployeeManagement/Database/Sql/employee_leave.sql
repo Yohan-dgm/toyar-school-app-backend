@@ -37,7 +37,9 @@ CREATE TABLE "public"."employee_leave" (
   "leave_date" timestamp(0),
   "leave_duration" int8,
   "created_by" int8,
-  "updated_by" timestamp(0)
+  "updated_by" int8,
+  "created_at" timestamp(0),
+  "updated_at" timestamp(0)
 )
 ;
 
