@@ -37,8 +37,10 @@ CREATE TABLE "public"."employee" (
   "remaining_annual_leaves" numeric(3,1) NOT NULL,
   "remaining_medical_leaves" numeric(3,1) NOT NULL,
   "remaining_maternity_leaves" numeric(3,1) NOT NULL,
-  "created_by" int8 NOT NULL,
-  "updated_by" int8 NOT NULL
+  "created_by" int8 ,
+  "updated_by" int8 ,
+  "created_at" timestamp(0),
+  "updated_at" timestamp(0)
 )
 ;
 

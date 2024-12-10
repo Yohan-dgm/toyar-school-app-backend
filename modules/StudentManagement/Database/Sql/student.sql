@@ -53,7 +53,9 @@ CREATE TABLE "public"."student" (
   "applicable_term_payment" numeric(15,1) NOT NULL,
   "applicable_year_payment" numeric(15,1) NOT NULL,
   "created_by" int8 NOT NULL,
-  "updated_by" int8 NOT NULL
+  "updated_by" int8 NOT NULL,
+  "created_at" timestamp(6),
+  "updated_at" timestamp(6),
 );
 
 -- ----------------------------

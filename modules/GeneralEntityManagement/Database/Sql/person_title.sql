@@ -35,7 +35,9 @@ CREATE TABLE "public"."person_title" (
   "name" varchar(255) COLLATE "pg_catalog"."default" NOT NULL, 
   "sequential_order" int8 NOT NULL,
   "created_by" int8, 
-  "updated_by" timestamp(0)
+  "updated_by" int8, 
+  "created_at" timestamp(0),
+  "updated_at" timestamp(0)
 )
 ;
 

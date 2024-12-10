@@ -33,7 +33,9 @@ CREATE TABLE "public"."employee_type" (
   "id" int8 NOT NULL DEFAULT nextval('employee_type_id_seq'::regclass),
   "name" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
   "created_by" int8,
-  "updated_by" timestamp(0)
+  "updated_by"  int8,
+  "created_at" timestamp(0),
+  "updated_at" timestamp(0)
 )
 ;
 
