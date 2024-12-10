@@ -12,20 +12,8 @@
  Target Server Version : 160000 (160000)
  File Encoding         : 65001
 
- Date: 10/12/2024 00:29:20
+ Date: 10/12/2024 06:25:55
 */
-
--- ----------------------------
--- Sequence structure for student_admission_source_id_seq
--- ----------------------------
-DROP SEQUENCE IF EXISTS "public"."student_admission_source_id_seq";
-CREATE SEQUENCE "public"."student_admission_source_id_seq" 
-INCREMENT 1
-MINVALUE  1
-MAXVALUE 9223372036854775807
-START 1
-CACHE 1;
-
 
 
 -- ----------------------------
@@ -35,10 +23,8 @@ DROP TABLE IF EXISTS "public"."student_admission_source";
 CREATE TABLE "public"."student_admission_source" (
   "id" int8 NOT NULL DEFAULT nextval('student_admission_source_id_seq'::regclass),
   "name" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
-  "created_by" int8 NOT NULL,
-  "updated_by" int8 NOT NULL,
-  "created_at" timestamp(0) NOT NULL,
-  "updated_at" timestamp(0) NOT NULL
+  "created_by" int8,
+  "updated_by" timestamp(0)
 )
 ;
 
@@ -62,11 +48,3 @@ INSERT INTO "public"."student_admission_source" VALUES (12, 'Ruwan sir''s contac
 -- Primary Key structure for table student_admission_source
 -- ----------------------------
 ALTER TABLE "public"."student_admission_source" ADD CONSTRAINT "student_admission_source_pkey" PRIMARY KEY ("id");
-
--- ----------------------------
--- Alter sequences owned by
--- ----------------------------
-ALTER SEQUENCE "public"."student_admission_source_id_seq"
-OWNED BY "public"."student_admission_source"."id";
-SELECT setval('"public"."student_admission_source_id_seq"', 12, true);
-
