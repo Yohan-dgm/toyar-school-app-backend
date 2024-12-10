@@ -38,8 +38,8 @@ CREATE TABLE "public"."user" (
   "email_verified_at" timestamp(0),
   "password" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
   "remember_token" varchar(100) COLLATE "pg_catalog"."default",
-  "created_at" timestamp(0),
-  "updated_at" timestamp(0),
+  "created_at" timestamp(6),
+  "updated_at" timestamp(6),
   "created_by" int8,
   "update_by" int8
 )
