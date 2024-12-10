@@ -32,8 +32,10 @@ DROP TABLE IF EXISTS "public"."educator_grade";
 CREATE TABLE "public"."educator_grade" (
   "id" int8 NOT NULL DEFAULT nextval('educator_grade_id_seq'::regclass),
    "name" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
+  "created_by" int8,
+  "updated_by" int8,
   "created_at" timestamp(6),
-  "updated_by" timestamp(6)
+  "updated_at" timestamp(6),
 )
 ;
 
