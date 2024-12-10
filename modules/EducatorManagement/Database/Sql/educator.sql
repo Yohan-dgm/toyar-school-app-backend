@@ -36,7 +36,7 @@ CREATE TABLE "public"."educator" (
   "created_by" int8,
   "updated_by" int8,
   "created_at" timestamp(6),
-  "updated_at" timestamp(6),
+  "updated_at" timestamp(6)
 )
 ;
 
@@ -46,28 +46,28 @@ CREATE TABLE "public"."educator" (
 -- ----------------------------
 -- Records of educator
 -- ----------------------------
-INSERT INTO "public"."educator" VALUES (1, 1, 2, NULL, NULL);
-INSERT INTO "public"."educator" VALUES (2, 2, 4, NULL, NULL);
-INSERT INTO "public"."educator" VALUES (3, 3, 2, NULL, NULL);
-INSERT INTO "public"."educator" VALUES (4, 4, 2, NULL, NULL);
-INSERT INTO "public"."educator" VALUES (5, 5, 2, NULL, NULL);
-INSERT INTO "public"."educator" VALUES (6, 9, 3, NULL, NULL);
-INSERT INTO "public"."educator" VALUES (7, 10, 4, NULL, NULL);
-INSERT INTO "public"."educator" VALUES (8, 11, 3, NULL, NULL);
-INSERT INTO "public"."educator" VALUES (9, 12, 4, NULL, NULL);
-INSERT INTO "public"."educator" VALUES (10, 13, 4, NULL, NULL);
-INSERT INTO "public"."educator" VALUES (11, 14, 4, NULL, NULL);
-INSERT INTO "public"."educator" VALUES (12, 15, 3, NULL, NULL);
-INSERT INTO "public"."educator" VALUES (13, 16, 1, NULL, NULL);
-INSERT INTO "public"."educator" VALUES (14, 18, 3, NULL, NULL);
-INSERT INTO "public"."educator" VALUES (15, 19, 3, NULL, NULL);
-INSERT INTO "public"."educator" VALUES (16, 20, 2, NULL, NULL);
-INSERT INTO "public"."educator" VALUES (17, 21, NULL, NULL, NULL);
-INSERT INTO "public"."educator" VALUES (18, 22, NULL, NULL, NULL);
-INSERT INTO "public"."educator" VALUES (19, 23, NULL, NULL, NULL);
-INSERT INTO "public"."educator" VALUES (20, 24, NULL, NULL, NULL);
-INSERT INTO "public"."educator" VALUES (21, 25, NULL, NULL, NULL);
-INSERT INTO "public"."educator" VALUES (22, 26, NULL, NULL, NULL);
+INSERT INTO "public"."educator" VALUES (1, 1, 2, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator" VALUES (2, 2, 4, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator" VALUES (3, 3, 2, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator" VALUES (4, 4, 2, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator" VALUES (5, 5, 2, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator" VALUES (6, 9, 3, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator" VALUES (7, 10, 4, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator" VALUES (8, 11, 3, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator" VALUES (9, 12, 4, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator" VALUES (10, 13, 4, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator" VALUES (11, 14, 4, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator" VALUES (12, 15, 3, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator" VALUES (13, 16, 1, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator" VALUES (14, 18, 3, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator" VALUES (15, 19, 3, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator" VALUES (16, 20, 2, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator" VALUES (17, 21, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator" VALUES (18, 22, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator" VALUES (19, 23, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator" VALUES (20, 24, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator" VALUES (21, 25, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."educator" VALUES (22, 26, NULL, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Primary Key structure for table educator
