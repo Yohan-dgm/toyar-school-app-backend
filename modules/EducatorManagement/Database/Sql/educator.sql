@@ -33,8 +33,8 @@ CREATE TABLE "public"."educator" (
   "id" int8 NOT NULL DEFAULT nextval('educator_id_seq'::regclass),
   "employee_id" int8 NOT NULL,
   "educator_grade_id" int8,
-  "created_by" int8,
-  "updated_by" timestamp(0)
+  "created_at" timestamp(6),
+  "updated_by" timestamp(6)
 )
 ;
 
