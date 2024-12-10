@@ -53,9 +53,8 @@ CREATE TABLE "public"."student" (
   "applicable_term_payment" numeric(10,1) NOT NULL,
   "applicable_year_payment" numeric(10,1) NOT NULL,
   "created_by" int8 NOT NULL,
-  "updated_by" int8 NOT NULL,
-)
-;
+  "updated_by" int8 NOT NULL
+);
 
 -- ----------------------------
 -- Records of student
