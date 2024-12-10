@@ -39,8 +39,8 @@ CREATE TABLE "public"."employee" (
   "remaining_maternity_leaves" numeric(3,1) NOT NULL,
   "created_by" int8 ,
   "updated_by" int8 ,
-  "created_at" timestamp(0),
-  "updated_at" timestamp(0)
+  "created_at" timestamp(6),
+  "updated_at" timestamp(6)
 )
 ;
 
