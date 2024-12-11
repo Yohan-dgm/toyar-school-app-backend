@@ -15,23 +15,27 @@
  Date: 09/12/2024 11:34:59
  */
 -- ----------------------------
--- Sequence structure for employee_leave_id_seq
+-- Sequence structure for leave_id_seq
 -- ----------------------------
-DROP SEQUENCE IF EXISTS "public"."employee_leave_id_seq";
+DROP SEQUENCE IF EXISTS "public"."leave_id_seq";
 
-CREATE SEQUENCE "public"."employee_leave_id_seq" INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
+CREATE SEQUENCE "public"."leave_id_seq" INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
 
 -- ----------------------------
--- Table structure for employee_leave
+-- Table structure for leave
 -- ----------------------------
-DROP TABLE IF EXISTS "public"."employee_leave";
+DROP TABLE IF EXISTS "public"."leave";
 
-CREATE TABLE "public"."employee_leave" (
-    "id" int8 NOT NULL DEFAULT nextval('employee_leave_id_seq' :: regclass),
-    "name" varchar(255) COLLATE "pg_catalog"."default",
+CREATE TABLE "public"."leave" (
+    "id" int8 NOT NULL DEFAULT nextval('leave_id_seq' :: regclass),
     "employee_id" int8,
-    "leave_date" timestamp(0),
-    "leave_duration" int8,
+    "leave_type_id" int8,
+    "leave_duration_type" varchar(255) COLLATE "pg_catalog"."default",
+    'leave_date' date,
+    'leave_period_start_date' date,
+    'leave_period_end_date' date,
+    'next_reporting_date' date,
+    'leave_status_type_id' int8,
     "created_by" int8,
     "updated_by" int8,
     "created_at" timestamp(0),
@@ -39,20 +43,20 @@ CREATE TABLE "public"."employee_leave" (
 );
 
 -- ----------------------------
--- Records of employee_leave
+-- Records of leave
 -- ----------------------------
 -- ----------------------------
--- Primary Key structure for table employee_leave
+-- Primary Key structure for table leave
 -- ----------------------------
 ALTER TABLE
-    "public"."employee_leave"
+    "public"."leave"
 ADD
-    CONSTRAINT "employee_leave_pkey" PRIMARY KEY ("id");
+    CONSTRAINT "leave_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Alter sequences owned by
 -- ----------------------------
-ALTER SEQUENCE "public"."employee_leave_id_seq" OWNED BY "public"."employee_leave"."id";
+ALTER SEQUENCE "public"."leave_id_seq" OWNED BY "public"."leave"."id";
 
 SELECT
-    setval('"public"."employee_leave_id_seq"', 1, false);
+    setval('"public"."leave_id_seq"', 1, false);
