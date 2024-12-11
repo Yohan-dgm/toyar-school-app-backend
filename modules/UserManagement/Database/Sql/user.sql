@@ -41,9 +41,8 @@ CREATE TABLE "public"."user" (
   "created_at" timestamp(0),
   "updated_at" timestamp(0),
   "created_by" int8,
-  "update_by" int8,
-)
-;
+  "update_by" int8
+);
 
 -- ----------------------------
 -- Records of user
