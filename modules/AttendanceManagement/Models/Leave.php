@@ -28,6 +28,7 @@ class Leave extends Model
 
     public $timestamps = true;
 
+
     public function employee(): BelongsTo
     {
         return $this->belongsTo(Employee::class, 'employee_id', 'id');

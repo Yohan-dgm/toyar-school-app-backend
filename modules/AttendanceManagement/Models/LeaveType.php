@@ -16,6 +16,8 @@ class LeaveType extends Model
         'updated_by',
     ];
 
+    public $timestamps = true;
+
     public function leave_list(): HasMany
     {
         return $this->hasMany(Leave::class, 'leave_type_id', 'id');

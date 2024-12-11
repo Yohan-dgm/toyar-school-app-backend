@@ -27,7 +27,7 @@ class Employee extends Model
         'updated_by',
     ];
 
-
+    public $timestamps = true;
     /**
      * Relationship with Employee Type
      */
