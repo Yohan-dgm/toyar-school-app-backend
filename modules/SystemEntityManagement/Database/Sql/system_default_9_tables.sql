@@ -16,6 +16,7 @@
 */
 
 
+
 -- ----------------------------
 -- Table structure for cache
 -- ----------------------------
@@ -24,8 +25,9 @@ CREATE TABLE "public"."cache" (
   "key" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
   "value" text COLLATE "pg_catalog"."default" NOT NULL,
   "expiration" int4 NOT NULL
-)
-;
+);
+
+
 
 -- ----------------------------
 -- Table structure for cache_locks
@@ -37,6 +39,17 @@ CREATE TABLE "public"."cache_locks" (
   "expiration" int4 NOT NULL
 )
 ;
+
+-- ----------------------------
+-- Sequence structure for failed_jobs_id_seq
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "public"."failed_jobs_id_seq";
+CREATE SEQUENCE "public"."failed_jobs_id_seq" 
+INCREMENT 1
+MINVALUE  1
+MAXVALUE 9223372036854775807
+START 1
+CACHE 1;
 
 -- ----------------------------
 -- Table structure for failed_jobs
@@ -52,6 +65,27 @@ CREATE TABLE "public"."failed_jobs" (
   "failed_at" timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP
 )
 ;
+
+-- ----------------------------
+-- Alter sequences owned by
+-- ----------------------------
+ALTER SEQUENCE "public"."failed_jobs_id_seq"
+OWNED BY "public"."failed_jobs"."id";
+SELECT setval('"public"."failed_jobs_id_seq"', 1, false);
+
+
+
+-- ----------------------------
+-- Sequence structure for job_batches_id_seq
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "public"."job_batches_id_seq";
+CREATE SEQUENCE "public"."job_batches_id_seq" 
+INCREMENT 1
+MINVALUE  1
+MAXVALUE 9223372036854775807
+START 1
+CACHE 1;
+
 
 -- ----------------------------
 -- Table structure for job_batches
@@ -72,6 +106,27 @@ CREATE TABLE "public"."job_batches" (
 ;
 
 -- ----------------------------
+-- Alter sequences owned by
+-- ----------------------------
+ALTER SEQUENCE "public"."job_batches_id_seq"
+OWNED BY "public"."job_batches"."id";
+SELECT setval('"public"."job_batches_id_seq"', 1, false);
+
+
+
+-- ----------------------------
+-- Sequence structure for jobs_id_seq
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "public"."jobs_id_seq";
+CREATE SEQUENCE "public"."jobs_id_seq" 
+INCREMENT 1
+MINVALUE  1
+MAXVALUE 9223372036854775807
+START 1
+CACHE 1;
+
+
+-- ----------------------------
 -- Table structure for jobs
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."jobs";
@@ -87,6 +142,28 @@ CREATE TABLE "public"."jobs" (
 ;
 
 -- ----------------------------
+-- Alter sequences owned by
+-- ----------------------------
+ALTER SEQUENCE "public"."jobs_id_seq"
+OWNED BY "public"."jobs"."id";
+SELECT setval('"public"."jobs_id_seq"', 1, false);
+
+
+
+-- ----------------------------
+-- Sequence structure for migrations_id_seq
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "public"."migrations_id_seq";
+CREATE SEQUENCE "public"."migrations_id_seq" 
+INCREMENT 1
+MINVALUE  1
+MAXVALUE 9223372036854775807
+START 1
+CACHE 1;
+
+
+
+-- ----------------------------
 -- Table structure for migrations
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."migrations";
@@ -96,6 +173,17 @@ CREATE TABLE "public"."migrations" (
   "batch" int4 NOT NULL
 )
 ;
+
+
+-- ----------------------------
+-- Alter sequences owned by
+-- ----------------------------
+ALTER SEQUENCE "public"."migrations_id_seq"
+OWNED BY "public"."migrations"."id";
+SELECT setval('"public"."migrations_id_seq"', 1, false);
+
+
+
 
 -- ----------------------------
 -- Table structure for password_reset_tokens
@@ -107,6 +195,18 @@ CREATE TABLE "public"."password_reset_tokens" (
   "created_at" timestamp(0)
 )
 ;
+
+
+-- ----------------------------
+-- Sequence structure for personal_access_tokens_id_seq
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "public"."personal_access_tokens_id_seq";
+CREATE SEQUENCE "public"."personal_access_tokens_id_seq" 
+INCREMENT 1
+MINVALUE  1
+MAXVALUE 9223372036854775807
+START 1
+CACHE 1;
 
 -- ----------------------------
 -- Table structure for personal_access_tokens
@@ -126,6 +226,30 @@ CREATE TABLE "public"."personal_access_tokens" (
 )
 ;
 
+
+
+-- ----------------------------
+-- Alter sequences owned by
+-- ----------------------------
+ALTER SEQUENCE "public"."personal_access_tokens_id_seq"
+OWNED BY "public"."personal_access_tokens"."id";
+SELECT setval('"public"."personal_access_tokens_id_seq"', 1, false);
+
+
+
+
+-- ----------------------------
+-- Sequence structure for sessions_id_seq
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "public"."sessions_id_seq";
+CREATE SEQUENCE "public"."sessions_id_seq" 
+INCREMENT 1
+MINVALUE  1
+MAXVALUE 9223372036854775807
+START 1
+CACHE 1;
+
+
 -- ----------------------------
 -- Table structure for sessions
 -- ----------------------------
@@ -139,3 +263,14 @@ CREATE TABLE "public"."sessions" (
   "last_activity" int4 NOT NULL
 )
 ;
+
+
+-- ----------------------------
+-- Alter sequences owned by
+-- ----------------------------
+ALTER SEQUENCE "public"."sessions_id_seq"
+OWNED BY "public"."sessions"."id";
+SELECT setval('"public"."sessions_id_seq"', 1, false);
+
+
+
