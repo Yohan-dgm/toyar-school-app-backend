@@ -12,7 +12,7 @@
  Target Server Version : 160000 (160000)
  File Encoding         : 65001
  
- Date: 06/12/2024 15:57:21
+ Date: 06/12/2024 15:58:21
  */
 -- ----------------------------
 -- Sequence structure for leave_status_type_id_seq
