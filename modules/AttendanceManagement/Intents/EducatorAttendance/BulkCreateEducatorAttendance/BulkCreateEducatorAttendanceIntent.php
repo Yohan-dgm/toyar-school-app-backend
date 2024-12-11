@@ -1,13 +1,14 @@
 <?php
 
-namespace Modules\AttendanceManagement\Intents\StudentAttendance\EditStudentAttendance;
+namespace Modules\AttendanceManagement\Intents\EducatorAttendance\BulkCreateEducatorAttendance;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Lorisleiva\Actions\Concerns\AsAction;
+use Modules\AttendanceManagement\Models\EducatorAttendance;
 
-class EditStudentAttendanceIntent
+class BulkCreateEducatorAttendanceIntent
 {
     use AsAction;
 
@@ -18,17 +19,23 @@ class EditStudentAttendanceIntent
             // 1. Authorization
 
             // 2. User Data Validation
-            $editStudentAttendanceUserDTO = EditStudentAttendanceUserDTO::validate($request->all());
+            $createEducatorAttendanceUserDTO = BulkCreateEducatorAttendanceUserDTO::validate($request->all());
 
             // 3. Before Intent
 
             // 4. Business Rules Validation
+            $educatorAtttendanceCount = EducatorAttendance::where('date', $createEducatorAttendanceUserDTO['date'])->count();
+
+            if ($educatorAtttendanceCount > 0) { // previous Bulk Create existing
+                // return
+                DB::rollback();
+                return false;
+            }
 
             // Action 1
             $actionData = [];
-            $actionData['updated_by'] = $request->user()->id;
-
-            $attendance = EditStudentAttendanceAction::run($editStudentAttendanceUserDTO, $actionData);
+            $actionData['created_by'] = $request->user()->id;
+            $attendance = BulkCreateEducatorAttendanceAction::run($createEducatorAttendanceUserDTO, $actionData);
 
             DB::commit();
             // After Intent
@@ -59,7 +66,7 @@ class EditStudentAttendanceIntent
                 return response()->json(
                     [
                         "status" => "failed",
-                        "message" => "",
+                        "message" => "Attendance already exist",
                         "data" => null,
                         "metadata" => null,
                     ],

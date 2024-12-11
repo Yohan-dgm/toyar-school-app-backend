@@ -5,6 +5,7 @@ namespace Modules\AttendanceManagement\Intents\StudentAttendance\EditStudentAtte
 use Illuminate\Http\Request;
 use Spatie\LaravelData\Attributes\Validation\IntegerType;
 use Spatie\LaravelData\Attributes\Validation\Required;
+use Spatie\LaravelData\Attributes\Validation\StringType;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\Support\Validation\ValidationContext;
 
@@ -13,10 +14,10 @@ class EditStudentAttendanceUserDTO extends Data
     public function __construct(
         // user
         public int $student_id,
-        public ?string $date,
-        public ?string $time,
-        public int $attendance_type_id,
-        public int $student_attendance_id,
+        public string $date,
+        public ?string $in_time,
+        public ?string $out_time,
+        public string $attendance_type, // Present, Absent
         // system
     ) {}
 
@@ -25,8 +26,8 @@ class EditStudentAttendanceUserDTO extends Data
         return [
             // user
             "student_id" => [new Required(), new IntegerType()],
-            "attendance_type_id" =>  [new Required(), new IntegerType()],
-            "student_attendance_id" =>  [new Required(), new IntegerType()],
+            "date" => [new Required()],
+            "attendance_type" =>  [new Required(), new StringType()],
             // system
         ];
     }
