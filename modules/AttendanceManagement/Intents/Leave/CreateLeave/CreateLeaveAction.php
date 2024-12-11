@@ -1,18 +1,18 @@
 <?php
 
-namespace Modules\AttendanceManagement\Intents\EducatorLeave\CreateEducatorLeave;
+namespace Modules\AttendanceManagement\Intents\Leave\CreateLeave;
 
 use Lorisleiva\Actions\Concerns\AsAction;
 use Modules\AttendanceManagement\Models\Leave;
 
-class CreateEducatorLeaveAction
+class CreateLeaveAction
 {
     use AsAction;
 
     public function handle($payloadArray, $actionData)
     {
         // User Data Validation
-        $createEducatorLeaveUserDTO = CreateEducatorLeaveUserDTO::validate($payloadArray);
+        $createLeaveUserDTO = CreateLeaveUserDTO::validate($payloadArray);
 
         // Data Prep
 
@@ -24,12 +24,12 @@ class CreateEducatorLeaveAction
  
 
         // System Data Validation
-        $createEducatorLeaveSystemDTO = CreateEducatorLeaveSystemDTO::validate($system_data);
+        $createLeaveSystemDTO = CreateLeaveSystemDTO::validate($system_data);
         // Final Data Validation
-        $createEducatorLeaveDTO = CreateEducatorLeaveDTO::validate(array_merge($createEducatorLeaveUserDTO, $createEducatorLeaveSystemDTO));
+        $createLeaveDTO = CreateLeaveDTO::validate(array_merge($createLeaveUserDTO, $createLeaveSystemDTO));
 
         // Save In Database
-        $user = Leave::create($createEducatorLeaveDTO);
+        $user = Leave::create($createLeaveDTO);
 
         return $user;
     }

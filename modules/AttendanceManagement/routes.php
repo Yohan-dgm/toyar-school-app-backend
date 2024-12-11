@@ -5,8 +5,8 @@ namespace Modules\AttendanceManagement;
 use Illuminate\Support\Facades\Route;
 use Modules\AttendanceManagement\Intents\EducatorAttendance\CreateEducatorAttendance\CreateEducatorAttendanceIntent;
 use Modules\AttendanceManagement\Intents\EducatorAttendance\EditEducatorAttendance\EditEducatorAttendanceIntent;
-use Modules\AttendanceManagement\Intents\EducatorAttendance\GetEducatorAttendanceListData\GetEducatorAttendanceListDataIntent;
-use Modules\AttendanceManagement\Intents\EducatorLeave\CreateEducatorLeave\CreateEducatorLeaveIntent;
+use Modules\AttendanceManagement\Intents\EducatorAttendance\GetEducatorAttendanceListData\GetEducatorAttendanceListDataIntent; 
+use Modules\AttendanceManagement\Intents\Leave\CreateLeave\CreateLeaveIntent;
 use Modules\AttendanceManagement\Intents\StudentAttendance\BulkCreateStudentAttendance\BulkCreateStudentAttendanceIntent;
 use Modules\AttendanceManagement\Intents\StudentAttendance\CreateStudentAttendance\CreateStudentAttendanceIntent;
 use Modules\AttendanceManagement\Intents\StudentAttendance\EditStudentAttendance\EditStudentAttendanceIntent;
@@ -29,7 +29,7 @@ Route::prefix('student-attendance')->group(function () {
 
 
 
-// EducatorLeave
-Route::prefix('educator-leave')->group(function () {
-    Route::middleware('auth:web')->post('/create-educator-leave', CreateEducatorLeaveIntent::class)->name('educator-leave.create-educator-leave');
+// Leave
+Route::prefix('leave')->group(function () {
+    Route::middleware('auth:web')->post('/create-leave', CreateLeaveIntent::class)->name('leave.create--leave');
 });

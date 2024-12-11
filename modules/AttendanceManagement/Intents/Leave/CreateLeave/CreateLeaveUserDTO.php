@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\AttendanceManagement\Intents\EducatorLeave\CreateEducatorLeave;
+namespace Modules\AttendanceManagement\Intents\Leave\CreateLeave;
 
 use DateTime;
 use Illuminate\Http\Request;
@@ -10,7 +10,7 @@ use Spatie\LaravelData\Attributes\Validation\Required;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\Support\Validation\ValidationContext;
 
-class CreateEducatorLeaveUserDTO extends Data
+class CreateLeaveUserDTO extends Data
 {
     public function __construct(
 
