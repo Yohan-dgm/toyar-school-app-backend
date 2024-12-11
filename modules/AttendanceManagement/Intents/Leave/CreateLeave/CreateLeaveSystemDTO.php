@@ -19,7 +19,7 @@ class CreateLeaveSystemDTO extends Data
 
     ) {}
 
-    public static function rules(Request $request, ValidationContext $context): array
+    public static function rules(ValidationContext $context): array
     {
         // $requestArray = $request->all();
         // $name_temp =  $context->fullPayload['name'];

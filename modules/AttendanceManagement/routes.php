@@ -31,5 +31,5 @@ Route::prefix('student-attendance')->group(function () {
 
 // Leave
 Route::prefix('leave')->group(function () {
-    Route::middleware('auth:web')->post('/create-leave', CreateLeaveIntent::class)->name('leave.create--leave');
+    Route::middleware('auth:web')->post('/create-leave', CreateLeaveIntent::class)->name('leave.create-leave');
 });
