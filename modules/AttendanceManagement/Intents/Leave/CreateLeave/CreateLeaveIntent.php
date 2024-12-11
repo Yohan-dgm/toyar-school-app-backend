@@ -1,17 +1,17 @@
 <?php
 
-namespace Modules\AttendanceManagement\Intents\EducatorLeave\CreateEducatorLeave;
+namespace Modules\AttendanceManagement\Intents\Leave\CreateLeave;
 
 use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Lorisleiva\Actions\Concerns\AsAction;
-use Modules\AttendanceManagement\Intents\EducatorLeave\CreateEducatorLeave\CreateEducatorLeaveUserDTO;
+use Modules\AttendanceManagement\Intents\Leave\CreateLeave\CreateLeaveUserDTO;
 
 
 
-class CreateEducatorLeaveIntent
+class CreateLeaveIntent
 {
     use AsAction;
 
@@ -22,7 +22,7 @@ class CreateEducatorLeaveIntent
             // 1. Authorization
 
             // 2. User Data Validation
-            $createEducatorLeaveUserDTO = CreateEducatorLeaveUserDTO::validate($request->all());
+            $createLeaveUserDTO = CreateLeaveUserDTO::validate($request->all());
 
             // 3. Before Intent
 
@@ -51,7 +51,7 @@ class CreateEducatorLeaveIntent
             }
 
 
-            $Leave = CreateEducatorLeaveAction::run($createEducatorLeaveUserDTO, $actionData);
+            $Leave = CreateLeaveAction::run($createLeaveUserDTO, $actionData);
 
             DB::commit();
             // After Intent

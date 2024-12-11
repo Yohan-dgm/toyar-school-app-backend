@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\AttendanceManagement\Intents\EducatorLeave\CreateEducatorLeave;
+namespace Modules\AttendanceManagement\Intents\Leave\CreateLeave;
 
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Type\Decimal;
@@ -9,7 +9,7 @@ use Spatie\LaravelData\Attributes\Validation\Required;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\Support\Validation\ValidationContext;
 
-class CreateEducatorLeaveSystemDTO extends Data
+class CreateLeaveSystemDTO extends Data
 {
     public function __construct(
         public int $created_by, 
