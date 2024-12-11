@@ -32,13 +32,13 @@ DROP TABLE IF EXISTS "public"."student_attendance";
 CREATE TABLE "public"."student_attendance" (
   "created_by" int8,
   "updated_by" int8,
-  "created_at" timestamp(6),
-  "updated_at" timestamp(6),
+  "created_at" timestamp(0),
+  "updated_at" timestamp(0),
   "id" int8 NOT NULL DEFAULT nextval('student_attendance_id_seq'::regclass),
   "student_id" int8,
   "date" date,
   "time" varchar(255) COLLATE "pg_catalog"."default",
-  "attendance_type_id" int8
+  "attendance_type_id" int8,
 )
 ;
 

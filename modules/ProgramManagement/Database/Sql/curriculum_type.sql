@@ -33,9 +33,9 @@ CREATE TABLE "public"."curriculum_type" (
   "name" varchar(255) COLLATE "pg_catalog"."default",
   "created_by" int8,
   "updated_by" int8,
-  "created_at" timestamp(6),
-  "updated_at" timestamp(6),
-  "id" int8 NOT NULL DEFAULT nextval('curriculum_type_id_seq'::regclass)
+  "created_at" timestamp(0),
+  "updated_at" timestamp(0),
+  "id" int8 NOT NULL DEFAULT nextval('curriculum_type_id_seq'::regclass),
 )
 ;
 

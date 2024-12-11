@@ -31,6 +31,7 @@ CACHE 1;
 DROP TABLE IF EXISTS "public"."student";
 CREATE TABLE "public"."student" (
   "id" int8 NOT NULL DEFAULT nextval('student_id_seq'::regclass),
+<<<<<<< HEAD
   "applicant_id" int8 NOT NULL,
   "admission_number" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
   "student_admission_source_id" int8 NOT NULL,
@@ -55,6 +56,33 @@ CREATE TABLE "public"."student" (
   "created_by" int8 NOT NULL,
   "updated_by" int8 NOT NULL,
   "grade_level_class_id" int8 NOT NULL
+=======
+  "applicant_id" int8,
+  "admission_number" varchar(255) COLLATE "pg_catalog"."default",
+  "student_admission_source_id" int8,
+  "joined_date" timestamp(0),
+  "full_name" varchar(255) COLLATE "pg_catalog"."default",
+  "gender" varchar(255) COLLATE "pg_catalog"."default",
+  "full_name_with_title" varchar(255) COLLATE "pg_catalog"."default",
+  "date_of_birth" date,
+  "nationality_id" int8,
+  "religion_id" int8,
+  "grade_level_id" int8,
+  "full_address" varchar(255) COLLATE "pg_catalog"."default",
+  "phone" varchar(255) COLLATE "pg_catalog"."default",
+  "email" varchar(255) COLLATE "pg_catalog"."default",
+  "school_studied_before" varchar(255) COLLATE "pg_catalog"."default",
+  "special_conditions" text COLLATE "pg_catalog"."default",
+  "admission_fee_discount_percentage" varchar(255) COLLATE "pg_catalog"."default",
+  "approved_admission_fee" numeric(15,1),
+  "applicable_refundable_deposit" numeric(15,1),
+  "applicable_term_payment" numeric(15,1),
+  "applicable_year_payment" numeric(15,1),
+  "created_by" int8,
+  "updated_by" int8,
+  "created_at" timestamp(0),
+  "updated_at" timestamp(0),
+>>>>>>> a2bcdb9ab770937fced79f02e466efec761b8297
 );
 
 -- ----------------------------
