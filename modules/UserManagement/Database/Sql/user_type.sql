@@ -30,8 +30,8 @@ CACHE 1;
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."user_type";
 CREATE TABLE "public"."user_type" (
-  "id" int8 NOT NULL DEFAULT nextval('user_type_id_seq'::regclass),
-  "name" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
+  "id" int8  NOT NULL  DEFAULT nextval('user_type_id_seq'::regclass),
+  "name" varchar(255) COLLATE "pg_catalog"."default" ,
    "created_by" int8  ,
   "updated_by" int8  ,
   "created_at" timestamp(6),
