@@ -33,11 +33,11 @@ DROP TABLE IF EXISTS "public"."receipt_voucher_status_type";
 CREATE TABLE "public"."receipt_voucher_status_type" (
   "created_by" int8,
   "updated_by" int8,
-  "created_at" timestamp(6),
-  "updated_at" timestamp(6),
+  "created_at" timestamp(0),
+  "updated_at" timestamp(0),
   "id" int8 NOT NULL DEFAULT nextval('receipt_voucher_status_type_id_seq'::regclass),
   "name" varchar(255) COLLATE "pg_catalog"."default",
-  "sequential_order" int4
+  "sequential_order" int4, 
 )
 ;
 
