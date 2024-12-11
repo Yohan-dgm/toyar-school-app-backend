@@ -35,8 +35,8 @@ CREATE TABLE "public"."user_user_type_pivot" (
   "user_type_id" int8  NOT NULL,
    "created_by" int8,
   "updated_by" int8,
-  "created_at" timestamp(6),
-  "updated_at" timestamp(6),
+  "created_at" timestamp(0),
+  "updated_at" timestamp(0),
 )
 ;
 

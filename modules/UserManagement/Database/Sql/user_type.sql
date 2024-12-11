@@ -34,8 +34,8 @@ CREATE TABLE "public"."user_type" (
   "name" varchar(255) COLLATE "pg_catalog"."default" ,
    "created_by" int8,
   "updated_by" int8,
-  "created_at" timestamp(6),
-  "updated_at" timestamp(6),
+  "created_at" timestamp(0),
+  "updated_at" timestamp(0),
 )
 ;
 
