@@ -59,9 +59,8 @@ CREATE TABLE "public"."receipt_voucher" (
   "serial_number_financial_year" varchar(32) COLLATE "pg_catalog"."default",
   "serial_number_suffix" varchar(255) COLLATE "pg_catalog"."default",
   "serial_number" varchar(255) COLLATE "pg_catalog"."default",
-  "payment_received_date" date,
-)
-;
+  "payment_received_date" date
+);
 
 -- ----------------------------
 -- Primary Key structure for table receipt_voucher
