@@ -38,8 +38,7 @@ CREATE TABLE "public"."program_status" (
   "created_at" timestamp(0),
   "updated_at" timestamp(0),
   "id" int8 NOT NULL DEFAULT nextval('program_status_id_seq'::regclass),
-)
-;
+);
 
 -- ----------------------------
 -- Records of program_status
