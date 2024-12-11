@@ -21,6 +21,7 @@ class Leave extends Model
         'leave_period_start_date',
         'leave_period_end_date',
         'next_reporting_date',
+        'leave_period_working_days_count',
         'leave_status_type_id',
         'created_by',
         'updated_by',
