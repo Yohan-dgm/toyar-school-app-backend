@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Modules\AttendanceManagement\Models\Leave;
 use Modules\EducatorManagement\Models\Educator;
 
 class Employee extends Model
@@ -41,9 +42,9 @@ class Employee extends Model
         return $this->belongsTo(Designation::class, 'designation_id', 'id');
     }
 
-    public function employee_leave_list(): HasMany
+    public function leave_list(): HasMany
     {
-        return $this->hasMany(EmployeeLeave::class, 'employee_id', 'id');
+        return $this->hasMany(Leave::class, 'employee_id', 'id');
     }
 
     public function employee_type(): BelongsTo
