@@ -45,6 +45,7 @@ class GetEducatorAttendanceListDataAction
                 $educator_attendance_list_query->with(['attendance_type' => function (Builder $attendance_type_query) {
                     //
                     $attendance_type_query->select("attendance_type.id", "attendance_type.name");
+                    
                 }])->select("id", "date", "time", "educator_id", "attendance_type_id");
             }])
 
