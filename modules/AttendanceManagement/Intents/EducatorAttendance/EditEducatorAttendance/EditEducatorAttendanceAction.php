@@ -24,7 +24,7 @@ class EditEducatorAttendanceAction
         $editEducatorAttendanceSystemDTO = EditEducatorAttendanceSystemDTO::validate($system_data);
         // Final Data Validation
         $editEducatorAttendanceDTO = EditEducatorAttendanceDTO::validate(array_merge($editEducatorAttendanceUserDTO, $editEducatorAttendanceSystemDTO));
-        
+
         unset($editEducatorAttendanceDTO['educator_attendance_id']);
 
         // edit In Database

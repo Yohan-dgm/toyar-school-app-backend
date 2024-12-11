@@ -4,6 +4,7 @@ namespace Modules\ProgramManagement\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class GradeLevelClass extends Model
@@ -25,6 +26,12 @@ class GradeLevelClass extends Model
     {
         return $this->hasOne(GradeLevel::class, 'grade_level_id', 'id');
     }
+
+    public function student_list(): HasMany
+    {
+        return $this->hasMany(Subject::class, 'grade_level_class_id', 'id');
+    }
+
 
     // protected static function newFactory(): GradeLevelClassFactory
     // {
