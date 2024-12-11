@@ -38,9 +38,8 @@ CREATE TABLE "public"."student_attendance" (
   "student_id" int8,
   "date" date,
   "time" varchar(255) COLLATE "pg_catalog"."default",
-  "attendance_type_id" int8,
-)
-;
+  "attendance_type_id" int8
+);
 
 -- ----------------------------
 -- Records of student_attendance

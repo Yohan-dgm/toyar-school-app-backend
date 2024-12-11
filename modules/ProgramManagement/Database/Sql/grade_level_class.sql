@@ -36,9 +36,8 @@ CREATE TABLE "public"."grade_level_class" (
   "updated_by" int8,
   "created_at" timestamp(0),
   "updated_at" timestamp(0),
-  "id" int8 NOT NULL DEFAULT nextval('grade_level_class_id_seq'::regclass),
-)
-;
+  "id" int8 NOT NULL DEFAULT nextval('grade_level_class_id_seq'::regclass)
+);
 
 -- ----------------------------
 -- Records of grade_level_class

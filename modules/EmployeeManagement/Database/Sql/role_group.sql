@@ -36,9 +36,8 @@ CREATE TABLE "public"."role_group" (
   "created_by" int8,
   "updated_by" int8,
   "created_at" timestamp(0),
-  "updated_at" timestamp(0),
-)
-;
+  "updated_at" timestamp(0)
+);
 
 -- ----------------------------
 -- Records of role_group

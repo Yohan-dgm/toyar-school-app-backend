@@ -36,8 +36,7 @@ CREATE TABLE "public"."stream" (
   "created_at" timestamp(0),
   "updated_at" timestamp(0),
   "id" int8 NOT NULL DEFAULT nextval('stream_id_seq'::regclass),
-)
-;
+);
 
 -- ----------------------------
 -- Records of stream
