@@ -52,7 +52,8 @@ CREATE TABLE "public"."student" (
     "created_by" int8,
     "updated_by" int8,
     "created_at" timestamp(0),
-    "updated_at" timestamp(0)
+    "updated_at" timestamp(0),
+    "grade_level_class_id" int8
 );
 
 -- ----------------------------
@@ -85,7 +86,10 @@ VALUES
         0.0,
         0.0,
         0,
-        0
+        0,
+        NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -115,7 +119,10 @@ VALUES
         0.0,
         0.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -145,7 +152,10 @@ VALUES
         0.0,
         0.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -175,7 +185,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -205,7 +218,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -235,7 +251,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -265,7 +284,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -295,7 +317,10 @@ VALUES
         35000.0,
         140000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -325,7 +350,10 @@ VALUES
         0.0,
         0.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -355,7 +383,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -385,7 +416,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -415,7 +449,10 @@ VALUES
         24000.0,
         96000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -445,7 +482,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -475,7 +515,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -505,7 +548,10 @@ VALUES
         35000.0,
         140000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -535,7 +581,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -565,7 +614,10 @@ VALUES
         45000.0,
         180000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -595,7 +647,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -625,7 +680,10 @@ VALUES
         35000.0,
         140000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -655,7 +713,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -685,7 +746,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -715,7 +779,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -745,7 +812,10 @@ VALUES
         30000.0,
         120000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -775,7 +845,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -805,7 +878,10 @@ VALUES
         45000.0,
         180000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -835,7 +911,10 @@ VALUES
         45000.0,
         180000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -865,7 +944,10 @@ VALUES
         25000.0,
         100000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -895,7 +977,10 @@ VALUES
         45000.0,
         180000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -925,7 +1010,10 @@ VALUES
         35000.0,
         140000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -955,7 +1043,10 @@ VALUES
         25000.0,
         100000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -985,7 +1076,10 @@ VALUES
         30000.0,
         120000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1015,7 +1109,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1045,7 +1142,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1075,7 +1175,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1105,7 +1208,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1135,7 +1241,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1165,7 +1274,10 @@ VALUES
         25000.0,
         100000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1195,7 +1307,10 @@ VALUES
         30000.0,
         120000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1225,7 +1340,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1255,7 +1373,10 @@ VALUES
         25000.0,
         100000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1285,7 +1406,10 @@ VALUES
         45000.0,
         180000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1315,7 +1439,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1345,7 +1472,10 @@ VALUES
         25000.0,
         100000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1375,7 +1505,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1405,7 +1538,10 @@ VALUES
         25000.0,
         100000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1435,7 +1571,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1465,7 +1604,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1495,7 +1637,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1525,7 +1670,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1555,7 +1703,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1585,7 +1736,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1615,7 +1769,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1645,7 +1802,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1675,7 +1835,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1705,7 +1868,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1735,7 +1901,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1765,7 +1934,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1795,7 +1967,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1825,7 +2000,10 @@ VALUES
         20000.0,
         80000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1855,7 +2033,10 @@ VALUES
         24000.0,
         96000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1885,7 +2066,10 @@ VALUES
         24000.0,
         96000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1915,7 +2099,10 @@ VALUES
         20000.0,
         80000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1945,7 +2132,10 @@ VALUES
         30000.0,
         120000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -1975,7 +2165,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2005,7 +2198,10 @@ VALUES
         24000.0,
         96000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2035,7 +2231,10 @@ VALUES
         24000.0,
         96000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2065,7 +2264,10 @@ VALUES
         24000.0,
         96000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2095,7 +2297,10 @@ VALUES
         12000.0,
         48000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2125,7 +2330,10 @@ VALUES
         24000.0,
         96000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2155,7 +2363,10 @@ VALUES
         20000.0,
         80000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2185,7 +2396,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2215,7 +2429,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2245,7 +2462,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2275,7 +2495,10 @@ VALUES
         24000.0,
         96000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2305,7 +2528,10 @@ VALUES
         24000.0,
         96000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2335,7 +2561,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2365,7 +2594,10 @@ VALUES
         25000.0,
         100000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2395,7 +2627,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2425,7 +2660,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2455,7 +2693,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2485,7 +2726,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2515,7 +2759,10 @@ VALUES
         30000.0,
         120000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2545,7 +2792,10 @@ VALUES
         0.0,
         0.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2575,7 +2825,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2605,7 +2858,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2635,7 +2891,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2665,7 +2924,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2695,7 +2957,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2725,7 +2990,10 @@ VALUES
         25000.0,
         100000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2755,7 +3023,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2785,7 +3056,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2815,7 +3089,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2845,7 +3122,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2875,7 +3155,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2905,7 +3188,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2935,7 +3221,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2965,7 +3254,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -2995,7 +3287,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3025,7 +3320,10 @@ VALUES
         30000.0,
         120000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3055,7 +3353,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3085,7 +3386,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3115,7 +3419,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3145,7 +3452,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3175,7 +3485,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3205,7 +3518,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3235,7 +3551,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3265,7 +3584,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3295,7 +3617,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3325,7 +3650,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3355,7 +3683,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3385,7 +3716,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3415,7 +3749,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3445,7 +3782,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3475,7 +3815,10 @@ VALUES
         30000.0,
         120000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3505,7 +3848,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3535,7 +3881,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3565,7 +3914,10 @@ VALUES
         45000.0,
         180000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3595,7 +3947,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3625,7 +3980,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3655,7 +4013,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3685,7 +4046,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3715,7 +4079,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3745,7 +4112,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3775,7 +4145,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3805,7 +4178,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3835,7 +4211,10 @@ VALUES
         25000.0,
         100000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3865,7 +4244,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3895,7 +4277,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3925,7 +4310,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3955,7 +4343,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -3985,7 +4376,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4015,7 +4409,10 @@ VALUES
         0.0,
         0.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4045,7 +4442,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4075,7 +4475,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4105,7 +4508,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4135,7 +4541,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4165,7 +4574,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4195,7 +4607,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4225,7 +4640,10 @@ VALUES
         45000.0,
         180000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4255,7 +4673,10 @@ VALUES
         25000.0,
         100000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4285,7 +4706,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4315,7 +4739,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4345,7 +4772,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4375,7 +4805,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4405,7 +4838,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4435,7 +4871,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4465,7 +4904,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4495,7 +4937,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4525,7 +4970,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4555,7 +5003,10 @@ VALUES
         45000.0,
         180000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4585,7 +5036,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4615,7 +5069,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4645,7 +5102,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4675,7 +5135,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4705,7 +5168,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4735,7 +5201,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4765,7 +5234,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4795,7 +5267,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4825,7 +5300,10 @@ VALUES
         25000.0,
         100000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4855,7 +5333,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4885,7 +5366,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4915,7 +5399,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4945,7 +5432,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -4975,7 +5465,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5005,7 +5498,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5035,7 +5531,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5065,7 +5564,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5095,7 +5597,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5125,7 +5630,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5155,7 +5663,10 @@ VALUES
         49950.0,
         199800.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5185,7 +5696,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5215,7 +5729,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5245,7 +5762,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5275,7 +5795,10 @@ VALUES
         45000.0,
         180000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5305,7 +5828,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5335,7 +5861,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5365,7 +5894,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5395,7 +5927,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5425,7 +5960,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5455,7 +5993,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5485,7 +6026,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5515,7 +6059,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5545,7 +6092,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5575,7 +6125,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5605,7 +6158,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5635,7 +6191,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5665,7 +6224,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5695,7 +6257,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5725,7 +6290,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5755,7 +6323,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5785,7 +6356,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5815,7 +6389,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5845,7 +6422,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5875,7 +6455,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5905,7 +6488,10 @@ VALUES
         25000.0,
         100000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5935,7 +6521,10 @@ VALUES
         20000.0,
         80000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5965,7 +6554,10 @@ VALUES
         30000.0,
         120000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -5995,7 +6587,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6025,7 +6620,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6055,7 +6653,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6085,7 +6686,10 @@ VALUES
         45000.0,
         180000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6115,7 +6719,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6145,7 +6752,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6175,7 +6785,10 @@ VALUES
         30000.0,
         120000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6205,7 +6818,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6235,7 +6851,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6265,7 +6884,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6295,7 +6917,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6325,7 +6950,10 @@ VALUES
         25000.0,
         100000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6355,7 +6983,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6385,7 +7016,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6415,7 +7049,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6445,7 +7082,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6475,7 +7115,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6505,7 +7148,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6535,7 +7181,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6565,7 +7214,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6595,7 +7247,10 @@ VALUES
         35000.0,
         140000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6625,7 +7280,10 @@ VALUES
         30000.0,
         120000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6655,7 +7313,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6685,7 +7346,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6715,7 +7379,10 @@ VALUES
         12500.0,
         50000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6745,7 +7412,10 @@ VALUES
         30000.0,
         120000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6775,7 +7445,10 @@ VALUES
         30000.0,
         120000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6805,7 +7478,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6835,7 +7511,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6865,7 +7544,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6895,7 +7577,10 @@ VALUES
         45000.0,
         180000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6925,7 +7610,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6955,7 +7643,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -6985,7 +7676,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7015,7 +7709,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7045,7 +7742,10 @@ VALUES
         25000.0,
         100000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7075,7 +7775,10 @@ VALUES
         30000.0,
         120000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7105,7 +7808,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7135,7 +7841,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7165,7 +7874,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7195,7 +7907,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7225,7 +7940,10 @@ VALUES
         30000.0,
         120000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7255,7 +7973,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7285,7 +8006,10 @@ VALUES
         25000.0,
         100000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7315,7 +8039,10 @@ VALUES
         30000.0,
         120000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7345,7 +8072,10 @@ VALUES
         25000.0,
         100000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7375,7 +8105,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7405,7 +8138,10 @@ VALUES
         0.0,
         0.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7435,7 +8171,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7465,7 +8204,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7495,7 +8237,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7525,7 +8270,10 @@ VALUES
         50000.0,
         200000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7555,7 +8303,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7585,7 +8336,10 @@ VALUES
         25000.0,
         100000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7615,7 +8369,10 @@ VALUES
         25000.0,
         100000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7645,7 +8402,10 @@ VALUES
         45000.0,
         180000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7675,7 +8435,10 @@ VALUES
         35000.0,
         140000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7705,7 +8468,10 @@ VALUES
         45000.0,
         180000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7735,7 +8501,10 @@ VALUES
         45000.0,
         180000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7765,7 +8534,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7795,7 +8567,10 @@ VALUES
         30000.0,
         120000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7825,7 +8600,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7855,7 +8633,10 @@ VALUES
         40000.0,
         160000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7885,7 +8666,10 @@ VALUES
         48000.0,
         192000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 INSERT INTO
@@ -7915,7 +8699,10 @@ VALUES
         45000.0,
         180000.0,
         0,
-        0
+        0,
+         NULL,
+        Null,
+        1
     );
 
 -- ----------------------------
