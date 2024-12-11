@@ -38,8 +38,7 @@ CREATE TABLE "public"."program_requirement" (
   "created_at" timestamp(0),
   "updated_at" timestamp(0),
   "id" int8 NOT NULL DEFAULT nextval('program_requirement_id_seq'::regclass)
-)
-;
+);
 
 -- ----------------------------
 -- Records of program
