@@ -36,8 +36,7 @@ CREATE TABLE "public"."program_duration_type" (
   "created_at" timestamp(0),
   "updated_at" timestamp(0),
   "id" int8 NOT NULL DEFAULT nextval('program_duration_type_id_seq'::regclass)
-)
-;
+);
 
 -- ----------------------------
 -- Records of program_duration_type

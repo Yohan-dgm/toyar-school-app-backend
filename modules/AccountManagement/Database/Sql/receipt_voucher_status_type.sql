@@ -37,9 +37,8 @@ CREATE TABLE "public"."receipt_voucher_status_type" (
   "updated_at" timestamp(0),
   "id" int8 NOT NULL DEFAULT nextval('receipt_voucher_status_type_id_seq'::regclass),
   "name" varchar(255) COLLATE "pg_catalog"."default",
-  "sequential_order" int4, 
-)
-;
+  "sequential_order" int4
+);
 
 -- ----------------------------
 -- Records of receipt_voucher_status_type

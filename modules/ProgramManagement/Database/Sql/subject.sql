@@ -41,8 +41,7 @@ CREATE TABLE "public"."subject" (
   "created_at" timestamp(0),
   "updated_at" timestamp(0),
   "id" int8 NOT NULL DEFAULT nextval('subject_id_seq'::regclass),
-)
-;
+);
 
 -- ----------------------------
 -- Records of subject

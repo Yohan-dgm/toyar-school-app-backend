@@ -38,8 +38,7 @@ CREATE TABLE "public"."program_school_location_pivot" (
   "created_at" timestamp(0),
   "updated_at" timestamp(0),
   "id" int8 NOT NULL DEFAULT nextval('program_school_location_pivot_id_seq'::regclass)
-)
-;
+);
 
 -- ----------------------------
 -- Records of program_school_location_pivot
