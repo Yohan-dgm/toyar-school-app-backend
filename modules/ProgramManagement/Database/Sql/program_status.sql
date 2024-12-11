@@ -35,9 +35,9 @@ CREATE TABLE "public"."program_status" (
   "sequential_order" int4,
   "created_by" int8,
   "updated_by" int8,
-  "created_at" timestamp(6),
-  "updated_at" timestamp(6),
-  "id" int8 NOT NULL DEFAULT nextval('program_status_id_seq'::regclass)
+  "created_at" timestamp(0),
+  "updated_at" timestamp(0),
+  "id" int8 NOT NULL DEFAULT nextval('program_status_id_seq'::regclass),
 )
 ;
 
