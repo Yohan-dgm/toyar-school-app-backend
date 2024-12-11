@@ -38,27 +38,26 @@ class BulkCreateStudentAttendanceAction
             $attendanceData = [
                 "student_id" => $studentListData_list->id,
                 "date" => $createStudentAttendanceDTO['date'],
-                "time" => "7:30:00",
+                "time" => $createStudentAttendanceDTO['in_time'],
                 "attendance_type_id" => 1,
-                "created_by" => $createStudentAttendanceDTO['created_by'],
             ];
             array_push($createStudentAttendanceDataList, $attendanceData);
 
             $attendanceData = [
                 "student_id" => $studentListData_list->id,
                 "date" => $createStudentAttendanceDTO['date'],
-                "time" => "13:30:00",
+                "time" => $createStudentAttendanceDTO['out_time'],
                 "attendance_type_id" => 2,
-                "created_by" => $createStudentAttendanceDTO['created_by'],
             ];
             array_push($createStudentAttendanceDataList, $attendanceData);
         }
 
         // Save In Database
-        $createStudentAttendanceDataList = array_map(function ($item) {
+        $createStudentAttendanceDataList = array_map(function ($item) use ($createStudentAttendanceDTO) {
             return array_merge(
                 $item,
                 [
+                    "created_by" => $createStudentAttendanceDTO['created_by'],
                     'created_at' => Carbon::now(),
                 ]
             );
