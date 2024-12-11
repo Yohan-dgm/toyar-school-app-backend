@@ -40,7 +40,7 @@ class EditStudentAttendanceAction
                 "student_id" =>  $editStudentAttendanceDTO['student_id'],
                 "date" => $editStudentAttendanceDTO['date'],
                 "updated_by" => $editStudentAttendanceDTO['updated_by'],
-                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
             ];
             $attendance = StudentAttendance::insert($attendanceData);
             //
@@ -70,7 +70,7 @@ class EditStudentAttendanceAction
                         "student_id" =>  $editStudentAttendanceDTO['student_id'],
                         "date" => $editStudentAttendanceDTO['date'],
                         "updated_by" => $editStudentAttendanceDTO['updated_by'],
-                        'created_at' => Carbon::now(),
+                        'updated_at' => Carbon::now(),
                     ]
                 );
             }, $createStudentAttendanceDataList);
