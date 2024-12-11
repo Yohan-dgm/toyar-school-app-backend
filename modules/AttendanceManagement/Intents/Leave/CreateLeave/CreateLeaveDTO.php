@@ -18,10 +18,10 @@ class CreateLeaveDTO extends Data
         public int $employee_id,
         public int $leave_type_id,
         public string $leave_duration_type,
-        public ?DateTime $leave_date,
-        public ?DateTime $leave_period_start_date,
-        public ?DateTime $leave_period_end_date,
-        public DateTime $next_reporting_date,
+        public ?string $leave_date, // yyyy-MM-dd
+        public ?string $leave_period_start_date, // yyyy-MM-dd
+        public ?string $leave_period_end_date, // yyyy-MM-dd
+        public string $next_reporting_date, // yyyy-MM-dd
         
         // system
         public int $created_by, 
@@ -29,7 +29,7 @@ class CreateLeaveDTO extends Data
         public int $leave_status_type_id,
     ) {}
 
-    public static function rules(Request $request, ValidationContext $context): array
+    public static function rules(ValidationContext $context): array
     {
         return [
             // user
