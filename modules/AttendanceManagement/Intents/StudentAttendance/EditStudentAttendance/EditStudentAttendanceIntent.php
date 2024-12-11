@@ -25,7 +25,7 @@ class EditStudentAttendanceIntent
 
             // 4. Business Rules Validation
 
-            if ($editStudentAttendanceUserDTO['attendance_type_id'] == 3 or $editStudentAttendanceUserDTO['attendance_type_id'] == 4) {
+            if ($editStudentAttendanceUserDTO['attendance_type_id'] == 4) {
                 $studentAtttendanOldData = DB::table("student_attendance")->where('date', $editStudentAttendanceUserDTO['date'])
                     ->where('student_id', $editStudentAttendanceUserDTO['student_id'])
                     ->whereNot('id', $editStudentAttendanceUserDTO['student_attendance_id'])->select('id')->get()->toArray();
