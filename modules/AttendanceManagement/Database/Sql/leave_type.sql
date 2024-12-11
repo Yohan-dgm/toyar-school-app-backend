@@ -12,7 +12,7 @@
  Target Server Version : 160000 (160000)
  File Encoding         : 65001
  
- Date: 09/12/2024 11:41:05
+ Date: 09/12/2024 11:42:05
  */
 -- ----------------------------
 -- Sequence structure for leave_type_id_seq
@@ -29,6 +29,7 @@ DROP TABLE IF EXISTS "public"."leave_type";
 CREATE TABLE "public"."leave_type" (
     "id" int8 NOT NULL DEFAULT nextval('leave_type_id_seq' :: regclass),
     "name" varchar(255) COLLATE "pg_catalog"."default",
+    "sequential_order" int4,
     "created_by" int8,
     "updated_by" int8,
     "created_at" timestamp(0),
@@ -41,17 +42,17 @@ CREATE TABLE "public"."leave_type" (
 INSERT INTO
     "public"."leave_type"
 VALUES
-    (1, 'Annual Leave', NULL, NULL);
+    (1, 'Annual Leave', 1, NULL, NULL);
 
 INSERT INTO
     "public"."leave_type"
 VALUES
-    (2, 'Medical Leave', NULL, NULL);
+    (2, 'Medical Leave', 2, NULL, NULL);
 
 INSERT INTO
     "public"."leave_type"
 VALUES
-    (3, 'Maternity Leave', NULL, NULL);
+    (3, 'Maternity Leave', 3, NULL, NULL);
 
 -- ----------------------------
 -- Primary Key structure for table leave_type
