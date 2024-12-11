@@ -6,6 +6,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Lorisleiva\Actions\Concerns\AsAction;
+use Modules\AttendanceManagement\Models\StudentAttendance;
 
 class EditStudentAttendanceIntent
 {
@@ -24,6 +25,17 @@ class EditStudentAttendanceIntent
 
             // 4. Business Rules Validation
 
+            if ($editStudentAttendanceUserDTO['attendance_type_id'] == 4) {
+                $studentAtttendanOldData = DB::table("student_attendance")->where('date', $editStudentAttendanceUserDTO['date'])
+                    ->where('student_id', $editStudentAttendanceUserDTO['student_id'])
+                    ->whereNot('id', $editStudentAttendanceUserDTO['student_attendance_id'])->select('id')->get()->toArray();
+
+                if (count($studentAtttendanOldData) > 0) {
+                    foreach ($studentAtttendanOldData as $studentAtttendanOldData_list) {
+                        StudentAttendance::where('id', '=', $studentAtttendanOldData_list->id)->delete();
+                    }
+                }
+            }
             // Action 1
             $actionData = [];
             $actionData['updated_by'] = $request->user()->id;
