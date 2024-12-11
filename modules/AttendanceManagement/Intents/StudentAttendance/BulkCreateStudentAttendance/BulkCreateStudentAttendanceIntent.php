@@ -27,10 +27,6 @@ class BulkCreateStudentAttendanceIntent
             // 3. Before Intent
 
             // 4. Business Rules Validation
-            // $studentAttendanceListData = DB::table("student_attendance")
-            //     ->where('date', '=', $createStudentAttendanceUserDTO['date'])
-            //     ->where('attendance_type_id', '=', $createStudentAttendanceUserDTO['attendance_type_id'])->get();
-
             $studentAtttendanceCount = StudentAttendance::whereHas('student', function (Builder $student_query) use ($createStudentAttendanceUserDTO) {
                 return $student_query->where('grade_level_class_id', $createStudentAttendanceUserDTO['grade_level_class_id']);
             })->where('date', $createStudentAttendanceUserDTO['date'])->count();
@@ -38,21 +34,12 @@ class BulkCreateStudentAttendanceIntent
             if ($studentAtttendanceCount > 0) { // previous Bulk Create existing
                 // return
                 DB::rollback();
-                return response()->json(
-                    [
-                        "status" => "failed",
-                        "message" => "Attendance already exist",
-                        "data" => null,
-                        "metadata" => null,
-                    ],
-                    500
-                );
+                return false;
             }
 
             // Action 1
             $actionData = [];
             $actionData['created_by'] = $request->user()->id;
-
             $attendance = BulkCreateStudentAttendanceAction::run($createStudentAttendanceUserDTO, $actionData);
 
             DB::commit();
@@ -84,7 +71,7 @@ class BulkCreateStudentAttendanceIntent
                 return response()->json(
                     [
                         "status" => "failed",
-                        "message" => "",
+                        "message" => "Attendance already exist",
                         "data" => null,
                         "metadata" => null,
                     ],

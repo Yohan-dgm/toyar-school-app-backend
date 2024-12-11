@@ -14,19 +14,22 @@ class BulkCreateStudentAttendanceUserDTO extends Data
         // user
         public int $grade_level_class_id,
         public string $date,
-        // public string $time,
+        public string $in_time,
+        public string $out_time,
         // public int $attendance_type_id,
         // system
     ) {}
+
+
 
     public static function rules(Request $request, ValidationContext $context): array
     {
         return [
             // user
             "grade_level_class_id" => [new Required(), new IntegerType()],
-            // "attendance_type_id" =>  [new Required(), new IntegerType()],
             "date" =>  [new Required()],
-            // "time" =>  [new Required()],
+            "in_time" =>  [new Required()],
+            "out_time" =>  [new Required()],
             // system
         ];
     }
