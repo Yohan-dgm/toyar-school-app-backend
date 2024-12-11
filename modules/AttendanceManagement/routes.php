@@ -3,6 +3,7 @@
 namespace Modules\AttendanceManagement;
 
 use Illuminate\Support\Facades\Route;
+use Modules\AttendanceManagement\Intents\EducatorAttendance\BulkCreateEducatorAttendance\BulkCreateEducatorAttendanceIntent;
 use Modules\AttendanceManagement\Intents\EducatorAttendance\CreateEducatorAttendance\CreateEducatorAttendanceIntent;
 use Modules\AttendanceManagement\Intents\EducatorAttendance\EditEducatorAttendance\EditEducatorAttendanceIntent;
 use Modules\AttendanceManagement\Intents\EducatorAttendance\GetEducatorAttendanceListData\GetEducatorAttendanceListDataIntent;
@@ -16,6 +17,7 @@ Route::prefix('educator-attendance')->group(function () {
     Route::middleware('auth:web')->post('/create-educator-attendance', CreateEducatorAttendanceIntent::class)->name('educator-attendance.create-educator-attendance');
     Route::middleware('auth:web')->post('/edit-educator-attendance', EditEducatorAttendanceIntent::class)->name('educator-attendance.edit-educator-attendance');
     Route::middleware('auth:web')->post('/get-educator-attendance-list-data', GetEducatorAttendanceListDataIntent::class)->name('educator-attendance.get-educator-attendance-list-data');
+    Route::middleware('auth:web')->post('/bulk-create-educator-attendance', BulkCreateEducatorAttendanceIntent::class)->name('educator-attendance.bulk-create-educator-attendance');
 });
 
 // StudentAttendance
