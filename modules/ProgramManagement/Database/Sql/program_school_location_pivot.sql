@@ -31,8 +31,8 @@ CACHE 1;
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."program_school_location_pivot";
 CREATE TABLE "public"."program_school_location_pivot" (
-  "program_id" int8,
-  "school_location_id" int8,
+  "program_id" int8  NOT NULL,
+  "school_location_id" int8  NOT NULL,
   "created_by" int8,
   "updated_by" int8,
   "created_at" timestamp(0),

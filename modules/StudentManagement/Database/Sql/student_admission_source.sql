@@ -31,7 +31,7 @@ CACHE 1;
 DROP TABLE IF EXISTS "public"."student_admission_source";
 CREATE TABLE "public"."student_admission_source" (
   "id" int8 NOT NULL DEFAULT nextval('student_admission_source_id_seq'::regclass),
-  "name" varchar(255) COLLATE "pg_catalog"."default" ,
+  "name" varchar(255) COLLATE "pg_catalog"."default",
   "created_by" int8,
   "updated_by" int8,
   "created_at" timestamp(0),

@@ -35,7 +35,7 @@ CREATE TABLE "public"."curriculum_type" (
   "updated_by" int8,
   "created_at" timestamp(0),
   "updated_at" timestamp(0),
-  "id" int8 NOT NULL DEFAULT nextval('curriculum_type_id_seq'::regclass)
+  "id" int8 NOT NULL DEFAULT nextval('curriculum_type_id_seq'::regclass),
 )
 ;
 

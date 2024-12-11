@@ -31,11 +31,11 @@ CACHE 1;
 DROP TABLE IF EXISTS "public"."designation";
 CREATE TABLE "public"."designation" (
   "id" int8 NOT NULL DEFAULT nextval('designation_id_seq'::regclass),
-  "name" varchar(255) COLLATE "pg_catalog"."default" ,
+  "name" varchar(255) COLLATE "pg_catalog"."default",
   "created_by" int8,
   "updated_by" int8,
   "created_at" timestamp(0),
-  "updated_at" timestamp(0)
+  "updated_at" timestamp(0),
 )
 ;
 
