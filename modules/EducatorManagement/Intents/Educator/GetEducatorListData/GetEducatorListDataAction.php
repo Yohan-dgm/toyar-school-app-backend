@@ -36,8 +36,6 @@ class GetEducatorListDataAction
             }
         })
             ->with(['employee' => function (Builder $employee_query) {
-                // //
-                // $employee_query->select("id", "full_name", "nic_number", "epf_number");
                 //
                 $employee_query->with(['employee_type' => function (Builder $employee_type_query) {
                     //
@@ -53,7 +51,7 @@ class GetEducatorListDataAction
                 "employee_id",
                 "educator_grade_id",
             )
-            ->orderBy("id", "desc")
+            ->orderBy("id", "asc")
             ->paginate(
                 $perPage = $getEducatorListDataUserDTO["page_size"],
                 $columns = ['*'],
