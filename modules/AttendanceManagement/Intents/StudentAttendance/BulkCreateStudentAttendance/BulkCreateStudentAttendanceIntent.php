@@ -27,25 +27,26 @@ class BulkCreateStudentAttendanceIntent
             // 3. Before Intent
 
             // 4. Business Rules Validation
-            $studentAttendanceListData = DB::table("student_attendance")->get();
+            // $studentAttendanceListData = DB::table("student_attendance")
+            //     ->where('date', '=', $createStudentAttendanceUserDTO['date'])
+            //     ->where('attendance_type_id', '=', $createStudentAttendanceUserDTO['attendance_type_id'])->get();
 
-            if (count($studentAttendanceListData) > 0) {
-                foreach ($studentAttendanceListData as $studentAttendanceListData_list) {
-                    if ($studentAttendanceListData_list->date == $createStudentAttendanceUserDTO['date']) {
-                        if ($studentAttendanceListData_list->attendance_type_id == $createStudentAttendanceUserDTO['attendance_type_id']) {
-                            DB::rollback();
-                            return response()->json(
-                                [
-                                    "status" => "failed",
-                                    "message" => "Attendance already exist",
-                                    "data" => null,
-                                    "metadata" => null,
-                                ],
-                                500
-                            );
-                        }
-                    }
-                }
+            $studentAtttendanceCount = StudentAttendance::whereHas('student', function (Builder $student_query) use ($createStudentAttendanceUserDTO) {
+                return $student_query->where('grade_level_class_id', $createStudentAttendanceUserDTO['grade_level_class_id']);
+            })->where('date', $createStudentAttendanceUserDTO['date'])->count();
+
+            if ($studentAtttendanceCount > 0) { // previous Bulk Create existing
+                // return
+                DB::rollback();
+                return response()->json(
+                    [
+                        "status" => "failed",
+                        "message" => "Attendance already exist",
+                        "data" => null,
+                        "metadata" => null,
+                    ],
+                    500
+                );
             }
 
             // Action 1

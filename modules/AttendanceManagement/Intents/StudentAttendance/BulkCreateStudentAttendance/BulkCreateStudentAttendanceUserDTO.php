@@ -14,8 +14,8 @@ class BulkCreateStudentAttendanceUserDTO extends Data
         // user
         public int $grade_level_class_id,
         public string $date,
-        public string $time,
-        public int $attendance_type_id,
+        // public string $time,
+        // public int $attendance_type_id,
         // system
     ) {}
 
@@ -24,9 +24,9 @@ class BulkCreateStudentAttendanceUserDTO extends Data
         return [
             // user
             "grade_level_class_id" => [new Required(), new IntegerType()],
-            "attendance_type_id" =>  [new Required(), new IntegerType()],
+            // "attendance_type_id" =>  [new Required(), new IntegerType()],
             "date" =>  [new Required()],
-            "time" =>  [new Required()],
+            // "time" =>  [new Required()],
             // system
         ];
     }

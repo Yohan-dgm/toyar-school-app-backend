@@ -38,8 +38,17 @@ class BulkCreateStudentAttendanceAction
             $attendanceData = [
                 "student_id" => $studentListData_list->id,
                 "date" => $createStudentAttendanceDTO['date'],
-                "time" => $createStudentAttendanceDTO['time'],
-                "attendance_type_id" => $createStudentAttendanceDTO['attendance_type_id'],
+                "time" => "7:30:00",
+                "attendance_type_id" => 1,
+                "created_by" => $createStudentAttendanceDTO['created_by'],
+            ];
+            array_push($createStudentAttendanceDataList, $attendanceData);
+
+            $attendanceData = [
+                "student_id" => $studentListData_list->id,
+                "date" => $createStudentAttendanceDTO['date'],
+                "time" => "13:30:00",
+                "attendance_type_id" => 2,
                 "created_by" => $createStudentAttendanceDTO['created_by'],
             ];
             array_push($createStudentAttendanceDataList, $attendanceData);
