@@ -35,7 +35,7 @@ CREATE TABLE "public"."attendance_type" (
   "created_at" timestamp(0),
   "updated_at" timestamp(0),
   "id" int8 NOT NULL DEFAULT nextval('attendance_type_id_seq'::regclass),
-  "name" varchar(255) COLLATE "pg_catalog"."default"
+  "name" varchar(255) COLLATE "pg_catalog"."default",
 )
 ;
 

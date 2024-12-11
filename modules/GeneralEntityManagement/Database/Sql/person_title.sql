@@ -32,12 +32,12 @@ CACHE 1;
 DROP TABLE IF EXISTS "public"."person_title";
 CREATE TABLE "public"."person_title" (
   "id" int8 NOT NULL DEFAULT nextval('person_title_id_seq'::regclass),
-  "name" varchar(255) COLLATE "pg_catalog"."default" , 
-  "sequential_order" int8 ,
+  "name" varchar(255) COLLATE "pg_catalog"."default", 
+  "sequential_order" int8,
   "created_by" int8, 
   "updated_by" int8, 
   "created_at" timestamp(0),
-  "updated_at" timestamp(0)
+  "updated_at" timestamp(0),
 )
 ;
 

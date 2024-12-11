@@ -32,16 +32,16 @@ CACHE 1;
 DROP TABLE IF EXISTS "public"."user";
 CREATE TABLE "public"."user" (
   "id" int8  NOT NULL  DEFAULT nextval('user_id_seq'::regclass),
-  "full_name" varchar(255) COLLATE "pg_catalog"."default" ,
-  "username" varchar(255) COLLATE "pg_catalog"."default" ,
-  "email" varchar(255) COLLATE "pg_catalog"."default" ,
+  "full_name" varchar(255) COLLATE "pg_catalog"."default",
+  "username" varchar(255) COLLATE "pg_catalog"."default",
+  "email" varchar(255) COLLATE "pg_catalog"."default",
   "email_verified_at" timestamp(0),
-  "password" varchar(255) COLLATE "pg_catalog"."default" ,
+  "password" varchar(255) COLLATE "pg_catalog"."default",
   "remember_token" varchar(100) COLLATE "pg_catalog"."default",
   "created_at" timestamp(6),
   "updated_at" timestamp(6),
   "created_by" int8,
-  "update_by" int8
+  "update_by" int8,
 )
 ;
 

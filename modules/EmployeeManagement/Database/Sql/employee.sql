@@ -30,17 +30,17 @@ CACHE 1;
 DROP TABLE IF EXISTS "public"."employee";
 CREATE TABLE "public"."employee" (
   "id" int8 NOT NULL DEFAULT nextval('employee_id_seq'::regclass),
-  "full_name" varchar(255) COLLATE "pg_catalog"."default" ,
-  "employee_type_id" int8 ,
-  "nic_number" varchar(255) COLLATE "pg_catalog"."default" ,
-  "epf_number" int8 ,
-  "remaining_annual_leaves" numeric(3,1) ,
-  "remaining_medical_leaves" numeric(3,1) ,
-  "remaining_maternity_leaves" numeric(3,1) ,
-  "created_by" int8 ,
-  "updated_by" int8 ,
+  "full_name" varchar(255) COLLATE "pg_catalog"."default",
+  "employee_type_id" int8,
+  "nic_number" varchar(255) COLLATE "pg_catalog"."default",
+  "epf_number" int8,
+  "remaining_annual_leaves" numeric(3,1),
+  "remaining_medical_leaves" numeric(3,1),
+  "remaining_maternity_leaves" numeric(3,1),
+  "created_by" int8,
+  "updated_by" int8,
   "created_at" timestamp(0),
-  "updated_at" timestamp(0)
+  "updated_at" timestamp(0),
 )
 ;
 
