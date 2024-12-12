@@ -47,23 +47,6 @@ INSERT INTO
     "public"."subject"
 VALUES
     (
-        'Sinhala',
-        'G1-SI',
-        'f',
-        1,
-        1,
-        1,
-        NULL,
-        NULL,
-        NULL,
-        NULL,
-        1
-    );
-
-INSERT INTO
-    "public"."subject"
-VALUES
-    (
         'Primary English',
         'G1-PE',
         'f',
@@ -2155,40 +2138,6 @@ INSERT INTO
     "public"."subject"
 VALUES
     (
-        'Wellbeing',
-        'G6-WE',
-        'f',
-        3,
-        1,
-        1,
-        NULL,
-        NULL,
-        NULL,
-        NULL,
-        125
-    );
-
-INSERT INTO
-    "public"."subject"
-VALUES
-    (
-        'English',
-        'G8-EN',
-        'f',
-        9,
-        1,
-        1,
-        NULL,
-        NULL,
-        NULL,
-        NULL,
-        126
-    );
-
-INSERT INTO
-    "public"."subject"
-VALUES
-    (
         'English',
         'G6-EN',
         'f',
@@ -2200,23 +2149,6 @@ VALUES
         NULL,
         NULL,
         127
-    );
-
-INSERT INTO
-    "public"."subject"
-VALUES
-    (
-        'English',
-        'G7-EN',
-        'f',
-        9,
-        1,
-        1,
-        NULL,
-        NULL,
-        NULL,
-        NULL,
-        128
     );
 
 INSERT INTO
@@ -2240,10 +2172,27 @@ INSERT INTO
     "public"."subject"
 VALUES
     (
+        'English and Literature',
+        'G10-EL',
+        'f',
+        10,
+        1,
+        1,
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        134
+    );
+
+INSERT INTO
+    "public"."subject"
+VALUES
+    (
         'Dancing',
         'G11-DA',
         'f',
-        8,
+        11,
         1,
         1,
         NULL,
@@ -2257,10 +2206,27 @@ INSERT INTO
     "public"."subject"
 VALUES
     (
+        'Music',
+        'G11-MU',
+        'f',
+        11,
+        1,
+        1,
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        131
+    );
+
+INSERT INTO
+    "public"."subject"
+VALUES
+    (
         'Dancing',
         'G12-DA',
         'f',
-        8,
+        12,
         1,
         1,
         NULL,
@@ -2275,26 +2241,9 @@ INSERT INTO
 VALUES
     (
         'Music',
-        'G11-MU',
-        'f',
-        8,
-        1,
-        1,
-        NULL,
-        NULL,
-        NULL,
-        NULL,
-        131
-    );
-
-INSERT INTO
-    "public"."subject"
-VALUES
-    (
-        'Music',
         'G12-MU',
         'f',
-        8,
+        12,
         1,
         1,
         NULL,
@@ -2308,8 +2257,8 @@ INSERT INTO
     "public"."subject"
 VALUES
     (
-        'English and Literature',
-        'G9-EL',
+        'Wellbeing',
+        'G6-WE',
         'f',
         6,
         1,
@@ -2318,7 +2267,41 @@ VALUES
         NULL,
         NULL,
         NULL,
-        133
+        125
+    );
+
+INSERT INTO
+    "public"."subject"
+VALUES
+    (
+        'English',
+        'G7-EN',
+        'f',
+        7,
+        1,
+        1,
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        128
+    );
+
+INSERT INTO
+    "public"."subject"
+VALUES
+    (
+        'English',
+        'G8-EN',
+        'f',
+        8,
+        1,
+        1,
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        126
     );
 
 INSERT INTO
@@ -2326,16 +2309,16 @@ INSERT INTO
 VALUES
     (
         'English and Literature',
-        'G10-EL',
+        'G9-EL',
         'f',
-        6,
+        9,
         1,
         1,
         NULL,
         NULL,
         NULL,
         NULL,
-        134
+        133
     );
 
 -- ----------------------------
