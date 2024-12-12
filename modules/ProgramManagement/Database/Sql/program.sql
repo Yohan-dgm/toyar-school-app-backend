@@ -39,7 +39,7 @@ CREATE TABLE "public"."program" (
     "updated_by" int8,
     "created_at" timestamp(0),
     "updated_at" timestamp(0),
-    "id" int8 NOT NULL DEFAULT nextval('program_id_seq' :: regclass),
+    "id" int8 NOT NULL DEFAULT nextval('program_id_seq' :: regclass)
 );
 
 -- ----------------------------
