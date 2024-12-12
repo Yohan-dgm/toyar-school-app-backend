@@ -39,7 +39,8 @@ CREATE TABLE "public"."program" (
     "updated_by" int8,
     "created_at" timestamp(0),
     "updated_at" timestamp(0),
-    "id" int8 NOT NULL DEFAULT nextval('program_id_seq' :: regclass)
+    "id" int8 NOT NULL DEFAULT nextval('program_id_seq' :: regclass),
+    "sequential_order" int4
 );
 
 -- ----------------------------
@@ -61,7 +62,8 @@ VALUES
         NULL,
         '2024-11-12 16:50:27',
         NULL,
-        10
+        10,
+        15
     );
 
 INSERT INTO
@@ -80,7 +82,8 @@ VALUES
         NULL,
         '2024-11-12 16:50:27',
         NULL,
-        11
+        11,
+        14
     );
 
 INSERT INTO
@@ -99,7 +102,8 @@ VALUES
         NULL,
         '2024-11-12 16:50:27',
         NULL,
-        12
+        12,
+        13
     );
 
 INSERT INTO
@@ -118,7 +122,8 @@ VALUES
         NULL,
         '2024-11-12 16:50:27',
         NULL,
-        2
+        2,
+        12
     );
 
 INSERT INTO
@@ -137,7 +142,8 @@ VALUES
         NULL,
         '2024-11-12 16:50:27',
         NULL,
-        3
+        3,
+        11
     );
 
 INSERT INTO
@@ -156,7 +162,8 @@ VALUES
         NULL,
         '2024-11-12 16:50:27',
         NULL,
-        4
+        4,
+        10
     );
 
 INSERT INTO
@@ -175,7 +182,8 @@ VALUES
         NULL,
         '2024-11-12 16:50:27',
         NULL,
-        5
+        5,
+        9
     );
 
 INSERT INTO
@@ -194,7 +202,8 @@ VALUES
         NULL,
         '2024-11-12 16:50:27',
         NULL,
-        6
+        6,
+        8
     );
 
 INSERT INTO
@@ -213,6 +222,7 @@ VALUES
         NULL,
         '2024-11-12 16:50:27',
         NULL,
+        7,
         7
     );
 
@@ -232,7 +242,8 @@ VALUES
         NULL,
         '2024-11-12 16:50:27',
         NULL,
-        8
+        8,
+        6
     );
 
 INSERT INTO
@@ -251,7 +262,8 @@ VALUES
         NULL,
         '2024-11-12 16:50:27',
         NULL,
-        9
+        9,
+        5
     );
 
 INSERT INTO
@@ -270,7 +282,8 @@ VALUES
         NULL,
         '2024-11-12 16:50:27',
         NULL,
-        1
+        1,
+        4
     );
 
 INSERT INTO
@@ -289,7 +302,8 @@ VALUES
         NULL,
         '2024-11-27 02:55:24',
         NULL,
-        13
+        13,
+        1
     );
 
 INSERT INTO
@@ -308,7 +322,8 @@ VALUES
         NULL,
         '2024-11-27 02:56:08',
         NULL,
-        14
+        14,
+        2
     );
 
 INSERT INTO
@@ -327,7 +342,8 @@ VALUES
         NULL,
         '2024-11-27 02:56:48',
         NULL,
-        15
+        15,
+        3
     );
 
 -- ----------------------------

@@ -73,12 +73,13 @@ class GetProgramListDataAction
             }])
             ->select(
                 "id",
+                "sequential_order",
                 "name",
                 "program_code",
                 "grade_level_id",
                 "curriculum_type_id",
             )
-            ->orderBy("id", "desc")
+            ->orderBy("sequential_order", "asc")
             ->paginate(
                 $perPage = $getProgramListDataUserDTO["page_size"],
                 $columns = ['*'],
