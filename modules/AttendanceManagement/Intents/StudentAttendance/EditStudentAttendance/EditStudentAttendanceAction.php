@@ -50,7 +50,6 @@ class EditStudentAttendanceAction
             // create 1 record for Out - out_time
 
             $createStudentAttendanceDataList = [];
-
             $attendanceData = [
                 "time" => $editStudentAttendanceDTO['in_time'],
                 "attendance_type_id" => 1,

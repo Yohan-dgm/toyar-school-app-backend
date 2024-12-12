@@ -1,14 +1,13 @@
 <?php
 
-namespace Modules\AttendanceManagement\Intents\EducatorAttendance\EditEducatorAttendance;
+namespace Modules\ProgramManagement\Intents\ProgramManagement\AttachSubjectListToEducator;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Lorisleiva\Actions\Concerns\AsAction;
-use Modules\AttendanceManagement\Models\EducatorAttendance;
 
-class EditEducatorAttendanceIntent
+class AttachSubjectListToEducatorIntent
 {
     use AsAction;
 
@@ -19,7 +18,7 @@ class EditEducatorAttendanceIntent
             // 1. Authorization
 
             // 2. User Data Validation
-            $editEducatorAttendanceUserDTO = EditEducatorAttendanceUserDTO::validate($request->all());
+            $AttachSubjectListToEducatorUserDTO = AttachSubjectListToEducatorUserDTO::validate($request->all());
 
             // 3. Before Intent
 
@@ -27,15 +26,14 @@ class EditEducatorAttendanceIntent
 
             // Action 1
             $actionData = [];
-            $actionData['updated_by'] = $request->user()->id;
-
-            $attendance = EditEducatorAttendanceAction::run($editEducatorAttendanceUserDTO, $actionData);
+            $actionData['created_by'] = $request->user()->id;
+            $subjectListToEducator = AttachSubjectListToEducatorAction::run($AttachSubjectListToEducatorUserDTO, $actionData);
 
             DB::commit();
             // After Intent
 
             // Return Response
-            return $attendance;
+            return $subjectListToEducator;
         } catch (\Throwable $th) {
             DB::rollback();
             throw $th;
