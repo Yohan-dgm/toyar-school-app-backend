@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\ProgramManagement\Intents\SubjectListToEducator\AttachSubjectListToEducator;
+namespace Modules\ProgramManagement\Intents\ProgramManagement\AttachSubjectListToEducator;
 
 use Spatie\LaravelData\Attributes\Validation\ArrayType;
 use Spatie\LaravelData\Attributes\Validation\IntegerType;

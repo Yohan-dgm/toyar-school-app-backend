@@ -1,7 +1,8 @@
 <?php
 
-namespace Modules\ProgramManagement\Intents\SubjectListToEducator\AttachSubjectListToEducator;
+namespace Modules\ProgramManagement\Intents\ProgramManagement\AttachSubjectListToEducator;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Lorisleiva\Actions\Concerns\AsAction;
 use Modules\EducatorManagement\Models\Educator;
@@ -31,8 +32,10 @@ class AttachSubjectListToEducatorAction
             $educator_query->where("id", "=", "" . $attachSubjectListToEducatorDTO['educator_id'] . "");
         })->first();
 
-        $attachData = [];
-        $attachData['created_by'] = $actionData['created_by'];
+        $attachData = [
+            "created_by" => $actionData['created_by'],
+            'created_at' => Carbon::now(),
+        ];
         $educator->subject_list($attachSubjectListToEducatorDTO['educator_id'])->attach($attachSubjectListToEducatorDTO['subject_list'], $attachData);
         return true;
     }
