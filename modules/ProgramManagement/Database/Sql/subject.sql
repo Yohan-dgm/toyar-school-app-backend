@@ -2151,6 +2151,193 @@ VALUES
         124
     );
 
+INSERT INTO
+    "public"."subject"
+VALUES
+    (
+        'Wellbeing',
+        'G6-WE',
+        'f',
+        3,
+        1,
+        1,
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        125
+    );
+
+INSERT INTO
+    "public"."subject"
+VALUES
+    (
+        'English',
+        'G8-EN',
+        'f',
+        9,
+        1,
+        1,
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        126
+    );
+
+INSERT INTO
+    "public"."subject"
+VALUES
+    (
+        'English',
+        'G6-EN',
+        'f',
+        9,
+        1,
+        1,
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        127
+    );
+
+INSERT INTO
+    "public"."subject"
+VALUES
+    (
+        'English',
+        'G7-EN',
+        'f',
+        9,
+        1,
+        1,
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        128
+    );
+
+INSERT INTO
+    "public"."subject"
+VALUES
+    (
+        'Sinhala',
+        'G1-SI',
+        'f',
+        1,
+        1,
+        1,
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        1
+    );
+
+INSERT INTO
+    "public"."subject"
+VALUES
+    (
+        'Dancing',
+        'G11-DA',
+        'f',
+        8,
+        1,
+        1,
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        129
+    );
+
+INSERT INTO
+    "public"."subject"
+VALUES
+    (
+        'Dancing',
+        'G12-DA',
+        'f',
+        8,
+        1,
+        1,
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        130
+    );
+
+INSERT INTO
+    "public"."subject"
+VALUES
+    (
+        'Music',
+        'G11-MU',
+        'f',
+        8,
+        1,
+        1,
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        131
+    );
+
+INSERT INTO
+    "public"."subject"
+VALUES
+    (
+        'Music',
+        'G12-MU',
+        'f',
+        8,
+        1,
+        1,
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        132
+    );
+
+INSERT INTO
+    "public"."subject"
+VALUES
+    (
+        'English and Literature',
+        'G9-EL',
+        'f',
+        6,
+        1,
+        1,
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        133
+    );
+
+INSERT INTO
+    "public"."subject"
+VALUES
+    (
+        'English and Literature',
+        'G10-EL',
+        'f',
+        6,
+        1,
+        1,
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        134
+    );
+
 -- ----------------------------
 -- Primary Key structure for table subject
 -- ----------------------------
@@ -2165,4 +2352,4 @@ ADD
 ALTER SEQUENCE "public"."subject_id_seq" OWNED BY "public"."subject"."id";
 
 SELECT
-    setval('"public"."subject_id_seq"', 124, true);
+    setval('"public"."subject_id_seq"', 134, true);

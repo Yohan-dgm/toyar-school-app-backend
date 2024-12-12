@@ -5,7 +5,8 @@ namespace Modules\ProgramManagement\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Modules\EducatorManagement\Models\Educator;
 
 class Subject extends Model
 {
@@ -40,6 +41,10 @@ class Subject extends Model
         return $this->belongsTo(Program::class, 'program_id', 'id');
     }
 
+    public function educator_list(): BelongsToMany
+    {
+        return $this->belongsToMany(Educator::class, 'educator_subject_pivot', 'subject_id', 'educator_id');
+    }
     // protected static function newFactory(): SubjectFactory
     // {
     //     return new SubjectFactory();
