@@ -15,32 +15,32 @@
  Date: 09/12/2024 09:41:15
  */
 -- ----------------------------
--- Sequence structure for program_status_id_seq
+-- Sequence structure for program_status_type_id_seq
 -- ----------------------------
-DROP SEQUENCE IF EXISTS "public"."program_status_id_seq";
+DROP SEQUENCE IF EXISTS "public"."program_status_type_id_seq";
 
-CREATE SEQUENCE "public"."program_status_id_seq" INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
+CREATE SEQUENCE "public"."program_status_type_id_seq" INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
 
 -- ----------------------------
--- Table structure for program_status
+-- Table structure for program_status_type
 -- ----------------------------
-DROP TABLE IF EXISTS "public"."program_status";
+DROP TABLE IF EXISTS "public"."program_status_type";
 
-CREATE TABLE "public"."program_status" (
+CREATE TABLE "public"."program_status_type" (
     "name" varchar(255) COLLATE "pg_catalog"."default",
     "sequential_order" int4,
     "created_by" int8,
     "updated_by" int8,
     "created_at" timestamp(0),
     "updated_at" timestamp(0),
-    "id" int8 NOT NULL DEFAULT nextval('program_status_id_seq' :: regclass),
+    "id" int8 NOT NULL DEFAULT nextval('program_status_type_id_seq' :: regclass)
 );
 
 -- ----------------------------
--- Records of program_status
+-- Records of program_status_type
 -- ----------------------------
 INSERT INTO
-    "public"."program_status"
+    "public"."program_status_type"
 VALUES
     (
         'Active',
@@ -53,7 +53,7 @@ VALUES
     );
 
 INSERT INTO
-    "public"."program_status"
+    "public"."program_status_type"
 VALUES
     (
         'Inactive',
@@ -66,17 +66,17 @@ VALUES
     );
 
 -- ----------------------------
--- Primary Key structure for table program_status
+-- Primary Key structure for table program_status_type
 -- ----------------------------
 ALTER TABLE
-    "public"."program_status"
+    "public"."program_status_type"
 ADD
-    CONSTRAINT "program_status_pkey" PRIMARY KEY ("id");
+    CONSTRAINT "program_status_type_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Alter sequences owned by
 -- ----------------------------
-ALTER SEQUENCE "public"."program_status_id_seq" OWNED BY "public"."program_status"."id";
+ALTER SEQUENCE "public"."program_status_type_id_seq" OWNED BY "public"."program_status_type"."id";
 
 SELECT
-    setval('"public"."program_status_id_seq"', 2, true);
+    setval('"public"."program_status_type_id_seq"', 2, true);
