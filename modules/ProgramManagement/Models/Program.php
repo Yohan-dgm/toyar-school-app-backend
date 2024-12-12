@@ -26,6 +26,7 @@ class Program extends Model
         'program_status_type_id',
         'created_by',
         'updated_by',
+        'sequential_order'
     ];
 
     public $timestamps = true;
