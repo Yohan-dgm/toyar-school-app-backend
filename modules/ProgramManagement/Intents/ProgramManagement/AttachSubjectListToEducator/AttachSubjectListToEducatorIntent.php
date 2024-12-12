@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\ProgramManagement\Intents\SubjectListToEducator\AttachSubjectListToEducator;
+namespace Modules\ProgramManagement\Intents\ProgramManagement\AttachSubjectListToEducator;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
