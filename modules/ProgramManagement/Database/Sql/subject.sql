@@ -2141,7 +2141,7 @@ VALUES
         'English',
         'G6-EN',
         'f',
-        9,
+        6,
         1,
         1,
         NULL,
