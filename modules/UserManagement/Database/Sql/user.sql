@@ -604,6 +604,108 @@ VALUES
         NULL
     );
 
+INSERT INTO
+    "public"."user"
+VALUES
+    (
+        34,
+        'Hewawasan Jayasooriyage Ruwan Nishantha Jayasooriya',
+        'ruwan',
+        'ruwan@nexiscollege.lk',
+        NULL,
+        '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G',
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        NULL
+    );
+
+INSERT INTO
+    "public"."user"
+VALUES
+    (
+        35,
+        'Nawagamuwage Kalhari Ganga Perera',
+        'kalhari',
+        'kalhari@nexiscollege.lk',
+        NULL,
+        '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G',
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        NULL
+    );
+
+INSERT INTO
+    "public"."user"
+VALUES
+    (
+        36,
+        'M.A Hiruni Sulochana Madhuwanthi',
+        'hiruni',
+        'hiruni@nexiscollege.lk',
+        NULL,
+        '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G',
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        NULL
+    );
+
+INSERT INTO
+    "public"."user"
+VALUES
+    (
+        37,
+        'Hasandi Nethmi Wickrmasooriya',
+        'hasandi',
+        'hasandi@nexiscollege.lk',
+        NULL,
+        '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G',
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        NULL
+    );
+
+INSERT INTO
+    "public"."user"
+VALUES
+    (
+        38,
+        'Mr. Lakshitha Wijerathne',
+        'lakshitha',
+        'lakshitha@nexiscollege.lk',
+        NULL,
+        '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G',
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        NULL
+    );
+
+INSERT INTO
+    "public"."user"
+VALUES
+    (
+        39,
+        'Mrs. Nadeesha Wijerathne',
+        'nadeesha',
+        'nadeesha@nexiscollege.lk',
+        NULL,
+        '$2y$12$WptK8Ri89rvFppc8OHqLVOUPX65DsDLZaMGHLNrfyQfG8gh8U9c3G',
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        NULL
+    );
+
 -- ----------------------------
 -- Primary Key structure for table user
 -- ----------------------------
@@ -618,4 +720,4 @@ ADD
 ALTER SEQUENCE "public"."user_id_seq" OWNED BY "public"."user"."id";
 
 SELECT
-    setval('"public"."user_id_seq"', 33, true);
+    setval('"public"."user_id_seq"', 39, true);
