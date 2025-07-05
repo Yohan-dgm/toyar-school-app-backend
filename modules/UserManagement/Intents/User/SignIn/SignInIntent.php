@@ -30,7 +30,8 @@ class SignInIntent
 
             // Return Response
             if ($signInResult) {
-                $user = $signInResult;
+                $data['token'] = $signInResult;
+                $user = $request->user();
                 $data['id'] = $user->id;
                 $data['full_name'] = $user->full_name;
                 $data['username'] = $user->username;

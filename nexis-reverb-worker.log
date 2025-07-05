@@ -1,0 +1,33 @@
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[08006] [7] connection to server at "82.112.254.107", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections? (Connection: pgsql, SQL: select * from "cache" where "key" in (laravel:reverb:restart))
+
+  at /var/www/solovosystems/sms/nexis-college-sms-staging-b.solovosystems.com/public/vendor/laravel/framework/src/Illuminate/Database/Connection.php:825
+    821▕                     $this->getName(), $query, $this->prepareBindings($bindings), $e
+    822▕                 );
+    823▕             }
+    824▕ 
+  ➜ 825▕             throw new QueryException(
+    826▕                 $this->getName(), $query, $this->prepareBindings($bindings), $e
+    827▕             );
+    828▕         }
+    829▕     }
+
+      [2m+37 vendor frames [22m
+
+  38  /var/www/solovosystems/sms/nexis-college-sms-staging-b.solovosystems.com/public/artisan:13
+      Illuminate\Foundation\Application::handleCommand()
+
+
+   INFO  Gracefully terminating connections.  
+
+
+   INFO  Starting server on 0.0.0.0:8080.  
+
+   INFO  Gracefully terminating connections.  
+
+
+   INFO  Starting server on 0.0.0.0:8080.  
+

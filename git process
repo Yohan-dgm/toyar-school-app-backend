@@ -1,0 +1,48 @@
+Note: this setup works only when others don't touch remote mithun branch
+
+1. finish a unit of work in VS Code
+commit when needed
+
+2. Update local mithun branch
+git checkout mithun && git pull origin main
+
+3. Update remote mithun branch
+git push origin mithun
+
+4. Create pull request in github.com
+
+
+Step 2 & 3 in one Command: 
+
+
+Workflow
+========
+
+Commit 1
+Commit 2
+
+let's check if main branch is updated or not
+git pull origin main
+
+Commit 3
+Commit 4
+
+Ok I think 1 unit of work is done and ready to push to remote mithun branch
+git checkout mithun && git pull origin main && git push origin mithun
+
+Now I create a PR
+github.com
+
+
+NOTE:
+Only pull from origin main
+Only push to origin mithun+
+
+delete and get
+=====================
+git status
+git clean -fd
+git reset --hard 
+git fetch origin
+git reset --hard origin/main
+git status

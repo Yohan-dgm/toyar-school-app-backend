@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\GeneralEntityManagement\Models\Employee;
+use Modules\PurchasingManagement\Models\Supplier;
 
 class Country extends Model
 {
@@ -22,7 +23,9 @@ class Country extends Model
     ];
 
     public $timestamps = true;
- 
- 
 
+    public function supplier_list(): HasMany
+    {
+        return $this->hasMany(Supplier::class, 'country_id', 'id');
+    }
 }

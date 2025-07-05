@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Routing\Controller as BaseController;
+use Stimulsoft\Events\StiDataEventArgs;
+use Stimulsoft\StiHandler;
+use Stimulsoft\StiResult;
+
+class ReportHandlerController extends BaseController
+{
+    public function process()
+    {
+        $handler = new StiHandler();
+        $handler->onBeginProcessData = array($this, 'onBeginProcessData');
+        $handler->process(true);
+    }
+
+    public function onBeginProcessData(StiDataEventArgs $args): StiResult
+    {
+        if ($args->connection == 'PostgreSQL')
+            $args->connectionString = 'Server=127.0.0.1; Database=sms_development_v4; UserId=postgres; Pwd=123;';
+        return StiResult::getSuccess();
+    }
+}

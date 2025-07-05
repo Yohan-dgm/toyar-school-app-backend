@@ -1,0 +1,16 @@
+{
+    "php.suggest.basic": false,
+    "intelephense.environment.includePaths": ["vendor"],
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    // add this code
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    },
+    "[sql]": {
+        "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+    },
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
+    "git.enabled": false
+}

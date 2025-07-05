@@ -17,34 +17,7 @@ class SignInAction
         // User Data Validation
         $signInUserDTO = SignInUserDTO::validate($payloadArray);
 
-        // Data Prep
-
-        // System Data Prep
-
-        // Final Data Validation
-
-        // // Sign In User (Token Based Authentication)
-        // $user = User::where("username", $signInUserDTO["username_or_email"])->first();
-        // if ($user) {
-        //     if (!Hash::check($signInUserDTO["password"], $user->password)) {
-        //         return false;
-        //     }
-        //     $token = $user->createToken("my-auth-token")->plainTextToken;
-        //     return $token;
-        // }else{
-        //     $user = User::where("email", $signInUserDTO["username_or_email"])->first();
-        //     if($user){
-        //         if (!Hash::check($signInUserDTO["password"], $user->password)) {
-        //             return false;
-        //         }
-        //         $token = $user->createToken("my-auth-token")->plainTextToken;
-        //         return $token;
-        //     }else{
-        //         return false;
-        //     }
-        // }
-
-        // Sign In User (Session Based Authentication)
+        // Sign In User (Token Based Authentication)
         $credentials_with_username = [
             'username' => $signInUserDTO['username_or_email'],
             'password' => $signInUserDTO['password'],
@@ -54,11 +27,11 @@ class SignInAction
             'password' => $signInUserDTO['password'],
         ];
         if (Auth::attempt($credentials_with_username)) {
-            $request->session()->regenerate();
-            return $request->user();
+            $token = $request->user()->createToken('token');
+            return $token->plainTextToken;
         } else if (Auth::attempt($credentials_with_email)) {
-            $request->session()->regenerate();
-            return $request->user();
+            $token = $request->user()->createToken('token');
+            return $token->plainTextToken;
         } else {
             return false;
         }

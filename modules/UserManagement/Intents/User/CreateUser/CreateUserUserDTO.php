@@ -15,7 +15,7 @@ class CreateUserUserDTO extends Data
         // system
     ) {}
 
-    public static function rules(Request $request, ValidationContext $context): array
+    public static function rules( ValidationContext $context): array
     {
         return [
             // user
