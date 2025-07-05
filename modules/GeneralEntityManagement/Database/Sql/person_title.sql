@@ -47,7 +47,7 @@ VALUES
 INSERT INTO
     "public"."person_title"
 VALUES
-    (2, 'Ms..', 2, NULL, NULL);
+    (2, 'Ms.', 2, NULL, NULL);
 
 INSERT INTO
     "public"."person_title"

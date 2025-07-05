@@ -13,7 +13,7 @@ class GetUserListDataResDTO extends Data
 
         // system
         public ?array $data,
-        public int $total,
+        // public int $total,
         public ?object $user_count,
 
     ) {}

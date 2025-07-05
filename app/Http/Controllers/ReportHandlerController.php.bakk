@@ -1,0 +1,47 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Routing\Controller as BaseController;
+use Stimulsoft\Events\StiDataEventArgs;
+use Stimulsoft\Events\StiReportEventArgs;
+use Stimulsoft\StiHandler;
+use Stimulsoft\StiResult;
+
+class ReportHandlerController extends BaseController
+{
+    public function process()
+    {
+        $handler = new StiHandler();
+        $handler->onBeginProcessData = array($this, 'onBeginProcessData');
+        $handler->onSaveReport = array($this, 'onSaveReport');
+        $handler->process(true);
+    }
+
+    public function onBeginProcessData(StiDataEventArgs $args): StiResult
+    {
+        if ($args->connection == 'PostgreSQL')
+            $args->connectionString = 'Server=127.0.0.1; Database=sms_development_v4; UserId=postgres; Pwd=123;';
+        return StiResult::getSuccess();
+    }
+
+    public function onSaveReport(StiReportEventArgs $args): StiResult
+    {
+        // Getting the correct file name of the report template
+        $reportFileName = strlen($args->fileName) > 0 ? $args->fileName : 'Report.mrt';
+        if (strlen($reportFileName) < 5 || substr($reportFileName, -4) !== '.mrt')
+            $reportFileName .= '.mrt';
+        // $reportFileName .= '.php';
+
+        // Saving the report file in the 'reports' folder on the server-side
+        // $reportPath = "reports/$reportFileName";
+        $reportPath = "$reportFileName";
+        $result = file_put_contents($reportPath, $args->getReportJson());
+
+        // If required, it is possible to show a message about success or some error
+        if ($result === false)
+            return StiResult::getError('An error occurred while saving the report file on the server side.');
+        return StiResult::getSuccess("The report has been successfully saved to '$reportPath' file.");
+        //return StiResult::getSuccess();
+    }
+}

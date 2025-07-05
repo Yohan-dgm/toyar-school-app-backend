@@ -1,0 +1,240 @@
+  2025-05-07 03:12:08 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 03:12:08 App\Events\MessageSent .................... 33.75ms DONE
+  2025-05-07 03:19:43 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 03:19:43 App\Events\MessageSent .................... 15.01ms DONE
+  2025-05-07 03:20:07 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 03:20:07 App\Events\MessageSent ..................... 5.14ms DONE
+  2025-05-07 03:22:18 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 03:22:18 App\Events\MessageSent ..................... 3.36ms DONE
+  2025-05-07 03:22:31 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 03:22:31 App\Events\MessageSent ..................... 4.30ms DONE
+  2025-05-07 03:23:27 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 03:23:27 App\Events\MessageSent ..................... 3.99ms DONE
+  2025-05-07 03:23:39 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 03:23:39 App\Events\MessageSent ..................... 5.47ms DONE
+  2025-05-07 08:38:58 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 08:38:58 App\Events\MessageSent .................... 78.90ms DONE
+  2025-05-07 08:39:08 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 08:39:08 App\Events\MessageSent .................... 59.54ms DONE
+  2025-05-07 08:39:22 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 08:39:22 App\Events\MessageSent ..................... 4.63ms DONE
+  2025-05-07 08:39:28 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 08:39:28 App\Events\MessageSent ..................... 5.16ms DONE
+  2025-05-07 08:39:32 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 08:39:32 App\Events\MessageSent ..................... 5.48ms DONE
+  2025-05-07 08:39:44 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 08:39:44 App\Events\MessageSent ..................... 4.80ms DONE
+  2025-05-07 08:39:52 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 08:39:52 App\Events\MessageSent ..................... 4.42ms DONE
+  2025-05-07 09:19:55 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 09:19:55 App\Events\MessageSent .................... 11.53ms DONE
+  2025-05-07 09:20:49 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 09:20:49 App\Events\MessageSent ..................... 4.43ms DONE
+  2025-05-07 09:22:31 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 09:22:31 App\Events\MessageSent ..................... 5.12ms DONE
+  2025-05-07 09:23:22 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 09:23:22 App\Events\MessageSent ..................... 3.89ms DONE
+  2025-05-07 09:24:04 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 09:24:04 App\Events\MessageSent ..................... 4.83ms DONE
+  2025-05-07 09:24:16 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 09:24:16 App\Events\MessageSent ..................... 5.72ms DONE
+  2025-05-07 09:24:40 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 09:24:40 App\Events\MessageSent ..................... 5.54ms DONE
+  2025-05-07 13:00:33 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 13:00:33 App\Events\MessageSent ................... 108.83ms DONE
+  2025-05-07 13:00:44 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 13:00:44 App\Events\MessageSent .................... 84.82ms DONE
+  2025-05-07 13:00:53 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 13:00:53 App\Events\MessageSent ..................... 9.07ms DONE
+  2025-05-07 13:01:17 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 13:01:17 App\Events\MessageSent ..................... 5.56ms DONE
+  2025-05-07 13:02:35 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 13:02:35 App\Events\MessageSent ..................... 5.50ms DONE
+  2025-05-07 13:02:38 App\Events\MessageSent ......................... RUNNING
+  2025-05-07 13:02:38 App\Events\MessageSent ..................... 5.47ms DONE
+  2025-05-15 13:00:20 App\Events\MessageSent ......................... RUNNING
+  2025-05-15 13:00:20 App\Events\MessageSent .................... 37.99ms DONE
+  2025-05-15 13:00:20 App\Events\MessageSent ......................... RUNNING
+  2025-05-15 13:00:20 App\Events\MessageSent ..................... 5.65ms DONE
+  2025-05-15 13:05:03 App\Events\MessageSent ......................... RUNNING
+  2025-05-15 13:05:03 App\Events\MessageSent ..................... 6.67ms DONE
+  2025-05-15 13:05:03 App\Events\MessageSent ......................... RUNNING
+  2025-05-15 13:05:03 App\Events\MessageSent ..................... 6.27ms DONE
+  2025-05-15 13:05:54 App\Events\MessageSent ......................... RUNNING
+  2025-05-15 13:05:54 App\Events\MessageSent ..................... 5.50ms DONE
+  2025-05-15 13:05:54 App\Events\MessageSent ......................... RUNNING
+  2025-05-15 13:05:54 App\Events\MessageSent ..................... 4.31ms DONE
+  2025-05-15 13:16:14 App\Events\MessageSent ......................... RUNNING
+  2025-05-15 13:16:14 App\Events\MessageSent .................... 14.05ms DONE
+  2025-05-15 13:16:14 App\Events\MessageSent ......................... RUNNING
+  2025-05-15 13:16:14 App\Events\MessageSent ..................... 5.98ms DONE
+  2025-05-17 02:01:47 App\Events\MessageSent ......................... RUNNING
+  2025-05-17 02:01:47 App\Events\MessageSent .................... 51.51ms DONE
+  2025-05-17 02:01:47 App\Events\MessageSent ......................... RUNNING
+  2025-05-17 02:01:47 App\Events\MessageSent ..................... 4.37ms DONE
+  2025-05-17 02:11:21 App\Events\MessageSent ......................... RUNNING
+  2025-05-17 02:11:21 App\Events\MessageSent ..................... 3.96ms DONE
+  2025-05-17 02:11:21 App\Events\MessageSent ......................... RUNNING
+  2025-05-17 02:11:21 App\Events\MessageSent ..................... 3.18ms DONE
+  2025-05-17 02:11:37 App\Events\MessageSent ......................... RUNNING
+  2025-05-17 02:11:37 App\Events\MessageSent .................... 10.12ms DONE
+  2025-05-17 02:11:37 App\Events\MessageSent ......................... RUNNING
+  2025-05-17 02:11:37 App\Events\MessageSent ..................... 3.62ms DONE
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[08006] [7] connection to server at "82.112.254.107", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections? (Connection: pgsql, SQL: select * from "cache" where "key" in (illuminate:queue:restart))
+
+  at /var/www/solovosystems/sms/nexis-college-sms-staging-b.solovosystems.com/public/vendor/laravel/framework/src/Illuminate/Database/Connection.php:825
+    821▕                     $this->getName(), $query, $this->prepareBindings($bindings), $e
+    822▕                 );
+    823▕             }
+    824▕ 
+  ➜ 825▕             throw new QueryException(
+    826▕                 $this->getName(), $query, $this->prepareBindings($bindings), $e
+    827▕             );
+    828▕         }
+    829▕     }
+
+      [2m+41 vendor frames [22m
+
+  42  /var/www/solovosystems/sms/nexis-college-sms-staging-b.solovosystems.com/public/artisan:13
+      Illuminate\Foundation\Application::handleCommand()
+
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[08006] [7] connection to server at "82.112.254.107", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections? (Connection: pgsql, SQL: select * from "cache" where "key" in (illuminate:queue:restart))
+
+  at /var/www/solovosystems/sms/nexis-college-sms-staging-b.solovosystems.com/public/vendor/laravel/framework/src/Illuminate/Database/Connection.php:825
+    821▕                     $this->getName(), $query, $this->prepareBindings($bindings), $e
+    822▕                 );
+    823▕             }
+    824▕ 
+  ➜ 825▕             throw new QueryException(
+    826▕                 $this->getName(), $query, $this->prepareBindings($bindings), $e
+    827▕             );
+    828▕         }
+    829▕     }
+
+      [2m+37 vendor frames [22m
+
+  38  /var/www/solovosystems/sms/nexis-college-sms-staging-b.solovosystems.com/public/artisan:13
+      Illuminate\Foundation\Application::handleCommand()
+
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[08006] [7] connection to server at "82.112.254.107", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections? (Connection: pgsql, SQL: select * from "cache" where "key" in (illuminate:queue:restart))
+
+  at /var/www/solovosystems/sms/nexis-college-sms-staging-b.solovosystems.com/public/vendor/laravel/framework/src/Illuminate/Database/Connection.php:825
+    821▕                     $this->getName(), $query, $this->prepareBindings($bindings), $e
+    822▕                 );
+    823▕             }
+    824▕ 
+  ➜ 825▕             throw new QueryException(
+    826▕                 $this->getName(), $query, $this->prepareBindings($bindings), $e
+    827▕             );
+    828▕         }
+    829▕     }
+
+      [2m+41 vendor frames [22m
+
+  42  /var/www/solovosystems/sms/nexis-college-sms-staging-b.solovosystems.com/public/artisan:13
+      Illuminate\Foundation\Application::handleCommand()
+
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[08006] [7] connection to server at "82.112.254.107", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections? (Connection: pgsql, SQL: select * from "cache" where "key" in (illuminate:queue:restart))
+
+  at /var/www/solovosystems/sms/nexis-college-sms-staging-b.solovosystems.com/public/vendor/laravel/framework/src/Illuminate/Database/Connection.php:825
+    821▕                     $this->getName(), $query, $this->prepareBindings($bindings), $e
+    822▕                 );
+    823▕             }
+    824▕ 
+  ➜ 825▕             throw new QueryException(
+    826▕                 $this->getName(), $query, $this->prepareBindings($bindings), $e
+    827▕             );
+    828▕         }
+    829▕     }
+
+      [2m+37 vendor frames [22m
+
+  38  /var/www/solovosystems/sms/nexis-college-sms-staging-b.solovosystems.com/public/artisan:13
+      Illuminate\Foundation\Application::handleCommand()
+
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[08006] [7] connection to server at "82.112.254.107", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections? (Connection: pgsql, SQL: select * from "cache" where "key" in (illuminate:queue:restart))
+
+  at /var/www/solovosystems/sms/nexis-college-sms-staging-b.solovosystems.com/public/vendor/laravel/framework/src/Illuminate/Database/Connection.php:825
+    821▕                     $this->getName(), $query, $this->prepareBindings($bindings), $e
+    822▕                 );
+    823▕             }
+    824▕ 
+  ➜ 825▕             throw new QueryException(
+    826▕                 $this->getName(), $query, $this->prepareBindings($bindings), $e
+    827▕             );
+    828▕         }
+    829▕     }
+
+      [2m+37 vendor frames [22m
+
+  38  /var/www/solovosystems/sms/nexis-college-sms-staging-b.solovosystems.com/public/artisan:13
+      Illuminate\Foundation\Application::handleCommand()
+
+  2025-05-27 09:34:41 App\Events\MessageSent ......................... RUNNING
+  2025-05-27 09:34:42 App\Events\MessageSent ................... 266.82ms DONE
+  2025-05-27 09:34:42 App\Events\MessageSent ......................... RUNNING
+  2025-05-27 09:34:42 App\Events\MessageSent ..................... 3.78ms DONE
+  2025-05-27 09:34:52 App\Events\MessageSent ......................... RUNNING
+  2025-05-27 09:34:52 App\Events\MessageSent .................... 10.03ms DONE
+  2025-05-27 09:34:52 App\Events\MessageSent ......................... RUNNING
+  2025-05-27 09:34:52 App\Events\MessageSent ..................... 4.97ms DONE
+  2025-05-27 09:35:34 App\Events\MessageSent ......................... RUNNING
+  2025-05-27 09:35:34 App\Events\MessageSent ..................... 4.51ms DONE
+  2025-05-27 09:35:34 App\Events\MessageSent ......................... RUNNING
+  2025-05-27 09:35:34 App\Events\MessageSent ..................... 8.39ms DONE
+  2025-05-27 09:36:54 App\Events\MessageSent ......................... RUNNING
+  2025-05-27 09:36:54 App\Events\MessageSent ..................... 5.60ms DONE
+  2025-05-27 09:36:54 App\Events\MessageSent ......................... RUNNING
+  2025-05-27 09:36:54 App\Events\MessageSent ..................... 5.78ms DONE
+  2025-05-27 09:37:27 App\Events\MessageSent ......................... RUNNING
+  2025-05-27 09:37:27 App\Events\MessageSent ..................... 3.96ms DONE
+  2025-05-27 09:37:27 App\Events\MessageSent ......................... RUNNING
+  2025-05-27 09:37:27 App\Events\MessageSent ..................... 3.70ms DONE
+  2025-05-27 09:37:49 App\Events\MessageSent ......................... RUNNING
+  2025-05-27 09:37:49 App\Events\MessageSent ..................... 4.88ms DONE
+  2025-05-27 09:37:49 App\Events\MessageSent ......................... RUNNING
+  2025-05-27 09:37:49 App\Events\MessageSent ..................... 4.75ms DONE
+  2025-05-27 09:38:19 App\Events\MessageSent ......................... RUNNING
+  2025-05-27 09:38:19 App\Events\MessageSent ..................... 5.32ms DONE
+  2025-05-27 09:38:19 App\Events\MessageSent ......................... RUNNING
+  2025-05-27 09:38:19 App\Events\MessageSent ..................... 3.99ms DONE
+  2025-05-29 09:05:57 App\Events\MessageSent ......................... RUNNING
+  2025-05-29 09:05:57 App\Events\MessageSent .................... 61.93ms DONE
+  2025-05-29 09:05:57 App\Events\MessageSent ......................... RUNNING
+  2025-05-29 09:05:57 App\Events\MessageSent ..................... 3.52ms DONE
+  2025-05-29 09:28:34 App\Events\MessageSent ......................... RUNNING
+  2025-05-29 09:28:34 App\Events\MessageSent ..................... 3.54ms DONE
+  2025-05-29 09:28:34 App\Events\MessageSent ......................... RUNNING
+  2025-05-29 09:28:34 App\Events\MessageSent ..................... 3.72ms DONE
+  2025-05-29 10:13:39 App\Events\MessageSent ......................... RUNNING
+  2025-05-29 10:13:39 App\Events\MessageSent .................... 19.57ms DONE
+  2025-05-29 10:13:39 App\Events\MessageSent ......................... RUNNING
+  2025-05-29 10:13:39 App\Events\MessageSent ..................... 5.63ms DONE
+  2025-05-29 10:13:45 App\Events\MessageSent ......................... RUNNING
+  2025-05-29 10:13:45 App\Events\MessageSent ..................... 5.70ms DONE
+  2025-05-29 10:13:45 App\Events\MessageSent ......................... RUNNING
+  2025-05-29 10:13:45 App\Events\MessageSent .................... 16.81ms DONE
+  2025-05-29 10:33:40 App\Events\MessageSent ......................... RUNNING
+  2025-05-29 10:33:40 App\Events\MessageSent ..................... 4.98ms DONE
+  2025-05-29 10:33:40 App\Events\MessageSent ......................... RUNNING
+  2025-05-29 10:33:40 App\Events\MessageSent ..................... 4.66ms DONE

@@ -25,7 +25,7 @@ class GetUserListDataAction
             }
         })->where(function (Builder $user_query_group2) use ($getUserListDataUserDTO) {
             // search_filter_list
-            if (array_key_exists('search_filter_list', $getUserListDataUserDTO) && count($getUserListDataUserDTO['search_filter_list']) > 0) {
+            if (array_key_exists('search_filter_list', $getUserListDataUserDTO) && !is_null($getUserListDataUserDTO['search_filter_list']) && count($getUserListDataUserDTO['search_filter_list']) > 0) {
                 foreach ($getUserListDataUserDTO['search_filter_list'] as $key => $value) {
                 }
             }

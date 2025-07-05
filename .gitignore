@@ -1,8 +1,13 @@
 # ignore all directories & files in root dir
-/*
+# /*
 # allow files in root dir
-!/.gitignore
+# !/.gitignore
 # allow directories in root dir
-!/modules
+# !/modules
 # allow decendants in each allowed directories mentioned above
-!/modules/*
+# !/modules/*
+
+
+# Ignore only the vendor folder
+/vendor/
+

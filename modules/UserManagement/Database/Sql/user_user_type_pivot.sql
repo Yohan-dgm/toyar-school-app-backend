@@ -1,18 +1,18 @@
 /*
  Navicat Premium Data Transfer
  
- Source Server         : postgres_local
+ Source Server         : postgresql_localhost_root
  Source Server Type    : PostgreSQL
  Source Server Version : 160000 (160000)
  Source Host           : localhost:5432
- Source Catalog        : sms_development_v1 
+ Source Catalog        : sms_development_v5
  Source Schema         : public
  
  Target Server Type    : PostgreSQL
  Target Server Version : 160000 (160000)
  File Encoding         : 65001
  
- Date: 06/12/2024 14:05:35
+ Date: 19/12/2024 10:51:11
  */
 -- ----------------------------
 -- Sequence structure for user_user_type_pivot_id_seq
@@ -207,42 +207,62 @@ VALUES
 INSERT INTO
     "public"."user_user_type_pivot"
 VALUES
-    (35, 34, 6, NULL, NULL, NULL, NULL);
+    (34, 34, 6, NULL, NULL, NULL, NULL);
 
 INSERT INTO
     "public"."user_user_type_pivot"
 VALUES
-    (36, 35, 6, NULL, NULL, NULL, NULL);
+    (35, 35, 6, NULL, NULL, NULL, NULL);
 
 INSERT INTO
     "public"."user_user_type_pivot"
 VALUES
-    (38, 36, 6, NULL, NULL, NULL, NULL);
+    (36, 36, 6, NULL, NULL, NULL, NULL);
 
 INSERT INTO
     "public"."user_user_type_pivot"
 VALUES
-    (39, 38, 6, NULL, NULL, NULL, NULL);
+    (37, 38, 6, NULL, NULL, NULL, NULL);
 
 INSERT INTO
     "public"."user_user_type_pivot"
 VALUES
-    (40, 39, 6, NULL, NULL, NULL, NULL);
+    (38, 39, 6, NULL, NULL, NULL, NULL);
 
 INSERT INTO
     "public"."user_user_type_pivot"
 VALUES
-    (41, 13, 6, NULL, NULL, NULL, NULL);
+    (39, 13, 6, NULL, NULL, NULL, NULL);
 
 INSERT INTO
     "public"."user_user_type_pivot"
 VALUES
-    (42, 35, 3, NULL, NULL, NULL, NULL);
+    (40, 35, 3, NULL, NULL, NULL, NULL);
 
 INSERT INTO
     "public"."user_user_type_pivot"
 VALUES
-    (43, 37, 5, NULL, NULL, NULL, NULL);
+    (41, 37, 5, NULL, NULL, NULL, NULL);
+
+INSERT INTO
+    "public"."user_user_type_pivot"
+VALUES
+    (42, 40, 6, NULL, NULL, NULL, NULL);
+
+INSERT INTO
+    "public"."user_user_type_pivot"
+VALUES
+    (43, 41, 6, NULL, NULL, NULL, NULL);
+
+INSERT INTO
+    "public"."user_user_type_pivot"
+VALUES
+    (44, 42, 6, NULL, NULL, NULL, NULL);
+
+INSERT INTO
+    "public"."user_user_type_pivot"
+VALUES
+    (45, 43, 6, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Primary Key structure for table user_user_type_pivot
@@ -260,6 +280,6 @@ ALTER SEQUENCE "public"."user_user_type_pivot_id_seq" OWNED BY "public"."user_us
 SELECT
     setval(
         '"public"."user_user_type_pivot_id_seq"',
-        43,
+        45,
         true
     );

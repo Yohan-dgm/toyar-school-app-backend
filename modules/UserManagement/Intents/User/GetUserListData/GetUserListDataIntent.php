@@ -40,14 +40,25 @@ class GetUserListDataIntent
     public function asController(Request $request): JsonResponse
     {
         try {
-            $result = $this->handle($request);
-            // Response Data Validation
-            $GetUserListDataResDTO = GetUserListDataResDTO::validate($result);
+            //$result = $this->handle($request);
+            // // Response Data Validation
+            // $GetUserListDataResDTO = GetUserListDataResDTO::validate($result);
+            // return response()->json(
+            //     [
+            //         "status" => "successful",
+            //         "message" => "",
+            //         "data" => $GetUserListDataResDTO,
+            //         "metadata" => null,
+            //     ],
+            //     200
+            // );
+            $data = [];
+            $data["hello"] = "world";
             return response()->json(
                 [
                     "status" => "successful",
                     "message" => "",
-                    "data" => $GetUserListDataResDTO,
+                    "data" => $data,
                     "metadata" => null,
                 ],
                 200
