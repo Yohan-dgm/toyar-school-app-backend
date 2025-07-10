@@ -29,6 +29,7 @@ class User extends Authenticatable
         'password',
         'password_new',
         'is_active',
+        'user_category',
         'created_by',
         'updated_by',
     ];

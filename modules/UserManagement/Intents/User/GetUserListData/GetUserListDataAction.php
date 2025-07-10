@@ -46,6 +46,7 @@ class GetUserListDataAction
                 "full_name",
                 "username",
                 "email",
+                "user_category",
             )
             ->orderBy("id", "desc")
             ->paginate(

@@ -5,5 +5,6 @@ return [
     Stimulsoft\Laravel\StiServiceProvider::class,
     Modules\GeneralEntityManagement\Providers\GeneralEntityManagementServiceProvider::class,
     Modules\UserManagement\Providers\UserManagementServiceProvider::class,
-     Modules\CalendarManagement\Providers\CalendarManagementServiceProvider::class,
+    Modules\CalendarManagement\Providers\CalendarManagementServiceProvider::class,
+    Modules\ActivityFeedManagement\Providers\ActivityFeedManagementServiceProvider::class,
 ];

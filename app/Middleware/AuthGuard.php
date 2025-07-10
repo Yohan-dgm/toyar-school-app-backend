@@ -32,7 +32,20 @@ class AuthGuard
                 401
             );
         }
-        [$id, $token] = explode('|', $bearer, 2);
+        // Handle bearer token format - check if it contains '|' separator
+        $tokenParts = explode('|', $bearer, 2);
+        if (count($tokenParts) !== 2) {
+            return response()->json(
+                [
+                    "status" => "authentication-required",
+                    "message" => "Invalid token format",
+                    "data" => null,
+                    "metadata" => null,
+                ],
+                401
+            );
+        }
+        [$id, $token] = $tokenParts;
 
         Log::info("from Sanctum middleware: " . Crypt::decrypt($request->cookie('t_session')));
 
