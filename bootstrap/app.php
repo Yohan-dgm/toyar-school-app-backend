@@ -19,7 +19,8 @@ return Application::configure(basePath: dirname(__DIR__))
         then: function () {
             Route::prefix('api/general-entity-management')->group(base_path('modules/GeneralEntityManagement/routes.php'));
             Route::prefix('api/user-management')->group(base_path('modules/UserManagement/routes.php'));
-            Route::middleware('api/calendar-management')->group(base_path('modules/CalendarManagement/routes.php'));
+            Route::prefix('api/calendar-management')->group(base_path('modules/CalendarManagement/routes.php'));
+            Route::prefix('api/activity-feed-management')->group(base_path('modules/ActivityFeedManagement/routes.php'));
 
         },
     )

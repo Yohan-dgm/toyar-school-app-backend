@@ -31,11 +31,12 @@ class SignInIntent
             // Return Response
             if ($signInResult) {
                 $data['token'] = $signInResult;
-                $user = $request->user();
+                $user = $request->user(); 
                 $data['id'] = $user->id;
                 $data['full_name'] = $user->full_name;
                 $data['username'] = $user->username;
                 $data['email'] = $user->email;
+                $data['user_category'] = $user->user_category;
                 $data['user_type_list'] = $user->user_type_list->select('name', 'pivot');
                 return $data;
             } else {
