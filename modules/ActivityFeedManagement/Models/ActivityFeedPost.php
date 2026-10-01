@@ -4,8 +4,9 @@ namespace Modules\ActivityFeedManagement\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Modules\StudentManagement\Models\Student;
 use Modules\UserManagement\Models\User;
 
 class ActivityFeedPost extends Model
@@ -31,6 +32,7 @@ class ActivityFeedPost extends Model
     ];
 
     protected $casts = [
+        'student_id' => 'integer',
         'is_active' => 'boolean',
         'likes_count' => 'integer',
         'comments_count' => 'integer',
@@ -44,6 +46,11 @@ class ActivityFeedPost extends Model
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class, 'author_id', 'id');
+    }
+
+    public function student(): BelongsTo
+    {
+        return $this->belongsTo(Student::class, 'student_id', 'id');
     }
 
     public function media(): HasMany
@@ -105,6 +112,7 @@ class ActivityFeedPost extends Model
         if ($dateTo) {
             $query->where('created_at', '<=', $dateTo);
         }
+
         return $query;
     }
 
@@ -119,10 +127,12 @@ class ActivityFeedPost extends Model
     {
         return $query->where(function ($q) use ($search) {
             $q->where('title', 'ILIKE', "%{$search}%")
-              ->orWhere('content', 'ILIKE', "%{$search}%")
-              ->orWhere('category', 'ILIKE', "%{$search}%");
+                ->orWhere('content', 'ILIKE', "%{$search}%")
+                ->orWhere('category', 'ILIKE', "%{$search}%");
         });
     }
+
+    // Accessors
 
     // Helper methods
     public function isLikedByUser($userId)

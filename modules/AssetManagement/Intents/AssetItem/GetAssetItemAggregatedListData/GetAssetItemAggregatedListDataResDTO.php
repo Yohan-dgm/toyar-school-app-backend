@@ -1,0 +1,28 @@
+<?php
+
+namespace Modules\AssetManagement\Intents\AssetItem\GetAssetItemAggregatedListData;
+
+use Spatie\LaravelData\Data;
+use Spatie\LaravelData\Support\Validation\ValidationContext;
+
+class GetAssetItemAggregatedListDataResDTO extends Data
+{
+    public function __construct(
+        // user
+
+        // system
+        public ?array $data,
+        public int $total,
+        public ?object $asset_item_count,
+
+    ) {}
+
+    public static function rules(ValidationContext $context): array
+    {
+        return [
+            // user
+
+            // system
+        ];
+    }
+}

@@ -6,6 +6,7 @@ use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\DB;
 use Lorisleiva\Actions\Concerns\AsAction;
 use Modules\CalendarManagement\Models\Event;
+use Modules\UserManagement\Models\User;
 
 class GetEventListDataAction
 {
@@ -15,13 +16,19 @@ class GetEventListDataAction
     {
         // Event Data Validation
         $getEventListDataUserDTO = GetEventListDataUserDTO::validate($payloadArray);
-        $logInUserId = $getEventListDataUserDTO['logInUserId'];
-        $logInUserType = $getEventListDataUserDTO['logInUserType'];
+        $logInUserId = $actionData['user_id'] ?? null;
+
+        // Get user category from user_id
+        $logInUserType = null;
+        if ($logInUserId) {
+            $user = User::find($logInUserId);
+            $logInUserType = $user ? $user->user_category : null;
+        }
         // var_dump($getEventListDataUserDTO);
         // Action
         $event = Event::where(function (Builder $event_group1) use ($getEventListDataUserDTO, $logInUserId, $logInUserType) {
             // Handle group_filter
-            if (!empty($getEventListDataUserDTO['group_filter']) && $getEventListDataUserDTO['group_filter'] === "All") {
+            if (! empty($getEventListDataUserDTO['group_filter']) && $getEventListDataUserDTO['group_filter'] === 'All') {
             }
             $event_group1->where(function (Builder $visibilityQuery) use ($logInUserId, $logInUserType) {
 
@@ -72,31 +79,31 @@ class GetEventListDataAction
             });
         })->where(function (Builder $event_group2) use ($getEventListDataUserDTO) {
             // Handle search_filter_list
-            if (!empty($getEventListDataUserDTO['search_filter_list'])) {
+            if (! empty($getEventListDataUserDTO['search_filter_list'])) {
                 foreach ($getEventListDataUserDTO['search_filter_list'] as $key => $value) {
                 }
             }
         })->where(function (Builder $event_group3) use ($getEventListDataUserDTO) {
             // Handle search_phrase
-            if (array_key_exists('search_phrase', $getEventListDataUserDTO) && $getEventListDataUserDTO['search_phrase'] != "") {
+            if (array_key_exists('search_phrase', $getEventListDataUserDTO) && $getEventListDataUserDTO['search_phrase'] != '') {
 
-                $event_group3->orWhere("title", "ILIKE", "%" . $getEventListDataUserDTO['search_phrase'] . "%");
-                $event_group3->orWhere("start_date", "ILIKE", "%" . $getEventListDataUserDTO['search_phrase'] . "%");
-                $event_group3->orWhere("end_date", "ILIKE", "%" . $getEventListDataUserDTO['search_phrase'] . "%");
+                $event_group3->orWhere('title', 'ILIKE', '%'.$getEventListDataUserDTO['search_phrase'].'%');
+                $event_group3->orWhere('start_date', 'ILIKE', '%'.$getEventListDataUserDTO['search_phrase'].'%');
+                $event_group3->orWhere('end_date', 'ILIKE', '%'.$getEventListDataUserDTO['search_phrase'].'%');
 
                 $event_group3->orWhereHas('event_category', function (Builder $event_category_query) use ($getEventListDataUserDTO) {
-                    return $event_category_query->where('name', "ILIKE", "%" . $getEventListDataUserDTO['search_phrase'] . "%");
+                    return $event_category_query->where('name', 'ILIKE', '%'.$getEventListDataUserDTO['search_phrase'].'%');
                 });
             }
             // $event_group3->where('visibility_type', "Private");
         })
             ->with(['event_category' => function (Builder $event_category_query) {
                 //
-                $event_category_query->select("id", "name");
+                $event_category_query->select('id', 'name');
             }])
             ->with(['created_by' => function (Builder $created_by_query) {
                 //
-                $created_by_query->select("id", "full_name");
+                $created_by_query->select('id', 'full_name');
             }])
 
             ->select(
@@ -115,11 +122,12 @@ class GetEventListDataAction
             )
             ->orderBy('id', 'desc')
             ->paginate(
-                $perPage = $getEventListDataUserDTO["page_size"],
+                $perPage = $getEventListDataUserDTO['page_size'],
                 $columns = ['*'],
                 $pageName = 'page',
-                $page = $getEventListDataUserDTO["page"]
+                $page = $getEventListDataUserDTO['page']
             );
+
         return $event;
     }
 }

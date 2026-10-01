@@ -1,0 +1,60 @@
+<?php
+
+namespace Modules\EducatorFeedbackManagement\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Notifications\Notifiable;
+use Modules\UserManagement\Models\User;
+
+class EduFbPredefinedQuestion extends Model
+{
+    use HasFactory, Notifiable;
+
+    protected $table = 'edu_fb_predefined_question';
+
+    protected $fillable = [
+        'question',
+        'edu_fb_category_id',
+        'edu_fb_answer_type_id',
+        'is_active',
+        'created_by',
+        'updated_by',
+    ];
+
+    protected $casts = [
+        'is_active' => 'integer',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
+
+    public $timestamps = true;
+
+    // Relations
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(EduFbCategory::class, 'edu_fb_category_id', 'id');
+    }
+
+    public function predefined_answers(): HasMany
+    {
+        return $this->hasMany(EduFbPredefinedAnswer::class, 'edu_fb_predefined_question_id', 'id');
+    }
+
+    public function question_answers(): HasMany
+    {
+        return $this->hasMany(EduFbQuestionAnswer::class, 'edu_fb_predefined_question_id', 'id');
+    }
+
+    public function created_by(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'created_by', 'id');
+    }
+
+    public function updated_by(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'updated_by', 'id');
+    }
+}

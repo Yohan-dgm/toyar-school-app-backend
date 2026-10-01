@@ -1,0 +1,27 @@
+<?php
+
+namespace Modules\AccountManagement\Intents\SchoolFee\GetSchoolFeeListData;
+
+use Spatie\LaravelData\Data;
+use Spatie\LaravelData\Support\Validation\ValidationContext;
+
+class GetSchoolFeeListDataResDTO extends Data
+{
+    public function __construct(
+        // user
+
+        // system
+        public ?array $data,
+        public int $total,
+        public ?object $exam_bill_item_count,
+    ) {}
+
+    public static function rules(ValidationContext $context): array
+    {
+        return [
+            // user
+
+            // system
+        ];
+    }
+}

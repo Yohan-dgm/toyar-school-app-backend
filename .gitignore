@@ -11,3 +11,32 @@
 # Ignore only the vendor folder
 /vendor/
 
+# Environment files contain live secrets (e.g. CyberSource merchant credentials)
+# and must never be committed.
+/.env
+/.env-local-backup
+/.env-server-backup
+
+# Deployment credentials (contains live SFTP password)
+/.vscode/sftp.json
+
+# Secret keys / service account files
+*.p8
+*.p12
+*.pem
+*.key
+google-services.json
+
+# Local test/debug artifacts
+cookies.txt
+*.zip
+
+# Laravel storage symlink (machine-specific, regenerate with artisan storage:link)
+/public/storage
+
+# OS files
+.DS_Store
+
+# Claude Code local-only settings (may contain local DB credentials)
+.claude/settings.local.json
+

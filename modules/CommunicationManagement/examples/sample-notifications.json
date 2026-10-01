@@ -1,0 +1,170 @@
+{
+  "description": "Sample notification payloads for testing different scenarios",
+  "notifications": {
+    "basic_notification": {
+      "notification_type_id": 1,
+      "title": "Welcome to School App",
+      "message": "Your account has been successfully created. Welcome aboard!",
+      "priority": "normal",
+      "target_type": "user",
+      "target_data": {
+        "user_ids": [1]
+      },
+      "created_by": 1
+    },
+    "urgent_announcement": {
+      "notification_type_id": 2,
+      "title": "School Closure Notice",
+      "message": "Due to severe weather conditions, school will be closed tomorrow. Please stay safe!",
+      "priority": "urgent",
+      "target_type": "broadcast",
+      "target_data": {},
+      "action_url": "/announcements/weather-closure",
+      "action_text": "View Details",
+      "created_by": 1,
+      "metadata": {
+        "category": "emergency",
+        "source": "administration",
+        "requires_acknowledgment": true
+      }
+    },
+    "class_specific": {
+      "notification_type_id": 3,
+      "title": "Math Assignment Due Tomorrow",
+      "message": "Please remember to submit your algebra homework by 9 AM tomorrow.",
+      "priority": "high",
+      "target_type": "class",
+      "target_data": {
+        "grade_level_class_ids": [1, 2]
+      },
+      "action_url": "/assignments/math-homework",
+      "action_text": "View Assignment",
+      "created_by": 5,
+      "metadata": {
+        "subject": "mathematics",
+        "assignment_id": 123,
+        "due_date": "2024-01-15T09:00:00Z"
+      }
+    },
+    "parent_notification": {
+      "notification_type_id": 4,
+      "title": "Parent-Teacher Conference",
+      "message": "Your child's progress meeting is scheduled for Friday at 2 PM.",
+      "priority": "normal",
+      "target_type": "role",
+      "target_data": {
+        "roles": ["parent"]
+      },
+      "action_url": "/meetings/parent-teacher",
+      "action_text": "Confirm Attendance",
+      "image_url": "/images/parent-teacher.png",
+      "created_by": 3,
+      "metadata": {
+        "meeting_type": "progress_review",
+        "student_id": 45,
+        "teacher_id": 3,
+        "scheduled_date": "2024-01-19T14:00:00Z"
+      }
+    },
+    "scheduled_notification": {
+      "notification_type_id": 1,
+      "title": "Exam Reminder",
+      "message": "Your chemistry exam is tomorrow. Good luck with your studies!",
+      "priority": "high",
+      "target_type": "user",
+      "target_data": {
+        "user_ids": [10, 11, 12]
+      },
+      "is_scheduled": true,
+      "scheduled_at": "2024-01-14T18:00:00Z",
+      "expires_at": "2024-01-15T12:00:00Z",
+      "created_by": 7,
+      "metadata": {
+        "exam_id": 456,
+        "subject": "chemistry",
+        "reminder_type": "24h_before"
+      }
+    },
+    "attendance_alert": {
+      "notification_type_id": 6,
+      "title": "Attendance Alert",
+      "message": "Your child was marked absent from first period today.",
+      "priority": "high",
+      "target_type": "user",
+      "target_data": {
+        "user_ids": [25]
+      },
+      "action_url": "/attendance/report",
+      "action_text": "View Attendance",
+      "created_by": 1,
+      "metadata": {
+        "student_id": 67,
+        "date": "2024-01-15",
+        "period": "first",
+        "attendance_type": "absent"
+      }
+    },
+    "financial_reminder": {
+      "notification_type_id": 7,
+      "title": "Payment Reminder",
+      "message": "Your tuition fee payment is due in 3 days. Please make payment to avoid late fees.",
+      "priority": "normal",
+      "target_type": "user",
+      "target_data": {
+        "user_ids": [30]
+      },
+      "action_url": "/payments/tuition",
+      "action_text": "Pay Now",
+      "created_by": 1,
+      "metadata": {
+        "payment_type": "tuition",
+        "amount": 1500.00,
+        "due_date": "2024-01-18",
+        "currency": "USD"
+      }
+    },
+    "social_update": {
+      "notification_type_id": 8,
+      "title": "New Photo Posted",
+      "message": "Check out the new photos from the school sports day event!",
+      "priority": "normal",
+      "target_type": "broadcast",
+      "target_data": {},
+      "action_url": "/gallery/sports-day-2024",
+      "action_text": "View Photos",
+      "image_url": "/images/sports-day-thumbnail.jpg",
+      "created_by": 15,
+      "metadata": {
+        "event_type": "sports_day",
+        "photo_count": 45,
+        "event_date": "2024-01-12"
+      }
+    }
+  },
+  "test_scenarios": {
+    "stress_test": {
+      "description": "Test with high volume notifications",
+      "notification_count": 1000,
+      "recipient_count": 500,
+      "batch_size": 100
+    },
+    "error_handling": {
+      "description": "Test various error conditions",
+      "scenarios": [
+        "invalid_user_id",
+        "missing_notification_type",
+        "empty_message",
+        "malformed_target_data"
+      ]
+    },
+    "priority_testing": {
+      "description": "Test different priority levels",
+      "priorities": ["urgent", "high", "normal"],
+      "expected_behavior": {
+        "urgent": "immediate_delivery",
+        "high": "priority_queue",
+        "normal": "standard_queue"
+      }
+    }
+  }
+}

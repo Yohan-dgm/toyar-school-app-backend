@@ -1,0 +1,1096 @@
+{
+	"info": {
+		"_postman_id": "school-notifications-api",
+		"name": "School Management - Notifications API",
+		"description": "Complete Postman collection for testing the school management notification system API endpoints including push tokens and real-time notifications.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "school-management-team"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "User Sign In",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    const response = pm.response.json();",
+									"    if (response.success && response.data.token) {",
+									"        pm.environment.set('auth_token', response.data.token);",
+									"        pm.environment.set('user_id', response.data.user.id);",
+									"        console.log('Authentication successful. Token saved.');",
+									"    }",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"testuser@nexiscollege.lk\",\n  \"password\": \"password\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user-management/user/sign-in",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user-management",
+								"user",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Authentication endpoints for getting JWT tokens"
+		},
+		{
+			"name": "Push Token Management",
+			"item": [
+				{
+					"name": "Register Push Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code is 200', function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test('Response has success field', function () {",
+									"    const jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('success');",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"});",
+									"",
+									"pm.test('Response contains token data', function () {",
+									"    const jsonData = pm.response.json();",
+									"    pm.expect(jsonData.data).to.have.property('id');",
+									"    pm.expect(jsonData.data).to.have.property('user_id');",
+									"    pm.expect(jsonData.data).to.have.property('device_id');",
+									"    pm.expect(jsonData.data).to.have.property('platform');",
+									"    pm.expect(jsonData.data).to.have.property('is_active');",
+									"    ",
+									"    // Save token ID for other tests",
+									"    pm.environment.set('push_token_id', jsonData.data.id);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"push_token\": \"ExponentPushToken[{{$randomAlphaNumeric}}{{$randomAlphaNumeric}}{{$randomAlphaNumeric}}]\",\n  \"device_id\": \"test_device_{{$randomInt}}\",\n  \"platform\": \"ios\",\n  \"app_version\": \"1.0.0\",\n  \"device_name\": \"Test iPhone\",\n  \"device_model\": \"iPhone 14 Pro\",\n  \"os_version\": \"16.0\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user-management/push-tokens/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user-management",
+								"push-tokens",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Push Token - Android",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"push_token\": \"ExponentPushToken[{{$randomAlphaNumeric}}{{$randomAlphaNumeric}}{{$randomAlphaNumeric}}]\",\n  \"device_id\": \"android_device_{{$randomInt}}\",\n  \"platform\": \"android\",\n  \"app_version\": \"1.0.0\",\n  \"device_name\": \"Test Samsung Galaxy\",\n  \"device_model\": \"Samsung Galaxy S23\",\n  \"os_version\": \"13\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user-management/push-tokens/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user-management",
+								"push-tokens",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Push Token - By Device ID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"device_id\": \"test_device_123\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user-management/push-tokens/delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user-management",
+								"push-tokens",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Push Token - By Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"push_token\": \"ExponentPushToken[test-token-to-delete]\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user-management/push-tokens/delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user-management",
+								"push-tokens",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete All Push Tokens",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user-management/push-tokens/delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user-management",
+								"push-tokens",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints for managing Expo push tokens"
+		},
+		{
+			"name": "Notification Management",
+			"item": [
+				{
+					"name": "Create Notification (Admin)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code is 200', function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test('Notification created successfully', function () {",
+									"    const jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('success');",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.data).to.have.property('id');",
+									"    ",
+									"    // Save notification ID for other tests",
+									"    pm.environment.set('notification_id', jsonData.data.id);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"notification_type_id\": 1,\n  \"title\": \"Test Notification from Postman\",\n  \"message\": \"This is a test notification created via Postman to verify the API is working correctly.\",\n  \"priority\": \"high\",\n  \"target_type\": \"user\",\n  \"target_data\": {\n    \"user_ids\": [{{user_id}}]\n  },\n  \"action_url\": \"/test/notification\",\n  \"action_text\": \"View Details\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/communication-management/notifications/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"communication-management",
+								"notifications",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Notifications - All",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code is 200', function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test('Response contains notifications data', function () {",
+									"    const jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('success');",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.data).to.have.property('data');",
+									"    pm.expect(jsonData.data).to.have.property('unread_count');",
+									"    pm.expect(jsonData.data).to.have.property('current_page');",
+									"    pm.expect(jsonData.data).to.have.property('total');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"page\": 1,\n  \"per_page\": 20,\n  \"filter\": \"all\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/communication-management/notifications/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"communication-management",
+								"notifications",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Notifications - Unread Only",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"page\": 1,\n  \"per_page\": 10,\n  \"filter\": \"unread\",\n  \"unread_only\": true\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/communication-management/notifications/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"communication-management",
+								"notifications",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Notifications - High Priority",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"page\": 1,\n  \"per_page\": 20,\n  \"filter\": \"all\",\n  \"priority\": \"high\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/communication-management/notifications/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"communication-management",
+								"notifications",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Notifications",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"page\": 1,\n  \"per_page\": 20,\n  \"search\": \"homework\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/communication-management/notifications/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"communication-management",
+								"notifications",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Notification Details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code is 200', function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test('Notification details retrieved', function () {",
+									"    const jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('success');",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.data).to.have.property('id');",
+									"    pm.expect(jsonData.data).to.have.property('title');",
+									"    pm.expect(jsonData.data).to.have.property('message');",
+									"    pm.expect(jsonData.data).to.have.property('is_read');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"notification_id\": {{notification_id}}\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/communication-management/notifications/details",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"communication-management",
+								"notifications",
+								"details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark Notification as Read",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code is 200', function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test('Notification marked as read', function () {",
+									"    const jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('success');",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.data).to.have.property('marked_count');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"notification_id\": {{notification_id}}\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/communication-management/notifications/mark-read",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"communication-management",
+								"notifications",
+								"mark-read"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark All Notifications as Read",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"mark_all\": true\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/communication-management/notifications/mark-read",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"communication-management",
+								"notifications",
+								"mark-read"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Notification",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code is 200', function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test('Notification deleted successfully', function () {",
+									"    const jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('success');",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"notification_id\": {{notification_id}}\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/communication-management/notifications/delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"communication-management",
+								"notifications",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Notification Statistics",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code is 200', function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test('Statistics retrieved successfully', function () {",
+									"    const jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('success');",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.data).to.have.property('total_notifications');",
+									"    pm.expect(jsonData.data).to.have.property('unread_count');",
+									"    pm.expect(jsonData.data).to.have.property('priority_breakdown');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/communication-management/notifications/stats",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"communication-management",
+								"notifications",
+								"stats"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints for managing notifications"
+		},
+		{
+			"name": "Advanced Notification Tests",
+			"item": [
+				{
+					"name": "Create Broadcast Notification",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"notification_type_id\": 1,\n  \"title\": \"School Closure Alert\",\n  \"message\": \"School will be closed tomorrow due to severe weather conditions. All classes are cancelled.\",\n  \"priority\": \"urgent\",\n  \"target_type\": \"broadcast\",\n  \"action_url\": \"/announcements/weather-closure\",\n  \"action_text\": \"Read Full Notice\",\n  \"image_url\": \"https://example.com/weather-alert.jpg\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/communication-management/notifications/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"communication-management",
+								"notifications",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Role-based Notification",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"notification_type_id\": 1,\n  \"title\": \"Parent-Teacher Meeting\",\n  \"message\": \"Please attend the parent-teacher meeting scheduled for next Friday at 3 PM.\",\n  \"priority\": \"high\",\n  \"target_type\": \"role\",\n  \"target_data\": {\n    \"roles\": [\"parent\"]\n  },\n  \"action_url\": \"/meetings/parent-teacher\",\n  \"action_text\": \"Schedule Meeting\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/communication-management/notifications/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"communication-management",
+								"notifications",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Grade-based Notification",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"notification_type_id\": 1,\n  \"title\": \"Grade 10 Field Trip\",\n  \"message\": \"All Grade 10 students are invited to join the science museum field trip next week.\",\n  \"priority\": \"normal\",\n  \"target_type\": \"grade\",\n  \"target_data\": {\n    \"grade_level_ids\": [10]\n  },\n  \"action_url\": \"/field-trips/science-museum\",\n  \"action_text\": \"Register Now\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/communication-management/notifications/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"communication-management",
+								"notifications",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Scheduled Notification",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"notification_type_id\": 1,\n  \"title\": \"Homework Reminder\",\n  \"message\": \"Don't forget to submit your mathematics homework by tomorrow morning.\",\n  \"priority\": \"normal\",\n  \"target_type\": \"user\",\n  \"target_data\": {\n    \"user_ids\": [{{user_id}}]\n  },\n  \"is_scheduled\": true,\n  \"scheduled_at\": \"2025-01-16T08:00:00Z\",\n  \"expires_at\": \"2025-01-17T23:59:59Z\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/communication-management/notifications/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"communication-management",
+								"notifications",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Advanced notification creation scenarios"
+		},
+		{
+			"name": "Error Handling Tests",
+			"item": [
+				{
+					"name": "Unauthorized Access (No Token)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code is 401', function () {",
+									"    pm.response.to.have.status(401);",
+									"});",
+									"",
+									"pm.test('Unauthorized response', function () {",
+									"    const jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('success');",
+									"    pm.expect(jsonData.success).to.eql(false);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"page\": 1\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/communication-management/notifications/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"communication-management",
+								"notifications",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid Push Token Registration",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code is 422', function () {",
+									"    pm.response.to.have.status(422);",
+									"});",
+									"",
+									"pm.test('Validation error response', function () {",
+									"    const jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('success');",
+									"    pm.expect(jsonData.success).to.eql(false);",
+									"    pm.expect(jsonData).to.have.property('errors');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"push_token\": \"\",\n  \"device_id\": \"\",\n  \"platform\": \"invalid_platform\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user-management/push-tokens/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user-management",
+								"push-tokens",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Non-existent Notification Details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code is 404', function () {",
+									"    pm.response.to.have.status(404);",
+									"});",
+									"",
+									"pm.test('Not found response', function () {",
+									"    const jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('success');",
+									"    pm.expect(jsonData.success).to.eql(false);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"notification_id\": 999999\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/communication-management/notifications/details",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"communication-management",
+								"notifications",
+								"details"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Test error scenarios and edge cases"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Pre-request script to ensure environment variables are set",
+					"if (!pm.environment.get('base_url')) {",
+					"    console.log('Setting default base_url');",
+					"    pm.environment.set('base_url', 'http://172.16.20.183:9999');",
+					"}",
+					"",
+					"// Log current auth status",
+					"const authToken = pm.environment.get('auth_token');",
+					"if (authToken) {",
+					"    console.log('Auth token is present');",
+					"} else {",
+					"    console.log('No auth token found. Please sign in first.');",
+					"}"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Global test script",
+					"pm.test('Response time is reasonable', function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+					"});",
+					"",
+					"pm.test('Response has JSON content-type', function () {",
+					"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://172.16.20.183:9999",
+			"type": "string"
+		},
+		{
+			"key": "auth_token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "user_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "notification_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "push_token_id",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

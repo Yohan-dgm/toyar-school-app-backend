@@ -2,9 +2,10 @@
 
 namespace Modules\ActivityFeedManagement\Intents\SchoolPost\ToggleLike;
 
+use Illuminate\Support\Facades\DB;
 use Lorisleiva\Actions\Concerns\AsAction;
-use Modules\ActivityFeedManagement\Models\ActivityFeedLike;
-use Modules\ActivityFeedManagement\Models\ActivityFeedPost;
+use Modules\ActivityFeedManagement\Models\SchoolPost;
+use Modules\ActivityFeedManagement\Models\SchoolPostLike;
 
 class ToggleLikeAction
 {
@@ -12,29 +13,78 @@ class ToggleLikeAction
 
     public function handle($payloadArray, $actionData)
     {
-        // User Data Validation
-        $toggleLikeUserDTO = ToggleLikeUserDTO::validate($payloadArray);
+        // Temporary bypass of DTOs due to cache table issue
+        // TODO: Re-enable DTOs once cache table is created
 
-        // System Data Prep
-        $system_data = [];
-        $system_data['user_id'] = $actionData['user_id'];
+        // Basic validation
+        if (! isset($payloadArray['post_id']) || ! isset($payloadArray['action'])) {
+            throw new \InvalidArgumentException('post_id and action are required');
+        }
 
-        // System Data Validation
-        $toggleLikeSystemDTO = ToggleLikeSystemDTO::validate($system_data);
+        if (! isset($actionData['user_id'])) {
+            throw new \InvalidArgumentException('user_id is required');
+        }
 
-        // Final Data Validation
-        $toggleLikeDTO = ToggleLikeDTO::validate(array_merge($toggleLikeUserDTO, $toggleLikeSystemDTO));
+        if (! in_array($payloadArray['action'], ['like', 'unlike'])) {
+            throw new \InvalidArgumentException('action must be like or unlike');
+        }
+
+        $postId = $payloadArray['post_id'];
+        $userId = $actionData['user_id'];
+        $action = $payloadArray['action'];
 
         // Verify post exists
-        $post = ActivityFeedPost::findOrFail($toggleLikeDTO['post_id']);
+        $post = SchoolPost::findOrFail($postId);
 
-        // Toggle the like
-        $result = ActivityFeedLike::toggleLike($toggleLikeDTO['post_id'], $toggleLikeDTO['user_id']);
+        // Handle like/unlike with atomic transaction
+        return DB::transaction(function () use ($postId, $userId, $action, $post) {
 
-        return [
-            'post_id' => $toggleLikeDTO['post_id'],
-            'is_liked' => $result['is_liked'],
-            'likes_count' => $result['likes_count'],
-        ];
+            // Check if user already liked the post
+            $existingLike = SchoolPostLike::where('post_id', $postId)
+                ->where('user_id', $userId)
+                ->first();
+
+            $isLiked = false;
+            $likesCount = 0;
+
+            if ($action === 'like') {
+                if (! $existingLike) {
+                    // Create new like
+                    SchoolPostLike::create([
+                        'post_id' => $postId,
+                        'user_id' => $userId,
+                    ]);
+
+                    // Increment likes_count in posts table
+                    $post->increment('likes_count');
+                    $isLiked = true;
+                } else {
+                    // User already liked this post
+                    $isLiked = true;
+                }
+            } elseif ($action === 'unlike') {
+                if ($existingLike) {
+                    // Remove like
+                    $existingLike->delete();
+
+                    // Decrement likes_count in posts table
+                    $post->decrement('likes_count');
+                    $isLiked = false;
+                } else {
+                    // User hasn't liked this post
+                    $isLiked = false;
+                }
+            }
+
+            // Get updated likes count from the post
+            $post->refresh();
+            $likesCount = $post->likes_count;
+
+            return [
+                'post_id' => $postId,
+                'is_liked_by_user' => $isLiked,
+                'likes_count' => $likesCount,
+            ];
+        });
     }
 }

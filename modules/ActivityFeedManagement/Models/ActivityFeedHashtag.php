@@ -14,6 +14,7 @@ class ActivityFeedHashtag extends Model
 
     protected $fillable = [
         'post_id',
+        'post_type',
         'hashtag',
     ];
 
@@ -39,39 +40,41 @@ class ActivityFeedHashtag extends Model
     public function scopePopular($query, $limit = 10)
     {
         return $query->select('hashtag')
-                    ->selectRaw('COUNT(*) as usage_count')
-                    ->groupBy('hashtag')
-                    ->orderByDesc('usage_count')
-                    ->limit($limit);
+            ->selectRaw('COUNT(*) as usage_count')
+            ->groupBy('hashtag')
+            ->orderByDesc('usage_count')
+            ->limit($limit);
     }
 
     // Helper methods
     public static function extractHashtagsFromContent($content)
     {
         preg_match_all('/#([a-zA-Z0-9_]+)/', $content, $matches);
+
         return array_unique($matches[1]);
     }
 
-    public static function createHashtagsForPost($postId, $content)
+    public static function createHashtagsForPost($postId, $content, $postType = 'activity_feed_post')
     {
         $hashtags = self::extractHashtagsFromContent($content);
-        
+
         foreach ($hashtags as $hashtag) {
             self::create([
                 'post_id' => $postId,
+                'post_type' => $postType,
                 'hashtag' => $hashtag,
             ]);
         }
-        
+
         return $hashtags;
     }
 
-    public static function updateHashtagsForPost($postId, $content)
+    public static function updateHashtagsForPost($postId, $content, $postType = 'activity_feed_post')
     {
         // Delete existing hashtags for this post
-        self::where('post_id', $postId)->delete();
-        
+        self::where('post_id', $postId)->where('post_type', $postType)->delete();
+
         // Create new hashtags
-        return self::createHashtagsForPost($postId, $content);
+        return self::createHashtagsForPost($postId, $content, $postType);
     }
 }

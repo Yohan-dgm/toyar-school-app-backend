@@ -33,7 +33,7 @@ class CreateSchoolPostIntent
             $post = CreateSchoolPostAction::run($createSchoolPostUserDTO, $actionData);
 
             DB::commit();
-            
+
             // After Intent
             // TODO: Add any post-processing logic here
 
@@ -49,23 +49,23 @@ class CreateSchoolPostIntent
     {
         try {
             $result = $this->handle($request);
-            
+
             return response()->json(
                 [
-                    "status" => "successful",
-                    "message" => "School post created successfully",
-                    "data" => $result,
-                    "metadata" => null,
+                    'status' => 'successful',
+                    'message' => 'School post created successfully',
+                    'data' => $result,
+                    'metadata' => null,
                 ],
                 201
             );
         } catch (\Throwable $th) {
             return response()->json(
                 [
-                    "status" => "error",
-                    "message" => $th->getMessage(),
-                    "data" => null,
-                    "metadata" => null,
+                    'status' => 'error',
+                    'message' => $th->getMessage(),
+                    'data' => null,
+                    'metadata' => null,
                 ],
                 500
             );

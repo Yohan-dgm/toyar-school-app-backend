@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nexis College - SMS</title>
+    <title>School App by TOYAR</title>
 </head>
 
 <body>

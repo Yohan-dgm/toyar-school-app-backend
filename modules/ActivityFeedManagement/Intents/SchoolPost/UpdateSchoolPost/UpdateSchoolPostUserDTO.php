@@ -19,7 +19,7 @@ class UpdateSchoolPostUserDTO extends Data
     public static function rules(ValidationContext $context): array
     {
         return [
-            'id' => 'required|integer|exists:activity_feed_posts,id',
+            'id' => 'required|integer|exists:school_posts,id',
             'type' => 'nullable|in:announcement,event,news,achievement',
             'category' => 'nullable|string|max:100',
             'title' => 'nullable|string|max:500',

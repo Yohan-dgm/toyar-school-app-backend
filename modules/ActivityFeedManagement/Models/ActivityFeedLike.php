@@ -15,6 +15,7 @@ class ActivityFeedLike extends Model
 
     protected $fillable = [
         'post_id',
+        'post_type',
         'user_id',
     ];
 
@@ -53,45 +54,46 @@ class ActivityFeedLike extends Model
     }
 
     // Helper methods
-    public static function toggleLike($postId, $userId)
+    public static function toggleLike($postId, $userId, $postType = 'activity_feed_post')
     {
-        $like = self::where('post_id', $postId)->where('user_id', $userId)->first();
-        
+        $like = self::where('post_id', $postId)->where('user_id', $userId)->where('post_type', $postType)->first();
+
         if ($like) {
             // Unlike - remove the like
             $like->delete();
-            
-            // Decrement likes count
-            ActivityFeedPost::where('id', $postId)->decrement('likes_count');
-            
+
+            // Get updated likes count
+            $likesCount = self::where('post_id', $postId)->where('post_type', $postType)->count();
+
             return [
                 'is_liked' => false,
-                'likes_count' => ActivityFeedPost::find($postId)->likes_count
+                'likes_count' => $likesCount,
             ];
         } else {
             // Like - create new like
             self::create([
                 'post_id' => $postId,
+                'post_type' => $postType,
                 'user_id' => $userId,
             ]);
-            
-            // Increment likes count
-            ActivityFeedPost::where('id', $postId)->increment('likes_count');
-            
+
+            // Get updated likes count
+            $likesCount = self::where('post_id', $postId)->where('post_type', $postType)->count();
+
             return [
                 'is_liked' => true,
-                'likes_count' => ActivityFeedPost::find($postId)->likes_count
+                'likes_count' => $likesCount,
             ];
         }
     }
 
-    public static function isLikedByUser($postId, $userId)
+    public static function isLikedByUser($postId, $userId, $postType = 'activity_feed_post')
     {
-        return self::where('post_id', $postId)->where('user_id', $userId)->exists();
+        return self::where('post_id', $postId)->where('user_id', $userId)->where('post_type', $postType)->exists();
     }
 
-    public static function getLikesCount($postId)
+    public static function getLikesCount($postId, $postType = 'activity_feed_post')
     {
-        return self::where('post_id', $postId)->count();
+        return self::where('post_id', $postId)->where('post_type', $postType)->count();
     }
 }

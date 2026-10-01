@@ -2,8 +2,9 @@
 
 namespace Modules\ActivityFeedManagement\Intents\SchoolPost\GetSchoolPosts;
 
+use Illuminate\Support\Facades\DB;
 use Lorisleiva\Actions\Concerns\AsAction;
-use Modules\ActivityFeedManagement\Models\ActivityFeedPost;
+use Modules\ActivityFeedManagement\Models\SchoolPost;
 use Modules\UserManagement\Models\User;
 
 class GetSchoolPostsAction
@@ -30,24 +31,27 @@ class GetSchoolPostsAction
         $perPage = $getSchoolPostsDTO['page_size'] ?? 10;
         $schoolId = $getSchoolPostsDTO['school_id'] ?? 1; // Default to school 1 if not provided
 
-        // Build query with relationships
-        $query = ActivityFeedPost::query()
+        // Build query with relationships and likes count
+        $query = SchoolPost::query()
+            ->select('school_posts.*')
+            ->selectRaw('COALESCE(likes_count.count, 0) as likes_count')
+            ->leftJoin(DB::raw('(SELECT post_id, COUNT(*) as count FROM school_post_likes WHERE is_active = true GROUP BY post_id) as likes_count'),
+                'school_posts.id', '=', 'likes_count.post_id')
             ->with(['author', 'media', 'hashtags'])
             ->active()
-            ->bySchool($schoolId)
-            ->schoolWide(); // Only school-wide posts (class_id and student_id are null)
+            ->bySchool($schoolId);
 
-        // Optional: Log basic query info for monitoring (remove in production if not needed)
+        // Optional: Log basic query info for monitoring
         \Log::info('GetSchoolPosts request', [
             'user_id' => $actionData['user_id'],
             'school_id' => $schoolId,
             'page' => $page,
             'per_page' => $perPage,
-            'search_phrase' => $getSchoolPostsDTO['search_phrase'] ?? null
+            'search_phrase' => $getSchoolPostsDTO['search_phrase'] ?? null,
         ]);
 
         // Apply search filter
-        if ($getSchoolPostsDTO['search_phrase'] && !empty(trim($getSchoolPostsDTO['search_phrase']))) {
+        if ($getSchoolPostsDTO['search_phrase'] && ! empty(trim($getSchoolPostsDTO['search_phrase']))) {
             $query->search($getSchoolPostsDTO['search_phrase']);
         }
 
@@ -56,7 +60,7 @@ class GetSchoolPostsAction
             foreach ($getSchoolPostsDTO['search_filter_list'] as $filter) {
                 if (isset($filter['type']) && isset($filter['value'])) {
                     switch ($filter['type']) {
-                        case 'post_type':
+                        case 'type':
                             $query->byType($filter['value']);
                             break;
                         case 'category':
@@ -79,7 +83,8 @@ class GetSchoolPostsAction
         }
 
         // Order by creation date (newest first)
-        $query->orderBy('created_at', 'desc');
+        // $query->orderBy('created_at', 'desc');
+        $query->orderBy('id', 'desc');
 
         // Get total count for pagination
         $queryCount = $query->count();
@@ -116,8 +121,9 @@ class GetSchoolPostsAction
                 })->toArray(),
                 'hashtags' => $post->getHashtagsArray(),
                 'school_id' => $post->school_id,
-                'class_id' => $post->class_id,
-                'student_id' => $post->student_id,
+                'class_id' => null,
+                'student_id' => null,
+                'created_by' => $post->created_by,
             ];
         });
 

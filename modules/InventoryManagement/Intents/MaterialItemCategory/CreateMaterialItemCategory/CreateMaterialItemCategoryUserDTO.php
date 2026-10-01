@@ -1,0 +1,28 @@
+<?php
+
+namespace Modules\InventoryManagement\Intents\MaterialItemCategory\CreateMaterialItemCategory;
+
+use Spatie\LaravelData\Attributes\Validation\Required;
+use Spatie\LaravelData\Data;
+use Spatie\LaravelData\Support\Validation\ValidationContext;
+
+class CreateMaterialItemCategoryUserDTO extends Data
+{
+    public function __construct(
+        // user
+        public int $material_item_type_id,
+        public string $name,
+
+        // system
+    ) {}
+
+    public static function rules(ValidationContext $context): array
+    {
+        return [
+            // user
+            'material_item_type_id' => [new Required],
+            'name' => [new Required],
+            // system
+        ];
+    }
+}

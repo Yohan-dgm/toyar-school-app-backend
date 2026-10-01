@@ -1,0 +1,42 @@
+<?php
+
+namespace Modules\AssetManagement\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Notifications\Notifiable;
+
+class CurrentAssetItemCategory extends Model
+{
+    use HasFactory, Notifiable;
+
+    protected $table = 'current_asset_item_category';
+
+    protected $fillable = [
+        'current_asset_item_type_id',
+        'name',
+        //
+        'created_by',
+        'updated_by',
+    ];
+
+    public $timestamps = true;
+
+    // relations
+    public function current_asset_item_type(): BelongsTo
+    {
+        return $this->belongsTo(CurrentAssetItemType::class, 'current_asset_item_type_id', 'id');
+    }
+
+    public function current_asset_item_sub_category_list(): HasMany
+    {
+        return $this->hasMany(CurrentAssetItemSubCategory::class, 'current_asset_item_category_id', 'id');
+    }
+
+    public function current_asset_item_list(): HasMany
+    {
+        return $this->hasMany(CurrentAssetItem::class, 'current_asset_item_category_id', 'id');
+    }
+}

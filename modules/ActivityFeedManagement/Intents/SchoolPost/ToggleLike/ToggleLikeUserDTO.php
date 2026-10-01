@@ -9,12 +9,14 @@ class ToggleLikeUserDTO extends Data
 {
     public function __construct(
         public int $post_id,
+        public string $action,
     ) {}
 
     public static function rules(ValidationContext $context): array
     {
         return [
-            'post_id' => 'required|integer|exists:activity_feed_posts,id',
+            'post_id' => 'required|integer|exists:school_posts,id',
+            'action' => 'required|string|in:like,unlike',
         ];
     }
 }

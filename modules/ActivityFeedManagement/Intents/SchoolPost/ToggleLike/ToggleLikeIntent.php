@@ -33,7 +33,7 @@ class ToggleLikeIntent
             $result = ToggleLikeAction::run($toggleLikeUserDTO, $actionData);
 
             DB::commit();
-            
+
             // After Intent
             // TODO: Add any post-processing logic here
 
@@ -49,23 +49,43 @@ class ToggleLikeIntent
     {
         try {
             $result = $this->handle($request);
-            
+
+            // Determine message based on action
+            $action = $request->input('action', 'like');
+            $message = $action === 'like' ? 'Post liked successfully' : 'Post unliked successfully';
+
             return response()->json(
                 [
-                    "status" => "successful",
-                    "message" => "Like toggled successfully",
-                    "data" => $result,
-                    "metadata" => null,
+                    'status' => 'successful',
+                    'message' => $message,
+                    'data' => $result,
                 ],
                 200
+            );
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+            return response()->json(
+                [
+                    'status' => 'error',
+                    'message' => 'Post not found or user not authorized',
+                    'data' => null,
+                ],
+                404
+            );
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            return response()->json(
+                [
+                    'status' => 'error',
+                    'message' => 'Validation failed: '.$e->getMessage(),
+                    'data' => null,
+                ],
+                422
             );
         } catch (\Throwable $th) {
             return response()->json(
                 [
-                    "status" => "error",
-                    "message" => $th->getMessage(),
-                    "data" => null,
-                    "metadata" => null,
+                    'status' => 'error',
+                    'message' => $th->getMessage(),
+                    'data' => null,
                 ],
                 500
             );

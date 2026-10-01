@@ -35,4 +35,23 @@ return [
         ],
     ],
 
+    // HNB CyberSource Payment Gateway
+    'cybersource' => [
+        'env'           => env('CYBERSOURCE_ENV', 'test'),
+        'merchant_id'   => env('CYBERSOURCE_MERCHANT_ID'),
+        'key_id'        => env('CYBERSOURCE_REST_KEY_ID'),
+        'shared_secret' => env('CYBERSOURCE_SHARED_SECRET'),
+        'currency'      => env('CYBERSOURCE_CURRENCY', 'USD'),
+        // Resolved here (not via env() in application code) so this stays correct
+        // even when config is cached (php artisan config:cache) — env() calls
+        // outside config/*.php files return null once the config cache exists.
+        // InitiatePaymentSessionAction uses this to fail loudly if CYBERSOURCE_ENV
+        // is production but CYBERSOURCE_CURRENCY was never explicitly set, instead
+        // of silently sending real transactions in the 'USD' default above (a real
+        // wrong-currency risk confirmed in a TEST-environment log this session).
+        'currency_explicit' => env('CYBERSOURCE_CURRENCY') !== null,
+        // Online payment service charge, applied on top of the invoice amount.
+        'service_fee_percentage' => env('CYBERSOURCE_SERVICE_FEE_PERCENTAGE', 3),
+    ],
+
 ];

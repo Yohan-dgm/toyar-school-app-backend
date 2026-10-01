@@ -1,0 +1,61 @@
+{
+  "description": "Sample push tokens for testing different platforms",
+  "note": "These are example tokens - replace with real tokens from actual devices",
+  "tokens": {
+    "expo": {
+      "ios": [
+        "ExponentPushToken[xxxxxxxxxxxxxxxxxxxxxx]",
+        "ExponentPushToken[yyyyyyyyyyyyyyyyyyyyyy]",
+        "ExponentPushToken[zzzzzzzzzzzzzzzzzzzzzz]"
+      ],
+      "android": [
+        "ExponentPushToken[aaaaaaaaaaaaaaaaaaaaa]",
+        "ExponentPushToken[bbbbbbbbbbbbbbbbbbbbb]",
+        "ExponentPushToken[ccccccccccccccccccccc]"
+      ]
+    },
+    "fcm": {
+      "android": [
+        "fGhI1J2K3L4M5N6O7P8Q9R0S1T2U3V4W5X6Y7Z8A9B0C1D2E3F4G5H6I7J8K9L0M",
+        "aBcDeFgHiJkLmNoPqRsTuVwXyZ1234567890aBcDeFgHiJkLmNoPqRsTuVwXyZ12",
+        "xYz123AbC456DeF789GhI012JkL345MnO678PqR901StU234VwX567YzA890BcD"
+      ]
+    },
+    "apns": {
+      "ios": [
+        "a1b2c3d4e5f6789012345678901234567890123456789012345678901234567890",
+        "b2c3d4e5f67890123456789012345678901234567890123456789012345678901a",
+        "c3d4e5f678901234567890123456789012345678901234567890123456789012ab"
+      ]
+    }
+  },
+  "test_scenarios": {
+    "single_user": {
+      "user_id": 1,
+      "tokens": [
+        "ExponentPushToken[test_token_for_user_1]"
+      ]
+    },
+    "multiple_devices": {
+      "user_id": 2,
+      "tokens": [
+        "ExponentPushToken[user_2_iphone_token]",
+        "ExponentPushToken[user_2_android_token]"
+      ]
+    },
+    "broadcast_test": {
+      "user_count": 100,
+      "token_count": 150,
+      "note": "Simulate 100 users with 150 total devices"
+    }
+  },
+  "invalid_tokens": {
+    "description": "Use these for testing error handling",
+    "examples": [
+      "invalid_token_format",
+      "ExponentPushToken[INVALID]",
+      "",
+      null
+    ]
+  }
+}
